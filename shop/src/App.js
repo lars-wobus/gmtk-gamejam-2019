@@ -4,11 +4,16 @@ import './App.css';
 import { EditorView } from './components/editor-view';
 import { ShopView } from './components/shop-view';
 
+import { sortElementsByType } from './utils/sort-elements-by-type';
+
 import editorData from './data/editor-data';
 import shopData from './data/shop-data';
 
+const editorElements = sortElementsByType(editorData);
+
 function App() {
-  const [editorElements] = useState(editorData.dynamic);
+  const [editorButtons] = useState(editorElements.buttons);
+  const [editorTextfields] = useState(editorElements.textfields);
   const [shopButtons, setShopButtons] = useState(shopData.buttons);
 
   const addButtonToShop = () => {
@@ -28,7 +33,8 @@ function App() {
   return (
     <div className="App">
       <EditorView
-        data={editorElements}
+        buttons={editorButtons}
+        textfields={editorTextfields}
         onButtonClick={onButtonClick}
       />
       <ShopView buttons={shopButtons}/>

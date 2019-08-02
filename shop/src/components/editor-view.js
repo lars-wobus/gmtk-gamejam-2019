@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from './button';
 
 export const EditorView = (
-  {data=[], onButtonClick}
+  { buttons=[], textfields=[], onButtonClick }
 ) => {
   const createButtons = (buttons) => {
     const index = 0;
@@ -20,6 +20,8 @@ export const EditorView = (
 
   return <div id = "editorview">
     Lorem Ipsum Dolor Sit Amet
-    {createButtons(data)}
+    {createButtons(buttons)}
+    -
+    {createButtons(textfields)}
   </div>
 };
