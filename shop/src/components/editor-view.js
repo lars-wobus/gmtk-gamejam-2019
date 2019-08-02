@@ -16,11 +16,29 @@ export const EditorView = (
         onButtonClick={onButtonClick}
       />
     });
-  }
+  };
+
+  const createTextfield = (textfields) => {
+    let index = 0;
+    return textfields.map(element => {
+      index += 2;
+      const fixedIndex = index;
+      if (!element.is_visible) {
+        return null;
+      }
+      return <div key = {`${element.label}_${fixedIndex}`}>
+        <Button
+          label={element.label}
+        />
+        <Button
+          label='?'
+        />
+      </div>
+    });
+  };
 
   return <div id = "editorview">
     {createButtons(buttons)}
-    -
-    {createButtons(textfields)}
+    {createTextfield(textfields)}
   </div>
 };
