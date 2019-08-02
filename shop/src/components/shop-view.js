@@ -6,6 +6,9 @@ export const ShopView = ({data={}}) => {
   const createButtons = (buttons) => {
     const index = 0;
     return buttons.map(element => {
+      if (!element.is_visible) {
+        return null;
+      }
       return <Button
         label={element.label}
         key={`${element.label}_${index}`}
