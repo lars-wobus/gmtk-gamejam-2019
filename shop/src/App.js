@@ -8,9 +8,16 @@ import editorData from './data/editor-data';
 import shopData from './data/shop-data';
 
 function App() {
+  const onButtonClick = () => {
+    console.log('Button was clicked');
+  }
+
   return (
     <div className="App">
-      <EditorView data={editorData}/>
+      <EditorView
+        data={editorData}
+        onButtonClick={onButtonClick}
+      />
       <ShopView data={shopData}/>
     </div>
   );
