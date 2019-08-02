@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const Button = () => {
+export const Button = ({label = "Buy"}) => {
   return <div id = "buy">
-    Buy
+    {label}
   </div>
 };
