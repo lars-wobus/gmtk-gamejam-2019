@@ -1,0 +1,10 @@
+{
+  "buttons": [
+    {
+      "label": "Add Button",
+      "is_visible": true,
+      "css_id": null,
+      "css_classes": "simple-button"
+    }
+  ]
+}
