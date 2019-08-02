@@ -31,3 +31,33 @@
     transform: rotate(360deg);
   }
 }
+
+/*html, body {
+    height:100%;
+    width:100%;
+}*/
+
+.App {
+  display:flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+#editorview {
+  border: 1px solid black;
+  width:30%;
+}
+
+#shopview {
+  border: 1px solid red;
+  width:70%;
+  left: 30%;
+}
+
+#buy {
+  position: relative;
+  top: 50%;
+  border: 1px solid black;
+  width: 50%;
+  left: 25%;
+}
