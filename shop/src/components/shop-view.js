@@ -18,7 +18,6 @@ export const ShopView = ({buttons=[]}) => {
   }
 
   return <div id = "shopview">
-    Lorem Ipsum Dolor Sit Amet
     {createButtons(buttons)}
   </div>
 };

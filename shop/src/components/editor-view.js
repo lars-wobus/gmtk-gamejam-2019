@@ -19,7 +19,6 @@ export const EditorView = (
   }
 
   return <div id = "editorview">
-    Lorem Ipsum Dolor Sit Amet
     {createButtons(buttons)}
     -
     {createButtons(textfields)}
