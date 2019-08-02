@@ -8,8 +8,8 @@ import editorData from './data/editor-data';
 import shopData from './data/shop-data';
 
 function App() {
+  const [editorElements] = useState(editorData.dynamic);
   const [shopButtons, setShopButtons] = useState(shopData.buttons);
-
 
   const addButtonToShop = () => {
     setShopButtons([...shopButtons, {
@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <EditorView
-        data={editorData}
+        data={editorElements}
         onButtonClick={onButtonClick}
       />
       <ShopView buttons={shopButtons}/>

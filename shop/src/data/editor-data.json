@@ -1,49 +1,57 @@
 {
-  "buttons": [
+  "dynamic": [
     {
-      "type": "label",
+      "type": "textfield",
       "label": "Current Visitors:",
+      "js_id": "tf_current_visitors",
       "is_visible": true,
       "css_id": null,
       "css_classes": "simple-button"
     },
     {
-      "type": "label",
+      "type": "textfield",
       "label": "Overall Visitors:",
+      "js_id": "tf_overall_visitors",
       "is_visible": true,
       "css_id": null,
       "css_classes": "simple-button"
     },
     {
-      "type": "label",
+      "type": "textfield",
       "label": "Items Sold:",
+      "js_id": "tf_items_sold",
       "is_visible": true,
       "css_id": null,
       "css_classes": "simple-button"
     },
     {
-      "type": "label",
+      "type": "textfield",
       "label": "Remaining Items:",
+      "js_id": "tf_items_remaining",
       "is_visible": true,
       "css_id": null,
       "css_classes": "simple-button"
     },
     {
-      "type": "label",
+      "type": "textfield",
       "label": "Selling Rate:",
+      "js_id": "tf_selling_rate",
       "is_visible": true,
       "css_id": null,
       "css_classes": "simple-button"
     },
     {
-      "type": "label",
+      "type": "textfield",
       "label": "Account Balance:",
+      "js_id": "tf_account_balance",
       "is_visible": true,
       "css_id": null,
       "css_classes": "simple-button"
     },
     {
+      "type": "button",
       "label": "Add Button",
+      "js_id": "b_add_button",
       "is_visible": true,
       "css_id": null,
       "css_classes": "simple-button"
