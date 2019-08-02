@@ -1,23 +1,24 @@
 import React from 'react';
 import {Button} from './button';
 
-export const ShopView = ({data={}}) => {
+export const ShopView = ({buttons=[]}) => {
   
   const createButtons = (buttons) => {
-    const index = 0;
+    let index = 0;
     return buttons.map(element => {
+      const fixedIndex = index++;
       if (!element.is_visible) {
         return null;
       }
       return <Button
         label={element.label}
-        key={`${element.label}_${index}`}
+        key={`${element.label}_${fixedIndex}`}
       />
     });
   }
 
   return <div id = "shopview">
     Lorem Ipsum Dolor Sit Amet
-    {createButtons(data.buttons)}
+    {createButtons(buttons)}
   </div>
 };
