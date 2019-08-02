@@ -1,6 +1,48 @@
 {
   "buttons": [
     {
+      "type": "label",
+      "label": "Current Visitors:",
+      "is_visible": true,
+      "css_id": null,
+      "css_classes": "simple-button"
+    },
+    {
+      "type": "label",
+      "label": "Overall Visitors:",
+      "is_visible": true,
+      "css_id": null,
+      "css_classes": "simple-button"
+    },
+    {
+      "type": "label",
+      "label": "Items Sold:",
+      "is_visible": true,
+      "css_id": null,
+      "css_classes": "simple-button"
+    },
+    {
+      "type": "label",
+      "label": "Remaining Items:",
+      "is_visible": true,
+      "css_id": null,
+      "css_classes": "simple-button"
+    },
+    {
+      "type": "label",
+      "label": "Selling Rate:",
+      "is_visible": true,
+      "css_id": null,
+      "css_classes": "simple-button"
+    },
+    {
+      "type": "label",
+      "label": "Account Balance:",
+      "is_visible": true,
+      "css_id": null,
+      "css_classes": "simple-button"
+    },
+    {
       "label": "Add Button",
       "is_visible": true,
       "css_id": null,
