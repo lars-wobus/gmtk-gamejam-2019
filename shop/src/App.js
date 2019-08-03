@@ -30,7 +30,7 @@ function App() {
   const [stats, setStats] = useState(statsData);
   const [editorButtons] = useState(editorElements.buttons);
   const [editorTextfields] = useState(editorElements.textfields);
-  const [shopButtons, setShopButtons] = useState(shopData.buttons);
+
   const [userReviews, setUserReviews] = useState([]);
 
   const onSkipButtonClick = () => {
@@ -45,18 +45,8 @@ function App() {
     setTutorialIndex(tutorialIndex + 1);
   };
 
-  const addButtonToShop = () => {
-    setShopButtons([...shopButtons, {
-      "label": "Another Button",
-      "is_visible": true,
-      "css_id": null,
-      "css_classes": "simple-button"
-    }]);
-  };
-
   const onButtonClick = () => {
     console.log('Button was clicked');
-    addButtonToShop();
   };
 
   const calcRate = (stat, deltaTimeInSeconds) => {
@@ -158,9 +148,12 @@ function App() {
               stats={stats}
               buttons={editorButtons}
               textfields={editorTextfields}
+              onButtonClick={() => console.log('Some old button was clicked')}
+            />
+            <ShopView
+              userReviews={userReviews}
               onButtonClick={onButtonClick}
             />
-            <ShopView buttons={shopButtons} userReviews={userReviews} />
           </>
           {
             showTutorialDialog &&

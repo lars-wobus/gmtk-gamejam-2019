@@ -1,12 +1,11 @@
 import React from 'react';
-import { Button } from './button';
 import { Header } from './lars/header';
 import { Banner } from './lars/banner';
 import { Footer } from './lars/footer';
 import { Alarm } from '../icons/alarm';
 import { UserReview } from './lars/user-review';
 
-const createContainer = (type) => {
+/*const createContainer = (type) => {
   switch(type){
     case "image": {
       return <img alt="Main product" />
@@ -19,21 +18,21 @@ const createContainer = (type) => {
     }
     default: return <div></div>
   }
-}
+}*/
 
 export const ShopView = (
-  { userReviews }
+  { userReviews, onButtonClick }
 ) => {
   let index = 0;
   const array = userReviews.map(element => {
     const key = index++;
     return <UserReview userData={element} key={key} />
   });
-  
+
   return <div id = "shopview">
     <Header />
     <Banner />
-    <div id = "buy" onClick={() => console.log('TODO')}>
+    <div id = "buy" onClick={() => onButtonClick()}>
       Buy Now
     </div>
     <div>
