@@ -60,7 +60,7 @@
     "displayType": "percent",
     "statVisible": false,
     "value": 0,
-    "cap": null,
+    "cap": 1,
     "rate": null,
     "rateCap": null,
     "valueVisible": true,
@@ -146,6 +146,32 @@
     "rateVisible": false,
     "rateCapVisible": false
   },
+  "botMails": {
+    "name": "Bot send mails",
+    "displayType": "int",
+    "statVisible": false,
+    "value": null,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
+    "valueVisible": false,
+    "capVisible": false,
+    "rateVisible": true,
+    "rateCapVisible": false
+  },
+  "botPurchases": {
+    "name": "Bot send mails",
+    "displayType": "int",
+    "statVisible": false,
+    "value": null,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
+    "valueVisible": false,
+    "capVisible": false,
+    "rateVisible": true,
+    "rateCapVisible": false
+  },
   "moneyStolen": {
     "name": "Money stolen",
     "displayType": "int",
@@ -159,8 +185,34 @@
     "rateVisible": false,
     "rateCapVisible": false
   },
+  "competitors": {
+    "name": "Competitors",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 100,
+    "cap": null,
+    "rate": null,
+    "rateCap": null,
+    "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
+  },
+  "demand": {
+    "name": "Public demand for Plumbuses",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
+    "valueVisible": false,
+    "capVisible": false,
+    "rateVisible": true,
+    "rateCapVisible": false
+  },
   "publicOpinion": {
-    "name": "Public opinion",
+    "name": "Public opinion about our store",
     "displayType": "percent",
     "statVisible": false,
     "value": 0,
@@ -185,8 +237,34 @@
     "rateVisible": false,
     "rateCapVisible": false
   },
+  "captiveHumanEfficiency": {
+    "name": "Captive human efficiency",
+    "displayType": "int",
+    "statVisible": false,
+    "value": null,
+    "cap": null,
+    "rate": 1,
+    "rateCap": null,
+    "valueVisible": false,
+    "capVisible": false,
+    "rateVisible": true,
+    "rateCapVisible": false
+  },
   "freeHumans": {
     "name": "Free humans",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 7700000000,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
+    "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
+  },
+  "huntedHumans": {
+    "name": "Hunted humans",
     "displayType": "int",
     "statVisible": false,
     "value": 0,
@@ -195,7 +273,7 @@
     "rateCap": null,
     "valueVisible": true,
     "capVisible": false,
-    "rateVisible": false,
+    "rateVisible": true,
     "rateCapVisible": false
   }
 }
