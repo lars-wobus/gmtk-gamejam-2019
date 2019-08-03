@@ -12,17 +12,31 @@ import settings from './config/default-settings'
 import editorData from './data/editor-data';
 import statsData from './data/stats-data';
 import shopData from './data/shop-data';
+import tutorialData from './data/tutorial-data';
 
 const editorElements = sortElementsByType(editorData);
 
 function App() {
   const [showStartscreen, setShowStartscreen] = useState(settings.show_startscreen);
   const [showTutorialDialog, setShowTutorialDialog] = useState(settings.show_tutorial);
+  const [tutorialIndex, setTutorialIndex] = useState(0);
   const [shopName, setShopName] = useState(settings.default_shop_name);
   const [stats] = useState(statsData);
   const [editorButtons] = useState(editorElements.buttons);
   const [editorTextfields] = useState(editorElements.textfields);
   const [shopButtons, setShopButtons] = useState(shopData.buttons);
+
+  const onSkipButtonClick = () => {
+    setShowTutorialDialog(false);
+  }
+
+  const onPreviousButtonClick = () => {
+    setTutorialIndex(tutorialIndex - 1);
+  };
+
+  const onNextButtonClick = () => {
+    setTutorialIndex(tutorialIndex + 1);
+  };
 
   const addButtonToShop = () => {
     setShopButtons([...shopButtons, {
@@ -56,7 +70,14 @@ function App() {
             />
             <ShopView buttons={shopButtons} />
           </>
-          {showTutorialDialog && <Dialog />}
+          {
+            showTutorialDialog &&
+            <Dialog
+              data={tutorialData[tutorialIndex]}
+              onSkipButtonClick={() => onSkipButtonClick()}
+              onPreviousButtonClick={() => onPreviousButtonClick()}
+              onNextButtonClick={() => onNextButtonClick()}
+            />}
         </>
       }
     </div>

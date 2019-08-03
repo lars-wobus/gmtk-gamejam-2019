@@ -121,15 +121,19 @@ html, body {
   border-radius: 10px;
 }
 
-.tutorial-dialog h1, p {
+.tutorial-dialog h1, h2, p {
   position: absolute;
   margin: 0px 20px;
   padding: 20px;
   text-align: justify;
 }
 
-.tutorial-dialog p {
+.tutorial-dialog h2 {
   top: 60px;
+}
+
+.tutorial-dialog p {
+  top: 100px;
 }
 
 .tutorial-dialog div {
@@ -165,3 +169,10 @@ html, body {
   right: 10px;
 }
 
+.tutorial-dialog .previous-button,.next-button {
+  pointer-events: none;
+}
+
+.tutorial-dialog .previous-button.active,.next-button.active {
+  pointer-events: all;
+}
