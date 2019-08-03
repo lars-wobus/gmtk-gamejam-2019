@@ -6,6 +6,13 @@ import { Footer } from './lars/footer';
 import { Alarm } from '../icons/alarm';
 import { UserReview } from './lars/user-review';
 
+const userData = {
+  name: "John Doe",
+  rating: 3,
+  isVerified: "Verified Purchase",
+  comment: "I think I have to order another one"
+}
+
 const createContainer = (type) => {
   switch(type){
     case "image": {
@@ -21,9 +28,7 @@ const createContainer = (type) => {
   }
 }
 
-export const ShopView = (
-  { buttons=[] }
-) => {
+export const ShopView = () => {
   return <div id = "shopview">
     <Header />
     <Banner />
@@ -38,11 +43,11 @@ export const ShopView = (
     </div>
     <Alarm classes="alarm-1" />
     <div className="review-container">
-      <UserReview />
-      <UserReview />
-      <UserReview />
-      <UserReview />
-      <UserReview />
+      <UserReview userData={userData} />
+      <UserReview userData={userData} />
+      <UserReview userData={userData} />
+      <UserReview userData={userData} />
+      <UserReview userData={userData} />
     </div>
     <Footer />
   </div>

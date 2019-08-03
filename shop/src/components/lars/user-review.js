@@ -1,15 +1,21 @@
 import React from 'react';
 import { ProductRating } from './product-rating';
 
-export const UserReview = () => {
+export const UserReview = (
+  { userData }
+) => {
+  const {
+    name, rating, isVerified, comment
+  } = userData;
+
   return <div className="user-review">
     <div className="user-review-1">
-      <div className="user-name">John Doe</div>
-      <ProductRating value={2}/>
-      <div className="user-verification">Verified Purchase</div>
+      <div className="user-name">{name}</div>
+      <ProductRating value={rating}/>
+      <div className="user-verification">{isVerified}</div>
     </div>
     <div className="user-review-2">
-      <div className="user-comment">I like this product</div>
+      <div className="user-comment">{comment}</div>
     </div>
   </div>
 };

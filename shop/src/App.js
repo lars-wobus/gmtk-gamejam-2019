@@ -10,6 +10,7 @@ import { EditorView } from './components/editor-view';
 import { ShopView } from './components/shop-view';
 
 import { sortElementsByType } from './utils/sort-elements-by-type';
+import { getRandomUserName } from './utils/get-random-user-name';
 
 import settings from './config/default-settings'
 import editorData from './data/editor-data';
@@ -123,6 +124,10 @@ function App() {
 
   const onNewPurchases = (amount) => {
     // TODO: do something with this
+  };
+
+  const addCustomerReview = () => {
+    const userName = getRandomUserName();
   };
 
   return (
