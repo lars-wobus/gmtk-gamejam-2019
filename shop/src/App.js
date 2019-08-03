@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 import { Startscreen } from './components/lars/start-screen';
+import { Dialog } from './components/lars/dialog';
 import { EditorView } from './components/editor-view';
 import { ShopView } from './components/shop-view';
 
@@ -15,6 +16,7 @@ const editorElements = sortElementsByType(editorData);
 
 function App() {
   const [showStartscreen, setShowStartscreen] = useState(settings.show_startscreen);
+  const [showTutorialDialog, setShowTutorialDialog] = useState(settings.show_tutorial);
   const [shopName, setShopName] = useState(settings.default_shop_name);
   const [editorButtons] = useState(editorElements.buttons);
   const [editorTextfields] = useState(editorElements.textfields);
@@ -43,12 +45,15 @@ function App() {
           onTextInputChange={(event) => {setShopName(event.target.value);}}
          />
          : <>
-          <EditorView
-            buttons={editorButtons}
-            textfields={editorTextfields}
-            onButtonClick={onButtonClick}
-          />
-          <ShopView buttons={shopButtons} />
+          <>
+            <EditorView
+              buttons={editorButtons}
+              textfields={editorTextfields}
+              onButtonClick={onButtonClick}
+            />
+            <ShopView buttons={shopButtons} />
+          </>
+          {showTutorialDialog && <Dialog />}
         </>
       }
     </div>
