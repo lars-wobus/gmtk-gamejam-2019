@@ -10,10 +10,14 @@ import { EditorView } from './components/editor-view';
 import { ShopView } from './components/shop-view';
 
 import { sortElementsByType } from './utils/sort-elements-by-type';
+import { initEditorUpgrades } from "./utils/editor-upgrades";
 
 import settings from './config/default-settings'
 import editorData from './data/editor-data';
-import statsData from './data/editor-stats';
+import editorStatsData from './data/editor-stats';
+import editorUpgradeDefinitions from './data/editor-upgrades';
+import editorSectionNames from './data/editor-sections';
+import editorInitialActions from './data/editor-initial-actions';
 import shopData from './data/shop-data';
 import tutorialData from './data/tutorial-data';
 
@@ -24,7 +28,14 @@ function App() {
   const [showTutorialDialog, setShowTutorialDialog] = useState(settings.show_tutorial);
   const [tutorialIndex, setTutorialIndex] = useState(0);
   const [shopName, setShopName] = useState(settings.default_shop_name);
-  const [stats, setStats] = useState(statsData);
+  const [stats, setStats] = useState(editorStatsData);
+  const [upgrades, setUpgrades] = useState(initEditorUpgrades(
+    editorSectionNames,
+    editorUpgradeDefinitions,
+    editorInitialActions,
+    stats,
+    message => onMessage(message)
+  ));
   const [editorButtons] = useState(editorElements.buttons);
   const [editorTextfields] = useState(editorElements.textfields);
   const [shopButtons, setShopButtons] = useState(shopData.buttons);
@@ -117,11 +128,19 @@ function App() {
     if (newPurchases > 0) onNewPurchases(newPurchases);
   };
 
-  const onNewVisits = (amount) => {
+  const onNewVisits = amount => {
     // TODO: do something with this
   };
 
-  const onNewPurchases = (amount) => {
+  const onNewPurchases = amount => {
+    // TODO: do something with this
+  };
+
+  const onMessage = message => {
+    // TODO: do something with this
+  };
+
+  const onUpgradeClicked = upgrade => {
     // TODO: do something with this
   };
 
