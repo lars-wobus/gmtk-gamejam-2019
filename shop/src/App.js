@@ -15,6 +15,7 @@ const editorElements = sortElementsByType(editorData);
 
 function App() {
   const [showStartscreen, setShowStartscreen] = useState(settings.show_startscreen);
+  const [shopName, setShopName] = useState(settings.default_shop_name);
   const [editorButtons] = useState(editorElements.buttons);
   const [editorTextfields] = useState(editorElements.textfields);
   const [shopButtons, setShopButtons] = useState(shopData.buttons);
@@ -36,8 +37,10 @@ function App() {
   return (
     <div className="App">
       { showStartscreen
-         ? <Startscreen 
+         ? <Startscreen
+          defaultValue={settings.default_shop_name}
           onButtonClick={() => setShowStartscreen(false)}
+          onTextInputChange={(event) => {setShopName(event.target.value);}}
          />
          : <>
           <EditorView

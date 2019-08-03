@@ -1,12 +1,12 @@
 import React from 'react';
 
 export const Startscreen = (
-  { onButtonClick, onTextInputChange }
+  { defaultValue, onButtonClick, onTextInputChange }
 ) => {
   return <div className="center">
     <input
       type="text"
-      defaultValue="PlumbusStore"
+      defaultValue={defaultValue}
       onChange={onTextInputChange}
     />
     <div
