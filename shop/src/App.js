@@ -3,7 +3,7 @@ import './App.css';
 import './styles/tutorial-dialog.css';
 
 import { Startscreen } from './components/lars/start-screen';
-import { Dialog } from './components/lars/dialog';
+import { TutorialDialog } from './components/lars/tutorial-dialog';
 import { EditorView } from './components/editor-view';
 import { ShopView } from './components/shop-view';
 
@@ -73,7 +73,7 @@ function App() {
           </>
           {
             showTutorialDialog &&
-            <Dialog
+            <TutorialDialog
               data={tutorialData[tutorialIndex]}
               onSkipButtonClick={() => onSkipButtonClick()}
               onPreviousButtonClick={() => onPreviousButtonClick()}

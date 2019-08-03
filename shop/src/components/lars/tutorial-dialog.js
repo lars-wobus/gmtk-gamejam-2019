@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Dialog = (
+export const TutorialDialog = (
   {
     data,
     onSkipButtonClick,
