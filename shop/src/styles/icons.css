@@ -1,0 +1,12 @@
+.alarm-1 {
+  width: 96px;
+  height: 96px;
+  position: absolute;
+  top: 400px;
+  right: 20px;
+}
+
+.star {
+  width: 24px;
+  height: 24px;
+}

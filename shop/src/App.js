@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import './styles/tutorial-dialog.css';
 import './styles/user-reviews.css';
+import './styles/icons.css';
 
 import { Startscreen } from './components/lars/start-screen';
 import { TutorialDialog } from './components/lars/tutorial-dialog';
