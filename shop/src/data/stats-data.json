@@ -1,123 +1,279 @@
-[
-  {
-    "id": "example",
-    "COMMENT_0": "these are the default values",
-    "COMMENT_1": "cap, rate and rateCap are either null, or a number",
-    "COMMENT_2": "rates are in units per second",
-    "COMMENT_3": "displayType can be one of [int, float, percent]",
-    "COMMENT_4": "if no name is given, the id is used",
+{
+  "example": {
+    "COMMENT_0": "cap, rate and rateCap are either null, or a number",
+    "COMMENT_1": "rates are in units per second",
+    "COMMENT_2": "displayType can be one of [int, float, percent]",
+    "COMMENT_3": "if no name is given, the id is used",
     "name": "the example stat",
     "displayType": "int",
-    "statVisible": false,
     "value": 0,
-    "valueVisible": false,
     "cap": null,
-    "capVisible": false,
     "rate": null,
-    "rateVisible": false,
     "rateCap": null,
+    "statVisible": false,
+    "valueVisible": false,
+    "capVisible": false,
+    "rateVisible": false,
     "rateCapVisible": false
   },
-  {
-    "id": "test",
-    "COMMENT_0": "these are the default values",
-    "COMMENT_1": "cap, rate and rateCap are either null, or a number",
-    "COMMENT_2": "rates are in units per second",
-    "COMMENT_3": "displayType can be one of [int, float, percent]",
-    "COMMENT_4": "if no name is given, the id is used",
+  "test": {
     "name": "some test stat",
     "displayType": "int",
     "statVisible": true,
     "value": 0,
-    "valueVisible": true,
     "cap": 10,
-    "capVisible": true,
     "rate": 1,
-    "rateVisible": true,
     "rateCap": 2,
+    "valueVisible": true,
+    "capVisible": true,
+    "rateVisible": true,
     "rateCapVisible": true
   },
-  {
-    "id": "money",
+  "money": {
+    "name": "Account balance",
     "displayType": "int",
     "statVisible": true,
-    "valueVisible": true
-  },
-  {
-    "id": "visits",
-    "displayType": "int",
+    "value": 0,
+    "cap": null,
+    "rate": null,
+    "rateCap": null,
     "valueVisible": true,
-    "rate": 0,
-    "rateCap": 100
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
   },
-  {
-    "id": "conversion",
+  "visits": {
+    "name": "Shop visitors",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "cap": null,
+    "rate": 0,
+    "rateCap": 100,
+    "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
+  },
+  "conversion": {
+    "name": "Conversion rate",
     "displayType": "percent",
-    "valueVisible": true
-  },
-  {
-    "id": "purchases",
-    "displayType": "int",
-    "valueVisible": true
-  },
-  {
-    "id": "buttons",
-    "displayType": "int",
-    "valueVisible": true
-  },
-  {
-    "id": "mails",
-    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "cap": 1,
+    "rate": null,
+    "rateCap": null,
     "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
+  },
+  "purchases": {
+    "name": "Purchases",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "cap": null,
+    "rate": null,
+    "rateCap": null,
+    "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
+  },
+  "buttons": {
+    "name": "Purchase buttons",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "cap": null,
+    "rate": null,
+    "rateCap": null,
+    "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
+  },
+  "mails": {
+    "name": "Mails sent",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "cap": null,
     "rate": 0,
-    "rateVisible": true,
     "rateCap": 10,
-    "rateCapVisible": true
-  },
-  {
-    "id": "calls",
-    "displayType": "int",
     "valueVisible": true,
-    "rate": 0,
+    "capVisible": false,
     "rateVisible": true,
-    "rateCap": 1,
     "rateCapVisible": true
   },
-  {
-    "id": "adImpact",
+  "calls": {
+    "name": "Calls done",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "cap": null,
+    "rate": 0,
+    "rateCap": 1,
+    "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": true,
+    "rateCapVisible": true
+  },
+  "adImpact": {
+    "name": "Ad impact",
     "displayType": "percent",
+    "statVisible": false,
+    "value": 0,
+    "cap": 1,
+    "rate": null,
+    "rateCap": null,
     "valueVisible": true,
-    "cap": 1
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
   },
-  {
-    "id": "bots",
+  "bots": {
+    "name": "Compromised systems",
     "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
     "valueVisible": true,
-    "rate": 0
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
   },
-  {
-    "id": "moneyStolen",
+  "botMails": {
+    "name": "Bot send mails",
     "displayType": "int",
-    "valueVisible": true,
-    "rate": 0
+    "statVisible": false,
+    "value": null,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
+    "valueVisible": false,
+    "capVisible": false,
+    "rateVisible": true,
+    "rateCapVisible": false
   },
-  {
-    "id": "publicOpinion",
+  "botPurchases": {
+    "name": "Bot send mails",
+    "displayType": "int",
+    "statVisible": false,
+    "value": null,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
+    "valueVisible": false,
+    "capVisible": false,
+    "rateVisible": true,
+    "rateCapVisible": false
+  },
+  "moneyStolen": {
+    "name": "Money stolen",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
+    "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
+  },
+  "competitors": {
+    "name": "Competitors",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 100,
+    "cap": null,
+    "rate": null,
+    "rateCap": null,
+    "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
+  },
+  "demand": {
+    "name": "Public demand for Plumbuses",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
+    "valueVisible": false,
+    "capVisible": false,
+    "rateVisible": true,
+    "rateCapVisible": false
+  },
+  "publicOpinion": {
+    "name": "Public opinion about our store",
     "displayType": "percent",
-    "valueVisible": true
-  },
-  {
-    "id": "captiveHumans",
-    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "cap": null,
+    "rate": null,
+    "rateCap": null,
     "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
+  },
+  "captiveHumans": {
+    "name": "Captive humans",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
     "cap": 100,
-    "capVisible": true,
-    "rate": 0
-  },
-  {
-    "id": "freeHumans",
-    "displayType": "int",
+    "rate": 0,
+    "rateCap": null,
     "valueVisible": true,
-    "rate": 0
+    "capVisible": true,
+    "rateVisible": false,
+    "rateCapVisible": false
+  },
+  "captiveHumanEfficiency": {
+    "name": "Captive human efficiency",
+    "displayType": "int",
+    "statVisible": false,
+    "value": null,
+    "cap": null,
+    "rate": 1,
+    "rateCap": null,
+    "valueVisible": false,
+    "capVisible": false,
+    "rateVisible": true,
+    "rateCapVisible": false
+  },
+  "freeHumans": {
+    "name": "Free humans",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 7700000000,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
+    "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
+  },
+  "huntedHumans": {
+    "name": "Hunted humans",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
+    "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": true,
+    "rateCapVisible": false
   }
-]
+}
