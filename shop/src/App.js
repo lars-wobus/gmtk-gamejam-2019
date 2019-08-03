@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import './styles/tutorial-dialog.css';
 import './styles/user-reviews.css';
@@ -10,7 +10,7 @@ import { EditorView } from './components/editor-view';
 import { ShopView } from './components/shop-view';
 
 import { sortElementsByType } from './utils/sort-elements-by-type';
-import { getRandomUserName } from './utils/get-random-user-name';
+import { createUserReview } from './utils/create-user-review';
 
 import settings from './config/default-settings'
 import editorData from './data/editor-data';
@@ -19,6 +19,8 @@ import shopData from './data/shop-data';
 import tutorialData from './data/tutorial-data';
 
 const editorElements = sortElementsByType(editorData);
+
+let reviewIntervalId = null;
 
 function App() {
   const [showStartscreen, setShowStartscreen] = useState(settings.show_startscreen);
@@ -29,6 +31,7 @@ function App() {
   const [editorButtons] = useState(editorElements.buttons);
   const [editorTextfields] = useState(editorElements.textfields);
   const [shopButtons, setShopButtons] = useState(shopData.buttons);
+  const [userReviews, setUserReviews] = useState([]);
 
   const onSkipButtonClick = () => {
     setShowTutorialDialog(false);
@@ -126,9 +129,20 @@ function App() {
     // TODO: do something with this
   };
 
-  const addCustomerReview = () => {
-    const userName = getRandomUserName();
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (userReviews.length < 30) {
+        setUserReviews([...userReviews, createUserReview(0, false)]);
+      } else {
+        userReviews.shift();
+        setUserReviews([...userReviews, createUserReview(0, false)]);
+      }
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [userReviews]);
 
   return (
     <div className="App">
@@ -146,7 +160,7 @@ function App() {
               textfields={editorTextfields}
               onButtonClick={onButtonClick}
             />
-            <ShopView buttons={shopButtons} />
+            <ShopView buttons={shopButtons} userReviews={userReviews} />
           </>
           {
             showTutorialDialog &&

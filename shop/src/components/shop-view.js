@@ -6,13 +6,6 @@ import { Footer } from './lars/footer';
 import { Alarm } from '../icons/alarm';
 import { UserReview } from './lars/user-review';
 
-const userData = {
-  name: "John Doe",
-  rating: 3,
-  isVerified: "Verified Purchase",
-  comment: "I think I have to order another one"
-}
-
 const createContainer = (type) => {
   switch(type){
     case "image": {
@@ -28,11 +21,19 @@ const createContainer = (type) => {
   }
 }
 
-export const ShopView = () => {
+export const ShopView = (
+  { userReviews }
+) => {
+  let index = 0;
+  const array = userReviews.map(element => {
+    const key = index++;
+    return <UserReview userData={element} key={key} />
+  });
+  
   return <div id = "shopview">
     <Header />
     <Banner />
-    <div id = "buy" onClick={console.log('TODO')}>
+    <div id = "buy" onClick={() => console.log('TODO')}>
       Buy Now
     </div>
     <div>
@@ -42,13 +43,7 @@ export const ShopView = () => {
       Remaining: 
     </div>
     <Alarm classes="alarm-1" />
-    <div className="review-container">
-      <UserReview userData={userData} />
-      <UserReview userData={userData} />
-      <UserReview userData={userData} />
-      <UserReview userData={userData} />
-      <UserReview userData={userData} />
-    </div>
+    <div className="review-container">{array}</div>
     <Footer />
   </div>
 };

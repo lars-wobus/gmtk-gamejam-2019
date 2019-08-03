@@ -7,7 +7,6 @@ export const UserReview = (
   const {
     name, rating, isVerified, comment
   } = userData;
-
   return <div className="user-review">
     <div className="user-review-1">
       <div className="user-name">{name}</div>
