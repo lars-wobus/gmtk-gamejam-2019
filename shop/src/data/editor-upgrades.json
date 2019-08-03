@@ -1,0 +1,114 @@
+{
+  "buttonUpgrade": {
+    "section": "shop",
+    "label": "Better buy button",
+    "type": "multilevel",
+    "actions": [
+      "plus conversion 0.01; activate productImage",
+      "plus conversion 0.01",
+      "plus conversion 0.01",
+      "plus conversion 0.01",
+      "plus conversion 0.01"
+    ]
+  },
+  "productImage": {
+    "section": "shop",
+    "label": "Product image",
+    "type": "normal",
+    "actions": "plus conversion 0.02; activate imageUpgrade guidingArrows"
+  },
+  "imageUpgrade": {
+    "section": "shop",
+    "label": "Product image",
+    "type": "multilevel",
+    "actions": [
+      "plus conversion 0.01",
+      "plus conversion 0.01",
+      "plus conversion 0.01"
+    ]
+  },
+  "guidingArrows": {
+    "section": "shop",
+    "label": "Guiding arrows",
+    "type": "multilevel",
+    "actions": [
+      "plus conversion 0.01",
+      "plus conversion 0.01",
+      "plus conversion 0.01; activate suggestiveEmojis"
+    ]
+  },
+  "suggestiveEmojis": {
+    "section": "shop",
+    "label": "Suggestive emojis",
+    "type": "multilevel",
+    "actions": [
+      "plus conversion 0.01 activate fakeReviews researchDepartment",
+      "plus conversion 0.01",
+      "plus conversion 0.01"
+    ]
+  },
+  "fakeReviews": {
+    "section": "shop",
+    "label": "Fake reviews",
+    "type": "multilevel",
+    "actions": [
+      "plus conversion 0.01",
+      "plus conversion 0.01",
+      "plus conversion 0.01"
+    ]
+  },
+  "researchDepartment": {
+    "section": "shop",
+    "label": "R&D department",
+    "type": "normal",
+    "actions": "activate phase2"
+  },
+  "phase2": {
+    "section": "research",
+    "label": "Dynamic content",
+    "type": "research",
+    "actions": "activate imageButton headerButton arrowButton crossSelling"
+  },
+  "imageButton": {
+    "section": "shop",
+    "label": "Image as button",
+    "type": "normal",
+    "actions": "plus conversion 0.01; activate buttonButton"
+  },
+  "headerButton": {
+    "section": "shop",
+    "label": "Header buttons",
+    "type": "normal",
+    "actions": "plus conversion 0.01; activate buttonButton"
+  },
+  "arrowButton": {
+    "section": "shop",
+    "label": "Interactive arrows",
+    "type": "normal",
+    "actions": "plus conversion 0.01; activate buttonButton"
+  },
+  "buttonButton": {
+    "section": "shop",
+    "label": "Buttonception",
+    "type": "normal",
+    "actions": "plus conversion 0.01"
+  },
+  "crossSelling": {
+    "section": "shop",
+    "label": "Cross selling",
+    "type": "normal",
+    "actions": "plus conversion 0.01; activate moreProducts"
+  },
+  "moreProducts": {
+    "section": "research",
+    "label": "More than one product",
+    "type": "research",
+    "actions": "activate sueResearchTeam"
+  },
+  "sueResearchTeam": {
+    "section": "operations",
+    "label": "Sue the research team",
+    "type": "operation",
+    "actions": "add money 10000"
+  }
+}

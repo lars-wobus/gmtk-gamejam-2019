@@ -11,14 +11,15 @@ import { ShopView } from './components/shop-view';
 
 import { sortElementsByType } from './utils/sort-elements-by-type';
 import { createUserReview } from './utils/create-user-review';
+import { initEditorUpgrades, runUpgradeAction } from "./utils/editor-upgrades";
 
 import settings from './config/default-settings'
-import editorData from './data/editor-data';
-import statsData from './data/stats-data';
+import editorStatsData from './data/editor-stats';
+import editorUpgradeDefinitions from './data/editor-upgrades';
+import editorSectionDefinitions from './data/editor-sections';
+import editorInitialActions from './data/editor-initial-actions';
 import shopData from './data/shop-data';
 import tutorialData from './data/tutorial-data';
-
-const editorElements = sortElementsByType(editorData);
 
 let reviewIntervalId = null;
 
@@ -27,11 +28,21 @@ function App() {
   const [showTutorialDialog, setShowTutorialDialog] = useState(settings.show_tutorial);
   const [tutorialIndex, setTutorialIndex] = useState(0);
   const [shopName, setShopName] = useState(settings.default_shop_name);
-  const [stats, setStats] = useState(statsData);
-  const [editorButtons] = useState(editorElements.buttons);
-  const [editorTextfields] = useState(editorElements.textfields);
 
   const [userReviews, setUserReviews] = useState([]);
+  const [stats, setStats] = useState(editorStatsData);
+  const [upgrades, setUpgrades] = useState(() => initEditorUpgrades(editorSectionDefinitions, editorUpgradeDefinitions));
+  const [shopButtons, setShopButtons] = useState(shopData.buttons);
+
+  // TODO: do this the way it is supposed to be ^^
+  const init = () => {
+    editorInitialActions.forEach(action => {
+      runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, () => onMessage())
+    });
+    setStats(stats);
+    setUpgrades(upgrades);
+  };
+  const [] = useState(() => init());
 
   const onSkipButtonClick = () => {
     setShowTutorialDialog(false);
@@ -111,11 +122,40 @@ function App() {
     if (newPurchases > 0) onNewPurchases(newPurchases);
   };
 
-  const onNewVisits = (amount) => {
+  const onNewVisits = amount => {
     // TODO: do something with this
   };
 
-  const onNewPurchases = (amount) => {
+  const onNewPurchases = amount => {
+    // TODO: do something with this
+  };
+
+  const onMessage = message => {
+    // TODO: do something with this
+  };
+
+  const onUpgradeClicked = it => {
+    let action = "";
+    switch (it.type) {
+      case "multilevel":
+        action = it.actions[it.level];
+        it.level++;
+        it.isDone = it.level === it.actions.length;
+        break;
+      case "normal":
+        action = it.actions;
+        it.isDone = true;
+    }
+    runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, () => onMessage());
+    onEditorDataChanged();
+  };
+
+  const onEditorDataChanged = () => {
+    setStats(Object.assign({}, stats));
+    setUpgrades(Object.assign({}, upgrades));
+  };
+
+  const onUpgradeEvent = (upgradeEvent, level) => {
     // TODO: do something with this
   };
 
@@ -146,13 +186,14 @@ function App() {
           <>
             <EditorView
               stats={stats}
-              buttons={editorButtons}
-              textfields={editorTextfields}
-              onButtonClick={() => console.log('Some old button was clicked')}
+              upgradeSections={upgrades}
+              onUpgrade={it => onUpgradeClicked(it)}
             />
             <ShopView
               userReviews={userReviews}
               onButtonClick={onButtonClick}
+              upgradeSections={upgrades}
+              onUpgrade={it => onUpgradeClicked(it)}
             />
           </>
           {

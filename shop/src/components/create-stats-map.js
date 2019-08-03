@@ -3,9 +3,11 @@ import { StatsElement } from "./editor/stats-element";
 
 export const createStatsMap = (stats) => {
   return Object.keys(stats).map(statsId => {
-    return <StatsElement
-      statsId={statsId}
-      statsData={stats[statsId]}
-    />
+    return <div key={`stat-${statsId}`}>
+      <StatsElement
+        statsId={statsId}
+        statsData={stats[statsId]}
+      />
+    </div>
   });
 };
