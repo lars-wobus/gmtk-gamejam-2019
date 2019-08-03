@@ -2,57 +2,73 @@
   {
     "type": "textfield",
     "label": "Current Visitors:",
-    "js_id": "tf_current_visitors",
     "is_visible": true,
+    "sound_effect": null,
+    "js_id": "tf_current_visitors",
     "css_id": null,
-    "css_classes": "simple-button"
+    "css_classes": "debug-borders"
   },
   {
     "type": "textfield",
     "label": "Overall Visitors:",
-    "js_id": "tf_overall_visitors",
     "is_visible": true,
+    "sound_effect": null,
+    "js_id": "tf_overall_visitors",
     "css_id": null,
-    "css_classes": "simple-button"
+    "css_classes": "debug-borders"
   },
   {
     "type": "textfield",
     "label": "Items Sold:",
-    "js_id": "tf_items_sold",
     "is_visible": true,
+    "sound_effect": null,
+    "js_id": "tf_items_sold",
     "css_id": null,
-    "css_classes": "simple-button"
+    "css_classes": "debug-borders"
   },
   {
     "type": "textfield",
     "label": "Remaining Items:",
-    "js_id": "tf_items_remaining",
     "is_visible": true,
+    "sound_effect": null,
+    "js_id": "tf_items_remaining",
     "css_id": null,
-    "css_classes": "simple-button"
+    "css_classes": "debug-borders"
   },
   {
     "type": "textfield",
     "label": "Selling Rate:",
-    "js_id": "tf_selling_rate",
     "is_visible": true,
+    "sound_effect": null,
+    "js_id": "tf_selling_rate",
     "css_id": null,
-    "css_classes": "simple-button"
+    "css_classes": "debug-borders"
+  },
+  {
+    "type": "textfield",
+    "label": "Conversion Rate:",
+    "is_visible": true,
+    "sound_effect": null,
+    "js_id": "tf_conversion_rate",
+    "css_id": null,
+    "css_classes": "debug-borders"
   },
   {
     "type": "textfield",
     "label": "Account Balance:",
-    "js_id": "tf_account_balance",
     "is_visible": true,
+    "sound_effect": null,
+    "js_id": "tf_account_balance",
     "css_id": null,
-    "css_classes": "simple-button"
+    "css_classes": "debug-borders"
   },
   {
     "type": "button",
     "label": "Add Button",
-    "js_id": "b_add_button",
     "is_visible": true,
+    "sound_effect": null,
+    "js_id": "b_add_button",
     "css_id": null,
-    "css_classes": "simple-button"
+    "css_classes": "debug-borders"
   }
 ]
