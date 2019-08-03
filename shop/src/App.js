@@ -138,7 +138,28 @@ function App() {
     // TODO: do something with this
   };
 
-  const onUpgradeClicked = upgrade => {
+  const onUpgradeClicked = it => {
+    let action = "";
+    switch (it.type) {
+      case "multilevel":
+        action = it.actions[it.level];
+        it.level++;
+        it.isDone = it.level === it.actions.length;
+        break;
+      case "normal":
+        action = it.actions;
+        it.isDone = true;
+    }
+    runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, () => onMessage());
+    onEditorDataChanged();
+  };
+
+  const onEditorDataChanged = () => {
+    setStats(Object.assign({}, stats));
+    setUpgrades(Object.assign({}, upgrades));
+  };
+
+  const onUpgradeEvent = (upgradeEvent, level) => {
     // TODO: do something with this
   };
 

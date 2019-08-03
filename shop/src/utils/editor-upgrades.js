@@ -87,6 +87,7 @@ const changeStat = (action, statsData, statName, amountString, operation) => {
   }
 
   operation(stat, amount);
+  console.info(`changed stat with action: "${action}"`)
 };
 
 const activateUpgrade = (action, upgradeDefinitions, upgradeData, upgradeNames) => {
