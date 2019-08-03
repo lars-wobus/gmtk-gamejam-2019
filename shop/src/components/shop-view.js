@@ -1,5 +1,8 @@
 import React from 'react';
 import { Button } from './button';
+import { Header } from './lars/header';
+import { Banner } from './lars/banner';
+import { Footer } from './lars/footer';
 import { UserReview } from './lars/user-review';
 
 const createContainer = (type) => {
@@ -21,18 +24,11 @@ export const ShopView = (
   { buttons=[] }
 ) => {
   return <div id = "shopview">
-    <div>
-      Header
+    <Header />
+    <Banner />
+    <div id = "buy" onClick={console.log('TODO')}>
+      Buy Now
     </div>
-    <div>
-      Banner
-      <img alt="Banner"/>
-    </div>
-    {createContainer()}
-    <Button
-      label="Buy Now"
-      onButtonClick={() => console.log('TODO')}
-    />
     <div className="review-container">
       <UserReview />
       <UserReview />
@@ -40,8 +36,6 @@ export const ShopView = (
       <UserReview />
       <UserReview />
     </div>
-    <div>
-      Footer
-    </div>
+    <Footer />
   </div>
 };

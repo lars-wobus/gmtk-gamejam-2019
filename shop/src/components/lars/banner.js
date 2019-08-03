@@ -1,0 +1,8 @@
+import React from 'react';
+
+export const Banner = () => {
+  return <div className="banner">
+    Banner
+    <img alt="Banner"/>
+  </div>
+};
