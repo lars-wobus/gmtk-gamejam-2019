@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import './styles/tutorial-dialog.css';
 
 import { Startscreen } from './components/lars/start-screen';
 import { Dialog } from './components/lars/dialog';
