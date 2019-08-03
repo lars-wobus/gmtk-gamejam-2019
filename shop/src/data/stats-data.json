@@ -1,0 +1,123 @@
+[
+  {
+    "id": "example",
+    "COMMENT_0": "these are the default values",
+    "COMMENT_1": "cap, rate and rateCap are either null, or a number",
+    "COMMENT_2": "rates are in units per second",
+    "COMMENT_3": "displayType can be one of [int, float, percent]",
+    "COMMENT_4": "if no name is given, the id is used",
+    "name": "the example stat",
+    "displayType": "int",
+    "statVisible": false,
+    "value": 0,
+    "valueVisible": false,
+    "cap": null,
+    "capVisible": false,
+    "rate": null,
+    "rateVisible": false,
+    "rateCap": null,
+    "rateCapVisible": false
+  },
+  {
+    "id": "test",
+    "COMMENT_0": "these are the default values",
+    "COMMENT_1": "cap, rate and rateCap are either null, or a number",
+    "COMMENT_2": "rates are in units per second",
+    "COMMENT_3": "displayType can be one of [int, float, percent]",
+    "COMMENT_4": "if no name is given, the id is used",
+    "name": "some test stat",
+    "displayType": "int",
+    "statVisible": true,
+    "value": 0,
+    "valueVisible": true,
+    "cap": 10,
+    "capVisible": true,
+    "rate": 1,
+    "rateVisible": true,
+    "rateCap": 2,
+    "rateCapVisible": true
+  },
+  {
+    "id": "money",
+    "displayType": "int",
+    "statVisible": true,
+    "valueVisible": true
+  },
+  {
+    "id": "visits",
+    "displayType": "int",
+    "valueVisible": true,
+    "rate": 0,
+    "rateCap": 100
+  },
+  {
+    "id": "conversion",
+    "displayType": "percent",
+    "valueVisible": true
+  },
+  {
+    "id": "purchases",
+    "displayType": "int",
+    "valueVisible": true
+  },
+  {
+    "id": "buttons",
+    "displayType": "int",
+    "valueVisible": true
+  },
+  {
+    "id": "mails",
+    "displayType": "int",
+    "valueVisible": true,
+    "rate": 0,
+    "rateVisible": true,
+    "rateCap": 10,
+    "rateCapVisible": true
+  },
+  {
+    "id": "calls",
+    "displayType": "int",
+    "valueVisible": true,
+    "rate": 0,
+    "rateVisible": true,
+    "rateCap": 1,
+    "rateCapVisible": true
+  },
+  {
+    "id": "adImpact",
+    "displayType": "percent",
+    "valueVisible": true,
+    "cap": 1
+  },
+  {
+    "id": "bots",
+    "displayType": "int",
+    "valueVisible": true,
+    "rate": 0
+  },
+  {
+    "id": "moneyStolen",
+    "displayType": "int",
+    "valueVisible": true,
+    "rate": 0
+  },
+  {
+    "id": "publicOpinion",
+    "displayType": "percent",
+    "valueVisible": true
+  },
+  {
+    "id": "captiveHumans",
+    "displayType": "int",
+    "valueVisible": true,
+    "cap": 100,
+    "capVisible": true,
+    "rate": 0
+  },
+  {
+    "id": "freeHumans",
+    "displayType": "int",
+    "valueVisible": true,
+    "rate": 0
+  }
+]
