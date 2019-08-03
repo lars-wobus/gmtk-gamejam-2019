@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
 
+import { Startscreen } from './components/lars/start-screen';
 import { EditorView } from './components/editor-view';
 import { ShopView } from './components/shop-view';
 
 import { sortElementsByType } from './utils/sort-elements-by-type';
 
+import settings from './config/default-settings'
 import editorData from './data/editor-data';
 import shopData from './data/shop-data';
 
@@ -32,12 +34,17 @@ function App() {
 
   return (
     <div className="App">
-      <EditorView
-        buttons={editorButtons}
-        textfields={editorTextfields}
-        onButtonClick={onButtonClick}
-      />
-      <ShopView buttons={shopButtons}/>
+      { settings.show_startscreen
+         ? <Startscreen />
+         : <>
+          <EditorView
+            buttons={editorButtons}
+            textfields={editorTextfields}
+            onButtonClick={onButtonClick}
+          />
+          <ShopView buttons={shopButtons} />
+        </>
+      }
     </div>
   );
 }
