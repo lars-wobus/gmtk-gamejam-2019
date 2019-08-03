@@ -1,15 +1,13 @@
 export const initEditorUpgrades = (
-  sectionNames,
-  upgradeDefinitions,
-  initialActions,
-  statsData,
-  onMessage
+  sectionDefinitions,
+  upgradeDefinitions
 ) => {
   let upgradeData = {};
 
-  sectionNames.forEach(sectionName => {
+  Object.keys(sectionDefinitions).forEach(sectionName => {
     upgradeData[sectionName] = {
       name: sectionName,
+      label: sectionDefinitions[sectionName],
       isVisible: false,
       upgrades: []
     };
@@ -36,10 +34,6 @@ export const initEditorUpgrades = (
     console.info(`initialized upgrade "${sectionName}"/"${upgradeName}"`);
   });
 
-  initialActions.forEach(action => {
-    runUpgradeAction(action, upgradeDefinitions, upgradeData, statsData, onMessage)
-  });
-
   return upgradeData;
 };
 
@@ -55,11 +49,12 @@ export const runUpgradeAction = (
     let parts = action
       .split(" ")
       .filter(word => word.length > 0);
-    switch (parts.shift()) {
+    let operation = parts.shift();
+    switch (operation) {
       case "plus":
         changeStat(action, statsData, parts[0], parts[1], (stat, amount) => stat.value += amount);
         break;
-      case "times":
+      case "multiply":
         changeStat(action, statsData, parts[0], parts[1], (stat, amount) => stat.value *= amount);
         break;
       case "set":
@@ -70,6 +65,9 @@ export const runUpgradeAction = (
         break;
       case "message":
         onMessage(parts.join(" "));
+        break;
+      default:
+        console.error(`could not perform action "${action}": unknown operation "${operation}"!`);
         break;
     }
   });
@@ -102,5 +100,6 @@ const activateUpgrade = (action, upgradeDefinitions, upgradeData, upgradeNames) 
     let section = upgradeData[sectionName];
     section.isVisible = true;
     section.upgrades[upgradeName].isVisible = true;
+    console.info(`activated upgrade "${sectionName}"/"${upgradeName}"!`);
   });
 };

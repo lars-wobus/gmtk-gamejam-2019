@@ -9,19 +9,15 @@ import { TutorialDialog } from './components/lars/tutorial-dialog';
 import { EditorView } from './components/editor-view';
 import { ShopView } from './components/shop-view';
 
-import { sortElementsByType } from './utils/sort-elements-by-type';
-import { initEditorUpgrades } from "./utils/editor-upgrades";
+import { initEditorUpgrades, runUpgradeAction } from "./utils/editor-upgrades";
 
 import settings from './config/default-settings'
-import editorData from './data/editor-data';
 import editorStatsData from './data/editor-stats';
 import editorUpgradeDefinitions from './data/editor-upgrades';
-import editorSectionNames from './data/editor-sections';
+import editorSectionDefinitions from './data/editor-sections';
 import editorInitialActions from './data/editor-initial-actions';
 import shopData from './data/shop-data';
 import tutorialData from './data/tutorial-data';
-
-const editorElements = sortElementsByType(editorData);
 
 function App() {
   const [showStartscreen, setShowStartscreen] = useState(settings.show_startscreen);
@@ -29,16 +25,18 @@ function App() {
   const [tutorialIndex, setTutorialIndex] = useState(0);
   const [shopName, setShopName] = useState(settings.default_shop_name);
   const [stats, setStats] = useState(editorStatsData);
-  const [upgrades, setUpgrades] = useState(initEditorUpgrades(
-    editorSectionNames,
-    editorUpgradeDefinitions,
-    editorInitialActions,
-    stats,
-    message => onMessage(message)
-  ));
-  const [editorButtons] = useState(editorElements.buttons);
-  const [editorTextfields] = useState(editorElements.textfields);
+  const [upgrades, setUpgrades] = useState(() => initEditorUpgrades(editorSectionDefinitions, editorUpgradeDefinitions));
   const [shopButtons, setShopButtons] = useState(shopData.buttons);
+
+  // TODO: do this the way it is supposed to be ^^
+  const init = () => {
+    editorInitialActions.forEach(action => {
+      runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, () => onMessage())
+    });
+    setStats(stats);
+    setUpgrades(upgrades);
+  };
+  const [] = useState(() => init());
 
   const onSkipButtonClick = () => {
     setShowTutorialDialog(false);
@@ -156,9 +154,8 @@ function App() {
           <>
             <EditorView
               stats={stats}
-              buttons={editorButtons}
-              textfields={editorTextfields}
-              onButtonClick={onButtonClick}
+              upgradeSections={upgrades}
+              onUpgrade={it => onUpgradeClicked(it)}
             />
             <ShopView buttons={shopButtons} />
           </>

@@ -1,9 +1,9 @@
-[
-  "shop",
-  "research",
-  "server",
-  "bots",
-  "operations",
-  "politics",
-  "farms"
-]
+{
+  "shop": "Shop upgrades",
+  "research": "R&D department",
+  "server": "Server infrastructure",
+  "bots": "Botnet",
+  "operations": "Operations",
+  "politics": "Politics",
+  "farms": "Purchase farming"
+}
