@@ -13,7 +13,7 @@ import { sortElementsByType } from './utils/sort-elements-by-type';
 
 import settings from './config/default-settings'
 import editorData from './data/editor-data';
-import statsData from './data/stats-data';
+import statsData from './data/editor-stats';
 import shopData from './data/shop-data';
 import tutorialData from './data/tutorial-data';
 
