@@ -14,6 +14,7 @@ import shopData from './data/shop-data';
 const editorElements = sortElementsByType(editorData);
 
 function App() {
+  const [showStartscreen, setShowStartscreen] = useState(settings.show_startscreen);
   const [editorButtons] = useState(editorElements.buttons);
   const [editorTextfields] = useState(editorElements.textfields);
   const [shopButtons, setShopButtons] = useState(shopData.buttons);
@@ -34,8 +35,10 @@ function App() {
 
   return (
     <div className="App">
-      { settings.show_startscreen
-         ? <Startscreen />
+      { showStartscreen
+         ? <Startscreen 
+          onButtonClick={() => setShowStartscreen(false)}
+         />
          : <>
           <EditorView
             buttons={editorButtons}
