@@ -3,6 +3,7 @@ import { Button } from './button';
 import { Header } from './lars/header';
 import { Banner } from './lars/banner';
 import { Footer } from './lars/footer';
+import { Alarm } from '../icons/alarm';
 import { UserReview } from './lars/user-review';
 
 const createContainer = (type) => {
@@ -29,6 +30,13 @@ export const ShopView = (
     <div id = "buy" onClick={console.log('TODO')}>
       Buy Now
     </div>
+    <div>
+      In Stock: 
+    </div>
+    <div>
+      Remaining: 
+    </div>
+    <Alarm classes="alarm-1" />
     <div className="review-container">
       <UserReview />
       <UserReview />
