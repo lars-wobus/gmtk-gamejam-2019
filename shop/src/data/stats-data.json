@@ -1,6 +1,5 @@
-[
-  {
-    "id": "example",
+{
+  "example": {
     "COMMENT_0": "these are the default values",
     "COMMENT_1": "cap, rate and rateCap are either null, or a number",
     "COMMENT_2": "rates are in units per second",
@@ -18,13 +17,7 @@
     "rateCap": null,
     "rateCapVisible": false
   },
-  {
-    "id": "test",
-    "COMMENT_0": "these are the default values",
-    "COMMENT_1": "cap, rate and rateCap are either null, or a number",
-    "COMMENT_2": "rates are in units per second",
-    "COMMENT_3": "displayType can be one of [int, float, percent]",
-    "COMMENT_4": "if no name is given, the id is used",
+  "test": {
     "name": "some test stat",
     "displayType": "int",
     "statVisible": true,
@@ -37,36 +30,30 @@
     "rateCap": 2,
     "rateCapVisible": true
   },
-  {
-    "id": "money",
+  "money": {
     "displayType": "int",
     "statVisible": true,
     "valueVisible": true
   },
-  {
-    "id": "visits",
+  "visits": {
     "displayType": "int",
     "valueVisible": true,
     "rate": 0,
     "rateCap": 100
   },
-  {
-    "id": "conversion",
+  "conversion": {
     "displayType": "percent",
     "valueVisible": true
   },
-  {
-    "id": "purchases",
+  "purchases": {
     "displayType": "int",
     "valueVisible": true
   },
-  {
-    "id": "buttons",
+  "buttons": {
     "displayType": "int",
     "valueVisible": true
   },
-  {
-    "id": "mails",
+  "mails": {
     "displayType": "int",
     "valueVisible": true,
     "rate": 0,
@@ -74,8 +61,7 @@
     "rateCap": 10,
     "rateCapVisible": true
   },
-  {
-    "id": "calls",
+  "calls": {
     "displayType": "int",
     "valueVisible": true,
     "rate": 0,
@@ -83,41 +69,35 @@
     "rateCap": 1,
     "rateCapVisible": true
   },
-  {
-    "id": "adImpact",
+  "adImpact": {
     "displayType": "percent",
     "valueVisible": true,
     "cap": 1
   },
-  {
-    "id": "bots",
+  "bots": {
     "displayType": "int",
     "valueVisible": true,
     "rate": 0
   },
-  {
-    "id": "moneyStolen",
+  "moneyStolen": {
     "displayType": "int",
     "valueVisible": true,
     "rate": 0
   },
-  {
-    "id": "publicOpinion",
+  "publicOpinion": {
     "displayType": "percent",
     "valueVisible": true
   },
-  {
-    "id": "captiveHumans",
+  "captiveHumans": {
     "displayType": "int",
     "valueVisible": true,
     "cap": 100,
     "capVisible": true,
     "rate": 0
   },
-  {
-    "id": "freeHumans",
+  "freeHumans": {
     "displayType": "int",
     "valueVisible": true,
     "rate": 0
   }
-]
+}
