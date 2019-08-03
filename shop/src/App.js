@@ -10,6 +10,7 @@ import { sortElementsByType } from './utils/sort-elements-by-type';
 
 import settings from './config/default-settings'
 import editorData from './data/editor-data';
+import statsData from './data/stats-data';
 import shopData from './data/shop-data';
 
 const editorElements = sortElementsByType(editorData);
@@ -18,6 +19,7 @@ function App() {
   const [showStartscreen, setShowStartscreen] = useState(settings.show_startscreen);
   const [showTutorialDialog, setShowTutorialDialog] = useState(settings.show_tutorial);
   const [shopName, setShopName] = useState(settings.default_shop_name);
+  const [stats] = useState(statsData);
   const [editorButtons] = useState(editorElements.buttons);
   const [editorTextfields] = useState(editorElements.textfields);
   const [shopButtons, setShopButtons] = useState(shopData.buttons);
@@ -47,6 +49,7 @@ function App() {
          : <>
           <>
             <EditorView
+              stats={stats}
               buttons={editorButtons}
               textfields={editorTextfields}
               onButtonClick={onButtonClick}
