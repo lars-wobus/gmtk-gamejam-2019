@@ -22,5 +22,5 @@ export const ProductRating = (
       }
     }
   }
-  return <div>{array}</div>
+  return <div className="user-rating">{array}</div>
 };

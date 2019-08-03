@@ -1,0 +1,38 @@
+.review-container {
+  width: 100%;
+  height: 500px;
+  border: 1px solid gray;
+  overflow: scroll;
+}
+
+.user-review {
+  margin: 10px;
+  border: 1px solid gray;
+}
+
+.user-name {
+  display: block;
+}
+
+.user-rating, .user-verification {
+  
+  margin: 10px;
+}
+
+.user-review-1, .user-review-2 {
+  display: table-cell;
+}
+
+.user-review-1 {
+  width: 20vw;
+}
+
+.user-review-2 {
+  width: 100vw;
+  text-align: left;
+}
+
+.user-comment {
+  top: 10px;
+  position: relative;
+}
