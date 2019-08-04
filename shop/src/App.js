@@ -37,7 +37,7 @@ function App() {
 
   const onSkipButtonClick = () => {
     setShowTutorialDialog(false);
-  }
+  };
 
   const onPreviousButtonClick = () => {
     setTutorialIndex(tutorialIndex - 1);
