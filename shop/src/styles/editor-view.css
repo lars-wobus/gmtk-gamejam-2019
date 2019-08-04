@@ -36,6 +36,14 @@
   padding-top: 6px;
 }
 
+.button:hover {
+  background-color: lightskyblue;
+}
+
+.button:active {
+  background-color: white;
+}
+
 .stats-element-name, .stats-element-value, .stats-element-rate {
   display: inline-block;
   margin: 2px 4px;
