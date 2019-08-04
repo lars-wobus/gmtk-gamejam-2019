@@ -61,8 +61,8 @@
   margin-right: auto;
 }
 
-#productimage.active {
-  animation: glow 5s infinite;
+#productimage .active {
+  animation: glow 5s infinite; 
 }
 
 @keyframes glow {
