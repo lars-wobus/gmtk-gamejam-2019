@@ -20,8 +20,10 @@
 }
 
 .header.active {
-  background-color: rgb(255, 230, 230);
+  background-color: #f99292;
   border-bottom: 1px solid coral;
+  font-weight: 700;
+  font-size: 32px;
 }
 
 .banner {
@@ -47,9 +49,19 @@
   background-color: #fff;
 }
 
+.footer div{
+  display: inline-block;
+  margin: 10px;
+}
+
 .footer.active {
-  background-color: rgb(255, 230, 230);
+  background-color: #f99292;
   border-top: 1px solid coral;
+}
+
+.footer.active div{
+  font-weight: 500;
+  color: white;
 }
 
 #productimage {

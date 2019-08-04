@@ -274,6 +274,7 @@ function App() {
          : <>
           <>
             <ShopView
+              shopName={shopName}
               userReviews={userReviews}
               onButtonClick={onPurchaseButtonClicked}
               shopUpgrades={upgrades.shop.upgrades}

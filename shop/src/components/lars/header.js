@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const Header = ({ classes }) => {
+export const Header = ({ title, classes }) => {
   return <div className={`header ${classes}`}>
-    Header
+    {title}
   </div>
 };

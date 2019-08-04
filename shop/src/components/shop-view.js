@@ -18,7 +18,7 @@ import bannerData from '../data/tell-your-friends-data';
 const imageWidths = [50, 60, 70, 75];
 
 export const ShopView = (
-  { userReviews, shopUpgrades, onButtonClick }
+  { shopName, userReviews, shopUpgrades, onButtonClick }
 ) => {
   let index = 0;
   const array = userReviews.map(element => {
@@ -55,7 +55,7 @@ export const ShopView = (
   return <div id = "shopview">
     {(hypnoticBackground.level > 0) && <div><div className="background"></div></div>}
     
-    {<Header classes={(showHeader ? `${corporateDesign}` : "hidden")} />}
+    {<Header title={shopName} classes={(showHeader ? `${corporateDesign}` : "hidden")} />}
     {(tellYourFriendsBox.level > 0) && <Banner classes={(showBanner ? `${corporateDesign}` : "hidden")} text={bannerData[tellYourFriendsBox.level-1]} />}
     <div className={buttonClass} onClick={() => onButtonClick()}>
       Buy Now
