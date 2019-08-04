@@ -54,13 +54,13 @@ export const runUpgradeAction = (
     let operation = parts.shift();
     switch (operation) {
       case "plus":
-        changeStat(action, statsData, parts[0], parts[1], (stat, amount) => stat.value += amount);
+        changeStat(action, statsData, parts, (stat, amount) => stat.value += amount);
         break;
       case "multiply":
-        changeStat(action, statsData, parts[0], parts[1], (stat, amount) => stat.value *= amount);
+        changeStat(action, statsData, parts, (stat, amount) => stat.value *= amount);
         break;
       case "set":
-        changeStat(action, statsData, parts[0], parts[1], (stat, amount) => stat.value = amount);
+        changeStat(action, statsData, parts, (stat, amount) => stat.value = amount);
         break;
       case "activate":
         activateUpgrade(action, upgradeDefinitions, upgradeData, parts);
@@ -79,7 +79,9 @@ export const runUpgradeAction = (
   });
 };
 
-const changeStat = (action, statsData, statName, amountString, operation) => {
+const changeStat = (action, statsData, actionData, operation) => {
+  let statName = actionData.shift();
+  let amountString = actionData.shift();
   let stat = statsData[statName];
   if (!stat) {
     console.error(`could not perform action "${action}": could not find stat "${statName}"!`);
@@ -93,7 +95,10 @@ const changeStat = (action, statsData, statName, amountString, operation) => {
   }
 
   operation(stat, amount);
-  console.info(`changed stat with action: "${action}"`)
+  console.info(`changed stat with action: "${action}"`);
+  if (actionData.length > 0) {
+    console.warn(` action "${action}" has too many arguments. did you forget a semicolon?`);
+  }
 };
 
 const activateUpgrade = (action, upgradeDefinitions, upgradeData, upgradeNames) => {
