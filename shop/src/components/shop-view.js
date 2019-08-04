@@ -53,7 +53,7 @@ export const ShopView = (
   } 
 
   return <div id = "shopview">
-    {(hypnoticBackground.level > 0) && <div><div className="background"></div></div>}
+    {(hypnoticBackground.level > 0) && <div className="abc"><div className="background"></div></div>}
     
     {<Header title={shopName} classes={(showHeader ? `${corporateDesign}` : "hidden")} />}
     {(tellYourFriendsBox.level > 0) && <Banner classes={(showBanner ? `${corporateDesign}` : "hidden")} text={bannerData[tellYourFriendsBox.level-1]} />}

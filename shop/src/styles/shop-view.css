@@ -77,8 +77,17 @@
   background: url('../images/spiral.png') no-repeat center center;
 }*/
 
-#shopview div .background {
-  background: url('../images/spiral.png') no-repeat center center;
+#shopview .abc {
+  width: 70vw;
+  height: 100vh;
+  position: fixed;
+  display: block;
+  right: 30%;
+  top: -500px;
+}
+
+#shopview .abc .background {
+  /*background: url('../images/spiral.png') no-repeat center center;
   animation: spinning 5s linear infinite;
   height: 100%;
   display: block;
@@ -87,7 +96,16 @@
   opacity: 0.1;
   position: absolute;
   width: 70%;
+  background-size: 100%;*/
+  background: url(/static/media/spiral.44406ca2.png) no-repeat center center;
+  animation: spinning 5s linear infinite;
+  background-position: center;
+  opacity: 0.1;
+  height: 70%;
+  height: 2000px;
   background-size: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*#productimage .background {
