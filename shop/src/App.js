@@ -48,7 +48,6 @@ function App() {
   };
 
   const onPurchaseButtonClicked = () => {
-    console.log('Button was clicked');
     stats.purchases.value++;
     stats.money.value++;
     onEditorDataChanged();
