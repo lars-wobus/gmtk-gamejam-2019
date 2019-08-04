@@ -35,7 +35,7 @@ const normal = (it, onUpgrade) => {
 
 const multiLevel = (it, onUpgrade) => {
   if (it.isDone) {
-    return <div>{it.label} [MAX Lvl]</div>
+    return null
   } else {
     return <div>
       <Button
