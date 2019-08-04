@@ -74,7 +74,7 @@ export const ShopView = (
       Remaining: 
     </div>*
     <Alarm classes="alarm-1" />*/}
-    <div className="review-container">{array}</div>
+    {(array.length > 0) && <div className="review-container">{array}</div>}
     <Footer />
   </div>
 };
