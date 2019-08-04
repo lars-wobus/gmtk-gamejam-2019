@@ -44,8 +44,6 @@ html, body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  /*background-color: rgb(255, 236, 218);*/
-  background-color: rgb(241, 212, 212);
 }
 
 .App {

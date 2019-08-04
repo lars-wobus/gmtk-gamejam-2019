@@ -32,6 +32,11 @@ function App() {
   const [userReviews, setUserReviews] = useState([createUserReview(0, false)]);
   const [stats, setStats] = useState(editorStatsData);
   const [upgrades, setUpgrades] = useState(() => initEditorUpgrades(editorSectionDefinitions, editorUpgradeDefinitions));
+  const [corporateDesignLevel, setCorporateDesignLevel] = useState(0);
+
+  if (corporateDesignLevel > 4) {
+    document.body.style["background-color"] = "rgb(241, 212, 212)";
+  }
 
   const runAction = (action) => {
     runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, message => onMessage(message));
@@ -167,6 +172,7 @@ function App() {
   const onEditorDataChanged = () => {
     setStats(Object.assign({}, stats));
     setUpgrades(Object.assign({}, upgrades));
+    setCorporateDesignLevel(upgrades.shop.upgrades.buttonUpgrade.level);
   };
 
   const onNewVisits = amount => {

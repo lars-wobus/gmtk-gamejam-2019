@@ -37,8 +37,6 @@ export const ShopView = (
     fakeReviews
   } = shopUpgrades;
 
-  const buttonClass = `buy buy-${buttonUpgrade.level}`
-
   const maxImageLevel = imageUpgrade.actions.length;
   const imageStepSize = 100 / maxImageLevel;
   const imageWidth = imageStepSize * imageUpgrade.level;
@@ -54,15 +52,16 @@ export const ShopView = (
     labels.push(<Label classes={`guidingarrow-${i}`} />);
   }
 
-  const showHeader = true;
-  const showBanner = true;
-  const showFooter = true;
+  const buttonClass = `buy buy-${buttonUpgrade.level}`;
+  const showHeader = buttonUpgrade.level > 1;
+  const showBanner = buttonUpgrade.level > 2;
+  const showFooter = buttonUpgrade.level > 3;
+  const corporateDesign = buttonUpgrade.level > 4 ? "active" : "";
   const showReviews = fakeReviews.level > 0;
 
-  console.log(shopUpgrades);
   return <div id = "shopview">
-    {<Header classes={(showHeader ? "" : "hidden")} />}
-    {<Banner classes={(showBanner ? "" : "hidden")} />}
+    {<Header classes={(showHeader ? `${corporateDesign}` : "hidden")} />}
+    {<Banner classes={(showBanner ? `${corporateDesign}` : "hidden")} />}
     <div className={buttonClass} onClick={() => onButtonClick()}>
       Buy Now
     </div>
@@ -79,6 +78,6 @@ export const ShopView = (
     </div>*
     <Alarm classes="alarm-1" />*/}
     {(showReviews) && <div className="review-container">{array}</div>}
-    {<Footer classes={(showFooter ? "" : "hidden")} />}
+    {<Footer classes={(showFooter ? `${corporateDesign}` : "hidden")} />}
   </div>
 };
