@@ -58,7 +58,21 @@
   position: relative;
   display: block;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
+}
+
+#productimage.active {
+  animation: glow 5s infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    border: 1px solid rgb(255, 230, 230);
+  }
+
+  50% {
+    border: 1px solid rgb(228, 84, 132);;
+  }
 }
 
 .buy {

@@ -12,6 +12,8 @@ import ProductImage from '../images/plumbus.png';
 
 import bannerData from '../data/tell-your-friends-data';
 
+const imageWidths = [25, 50, 75, 75];
+
 export const ShopView = (
   { userReviews, shopUpgrades, onButtonClick }
 ) => {
@@ -24,13 +26,10 @@ export const ShopView = (
     buttonUpgrade, imageUpgrade, guidingArrows, suggestiveEmojis,
     fakeReviews, tellYourFriendsBox, crossSelling
   } = shopUpgrades;
-  console.log(shopUpgrades);
-  const maxImageLevel = imageUpgrade.actions.length;
-  const imageStepSize = 100 / (maxImageLevel + 1);
-  const imageWidth = imageStepSize * (imageUpgrade.level + 1);
+
   const grayscale = `grayscale(${25 * (4 - imageUpgrade.level - 1)}%`;
   const imageStyle = {
-    width: `${imageWidth}%`,
+    width: `${imageWidths[imageUpgrade.level]}%`,
     "-webkit-filter": grayscale,
     filter: grayscale
   };
@@ -53,7 +52,13 @@ export const ShopView = (
     <div className={buttonClass} onClick={() => onButtonClick()}>
       Buy Now
     </div>
-    {(imageUpgrade.isVisible) && <img id="productimage" src={ProductImage} style={imageStyle} alt="Rendering of a Plumbus" />}
+    {(imageUpgrade.isVisible) &&
+      <img id="productimage"
+        className={(imageUpgrade.level >= 3) ? "active": ""}
+        src={ProductImage} style={imageStyle}
+        alt="Rendering of a Plumbus"
+      />
+    }
     {labels}
     {(suggestiveEmojis.level >= 1) && <GestureTabHold classes="gesturetabhold" />}
     {(suggestiveEmojis.level >= 2) && <BellRing classes="bellring" />}
