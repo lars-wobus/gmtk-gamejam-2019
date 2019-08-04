@@ -9,20 +9,7 @@ import { Alarm } from '../icons/alarm';
 import { UserReview } from './lars/user-review';
 import ProductImage from '../images/plumbus.png';
 
-/*const createContainer = (type) => {
-  switch(type){
-    case "image": {
-      return <img alt="Main product" />
-    }
-    case "video": {
-      return <video alt="Main product" />
-    }
-    case "canvas": {
-      return <canvas alt="3D viewer of the product" />;
-    }
-    default: return <div></div>
-  }
-}*/
+import bannerData from '../data/tell-your-friends-data';
 
 export const ShopView = (
   { userReviews, shopUpgrades, onButtonClick }
@@ -34,7 +21,7 @@ export const ShopView = (
   });
   const {
     buttonUpgrade, imageUpgrade, guidingArrows, suggestiveEmojis,
-    fakeReviews
+    fakeReviews, tellYourFriendsBox
   } = shopUpgrades;
   console.log(shopUpgrades);
   const maxImageLevel = imageUpgrade.actions.length;
@@ -54,14 +41,14 @@ export const ShopView = (
 
   const buttonClass = `buy buy-${buttonUpgrade.level}`;
   const showHeader = buttonUpgrade.level > 1;
-  const showBanner = buttonUpgrade.level > 2;
+  const showBanner = tellYourFriendsBox.level > 0;
   const showFooter = buttonUpgrade.level > 3;
   const corporateDesign = buttonUpgrade.level > 4 ? "active" : "";
   const showReviews = fakeReviews.level > 0;
 
   return <div id = "shopview">
     {<Header classes={(showHeader ? `${corporateDesign}` : "hidden")} />}
-    {<Banner classes={(showBanner ? `${corporateDesign}` : "hidden")} />}
+    {(tellYourFriendsBox.level > 0) && <Banner classes={(showBanner ? `${corporateDesign}` : "hidden")} text={bannerData[tellYourFriendsBox.level-1]} />}
     <div className={buttonClass} onClick={() => onButtonClick()}>
       Buy Now
     </div>
