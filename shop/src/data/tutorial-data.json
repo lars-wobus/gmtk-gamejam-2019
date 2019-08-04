@@ -2,22 +2,45 @@
   {
     "headline": "Tutorial",
     "subheader": "Welcome on board!",
-    "description": "You have successfully opened your first online shop. But to attract more customers you should improve your website frequently!",
+    "description": "Congratulation! You have successfully opened your first online shop. Now you are ready to sell your newest invention.",
+    "note": "The \"One Thing\" which satisfies all needs!",
     "hasPredecessor": false,
-    "hasSuccessor": true
-  },
-  {
-    "headline": "Tutorial",
-    "subheader": "Editor View",
-    "description": "On the left you can see the editor view. From there you can buy upgrades and do research.",
-    "hasPredecessor": true,
-    "hasSuccessor": true
+    "hasSuccessor": true,
+    "label_1": "Skip tutorial",
+    "label_2": "Previous",
+    "label_3": "Next"
   },
   {
     "headline": "Tutorial",
     "subheader": "Shop View",
-    "description": "On the right you can see your current website.\n\nTip: You can buy your own product to increase your sales and to attract more people. Customers are stupid. They will not notice the difference.",
+    "description": "On the left side, you can see your current website.",
+    "note": "Note: At the beginning, you should buy some upgrades to attract more customers!",
     "hasPredecessor": true,
-    "hasSuccessor": false
-  }
+    "hasSuccessor": true,
+    "label_1": "Skip tutorial",
+    "label_2": "Previous",
+    "label_3": "Next"
+  },
+  {
+    "headline": "Tutorial",
+    "subheader": "Editor View",
+    "description": "On the right side, you can see the editor view. From there you can buy upgrades and later on do research.",
+    "note": null,
+    "hasPredecessor": true,
+    "hasSuccessor": true,
+    "label_1": "Skip tutorial",
+    "label_2": "Previous",
+    "label_3": "Next"
+  },
+  {
+    "headline": "Tutorial",
+    "subheader": "The End",
+    "description": "That's all for now.",
+    "note": "Note: Keep in mind, that each customer means more money and each visitor means more valuable data.",
+    "hasPredecessor": true,
+    "hasSuccessor": false,
+    "label_1": "Close dialog",
+    "label_2": "Previous",
+    "label_3": "Next"
+  }  
 ]

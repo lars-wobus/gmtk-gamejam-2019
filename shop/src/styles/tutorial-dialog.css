@@ -30,7 +30,15 @@
 }
 
 .tutorial-dialog p {
-  top: 100px;
+  position: relative;
+  margin: 0px 20px;
+  top: 110px;
+  padding: 10px 20px;
+}
+
+.tutorial-dialog p p {
+  position: relative;
+  margin: 10px 20px;
 }
 
 .tutorial-dialog div {
@@ -43,7 +51,6 @@
 .tutorial-dialog div {
   bottom: 10px;
   position: absolute;
-
 }
 
 .tutorial-dialog div:hover {
@@ -66,10 +73,46 @@
   right: 10px;
 }
 
-.tutorial-dialog .previous-button,.next-button {
+.tutorial-dialog .previous-button {
   pointer-events: none;
+  background-color: #bbbbbb;
+  border-color: #bbbbbb;
+  color: #888888;
 }
 
-.tutorial-dialog .previous-button.active,.next-button.active {
+.tutorial-dialog .next-button {
+  pointer-events: none;
+  background-color: #bbbbbb;
+  border-color: #bbbbbb;
+  color: #888888;
+}
+
+.tutorial-dialog .previous-button.active{
   pointer-events: all;
+  background-color: #cccccc;
+  border-color: black;
+  color: black;
+}
+
+.tutorial-dialog .next-button.active {
+  pointer-events: all;
+  background-color: #cccccc;
+  border-color: black;
+  color: black;
+}
+
+.previous-button.active:hover {
+  background-color: #ffffffaa;
+}
+
+.previous-button.active:active {
+  background-color: red;
+}
+
+.next-button.active:hover {
+  background-color: #ffffffaa;
+}
+
+.next-button.active:active {
+  background-color: red;
 }

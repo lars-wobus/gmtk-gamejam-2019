@@ -15,21 +15,22 @@ export const TutorialDialog = (
     <div className="tutorial-dialog">
       <h1>{data.headline}</h1>
       <h2>{data.subheader}</h2>
-      <p>{data.description}</p>
+      <p className="description">{data.description}</p>
+      <p className="note">{data.note}</p>
       <div 
         className={`skip-button`}
         onClick={() => onSkipButtonClick()}>
-          Skip tutorial
+          {data.label_1}
       </div>
       <div
         className={`previous-button ${hasPredecessor}`}
         onClick={() => onPreviousButtonClick()}>
-          Previous
+          {data.label_2}
       </div>
       <div
         className={`next-button ${hasSuccessor}`}
         onClick={() => onNextButtonClick()}>
-          Next
+          {data.label_3}
       </div>
     </div>
   </div>

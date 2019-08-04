@@ -1,7 +1,7 @@
 {
   "default_shop_name": "My Shop",
-  "show_startscreen": false,
-  "show_tutorial": false,
+  "show_startscreen": true,
+  "show_tutorial": true,
   "rich_mode": true,
   "upgrade_duration": 30
 }
