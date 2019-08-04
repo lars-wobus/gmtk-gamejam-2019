@@ -21,7 +21,7 @@ import { UserReview } from './lars/user-review';
 }*/
 
 export const ShopView = (
-  { userReviews, onButtonClick }
+  { userReviews, shopUpgrades, onButtonClick }
 ) => {
   let index = 0;
   const array = userReviews.map(element => {
@@ -29,10 +29,14 @@ export const ShopView = (
     return <UserReview userData={element} key={key} />
   });
 
+  const { level } = shopUpgrades.buttonUpgrade;
+  const buttonWidth = 15 * (1 + level);
+  const style = { width: `${buttonWidth}%` };
+
   return <div id = "shopview">
     <Header />
     <Banner />
-    <div id = "buy" onClick={() => onButtonClick()}>
+    <div id = "buy" style={style} onClick={() => onButtonClick()}>
       Buy Now
     </div>
     <div>

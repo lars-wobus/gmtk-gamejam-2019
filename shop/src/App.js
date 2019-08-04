@@ -192,7 +192,7 @@ function App() {
             <ShopView
               userReviews={userReviews}
               onButtonClick={onButtonClick}
-              upgradeSections={upgrades}
+              shopUpgrades={upgrades.shop.upgrades}
               onUpgrade={it => onUpgradeClicked(it)}
             />
           </>
