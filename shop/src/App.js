@@ -11,7 +11,6 @@ import { TutorialDialog } from './components/lars/tutorial-dialog';
 import { EditorView } from './components/editor-view';
 import { ShopView } from './components/shop-view';
 
-import { sortElementsByType } from './utils/sort-elements-by-type';
 import { createUserReview } from './utils/create-user-review';
 import { initEditorUpgrades, runUpgradeAction } from "./utils/editor-upgrades";
 
@@ -20,11 +19,9 @@ import editorStatsData from './data/editor-stats';
 import editorUpgradeDefinitions from './data/editor-upgrades';
 import editorSectionDefinitions from './data/editor-sections';
 import editorInitialActions from './data/editor-initial-actions';
-import shopData from './data/shop-data';
 import tutorialData from './data/tutorial-data';
 
 let initializationDone = false;
-let reviewIntervalId = null;
 
 function App() {
   const [showStartscreen, setShowStartscreen] = useState(settings.show_startscreen);
@@ -35,7 +32,6 @@ function App() {
   const [userReviews, setUserReviews] = useState([createUserReview(0, false)]);
   const [stats, setStats] = useState(editorStatsData);
   const [upgrades, setUpgrades] = useState(() => initEditorUpgrades(editorSectionDefinitions, editorUpgradeDefinitions));
-  const [shopButtons, setShopButtons] = useState(shopData.buttons);
 
   const onSkipButtonClick = () => {
     setShowTutorialDialog(false);
