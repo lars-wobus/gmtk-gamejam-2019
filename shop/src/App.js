@@ -251,10 +251,10 @@ function App() {
       const rating = getRandomRankingNumber(range[0], range[1]);
       console.log(rating);
       if (userReviews.length < 30) {
-        setUserReviews([...userReviews, createUserReview(rating, false)]);
+        setUserReviews([...userReviews, createUserReview(rating, level >= 2)]);
       } else {
         userReviews.shift();
-        setUserReviews([...userReviews, createUserReview(rating, false)]);
+        setUserReviews([...userReviews, createUserReview(rating, level >= 2)]);
       }
     }, 8000 / (level + 2));
 

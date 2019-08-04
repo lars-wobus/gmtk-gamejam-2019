@@ -2,6 +2,7 @@
 #shopview {
   width:70%;
   left: 30%;
+  overflow-y: scroll;
 }
 
 .header, .banner, .footer {
