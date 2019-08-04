@@ -40,7 +40,12 @@ export const ShopView = (
   const maxImageLevel = imageUpgrade.actions.length;
   const imageStepSize = 100 / maxImageLevel;
   const imageWidth = imageStepSize * imageUpgrade.level;
-  const imageStyle = { width: `${imageWidth}%` };
+  const grayscale = `grayscale(${25 * (4 - imageUpgrade.level - 1)}%`;
+  const imageStyle = {
+    width: `${imageWidth}%`,
+    "-webkit-filter": grayscale,
+    filter: grayscale
+  };
   if (imageWidth === 0 ) {
     imageStyle.display = "none";
   } else {
