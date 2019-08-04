@@ -22,7 +22,7 @@ const normal = (it, onUpgrade) => {
   } else {
     return <div>
       <Button
-        label={it.label}
+        label={`${it.label} ($${it.costs})`}
         onButtonClick={() => onUpgrade(it)}
       />
     </div>
@@ -35,7 +35,7 @@ const multiLevel = (it, onUpgrade) => {
   } else {
     return <div>
       <Button
-        label={it.label}
+        label={`${it.label} ($${it.costs[it.level]})`}
         onButtonClick={() => onUpgrade(it)}
       />
       [Lvl {it.level}/{it.actions.length}]
