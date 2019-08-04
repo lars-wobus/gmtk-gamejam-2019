@@ -44,71 +44,14 @@ html, body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  /*background-color: rgb(255, 236, 218);*/
+  background-color: rgb(241, 212, 212);
 }
 
 .App {
   display:flex;
   justify-content: space-between;
   height: 100vh;
-}
-
-#editorview {
-  border-right: 1px solid black;
-  width:30%;
-}
-
-#shopview {
-  width:70%;
-  left: 30%;
-}
-
-.header, .banner, .footer {
-  width: 100%;
-  border: 1px solid gray;
-  width: 70%;
-}
-
-.header {
-  width: 100%;
-  height: 64px;
-  position: inherit;
-}
-
-.banner {
-  width: 100%;
-  position: inherit;
-  margin-top: 20px;
-  height: 32px;
-}
-
-.footer {
-  bottom: 0px;
-  position: fixed;
-  width: 70%;
-  height: 32px;
-}
-
-#buy {
-  border: 3px solid darkgray;
-  width: 50%;
-  left: 25%;
-  display: inline-block;
-  margin: 50px 0px;
-  height: 50px;
-  border-radius: 10px;
-  background-color: darkgray;
-  box-shadow: 2px 2px black;
-  font-weight: 700;
-  font-size: 32px;
-}
-
-#productimage {
-  width: 200px;
-  height: auto;
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto
 }
 
 .center {

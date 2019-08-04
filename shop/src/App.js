@@ -3,6 +3,8 @@ import './App.css';
 import './styles/tutorial-dialog.css';
 import './styles/user-reviews.css';
 import './styles/icons.css';
+import './styles/editor-view.css';
+import './styles/shop-view.css';
 
 import { Startscreen } from './components/lars/start-screen';
 import { TutorialDialog } from './components/lars/tutorial-dialog';
