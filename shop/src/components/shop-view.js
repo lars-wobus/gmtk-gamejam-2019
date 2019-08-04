@@ -7,6 +7,7 @@ import { GestureTabHold } from '../icons/gesture-tab-hold';
 import { BellRing } from '../icons/bell-ring';
 import { Alarm } from '../icons/alarm';
 import { UserReview } from './lars/user-review';
+import { CrossSellingTable }from './lars/cross-selling-table';
 import ProductImage from '../images/plumbus.png';
 
 import bannerData from '../data/tell-your-friends-data';
@@ -57,13 +58,7 @@ export const ShopView = (
     {(suggestiveEmojis.level >= 1) && <GestureTabHold classes="gesturetabhold" />}
     {(suggestiveEmojis.level >= 2) && <BellRing classes="bellring" />}
     {(suggestiveEmojis.level >= 3) && <Alarm classes="alarm" />}
-    {/*<div>
-      In Stock: 
-    </div>
-    <div>
-      Remaining: 
-    </div>*
-    <Alarm classes="alarm-1" />*/}
+    <CrossSellingTable />
     {(showReviews) && <div className="review-container">{array}</div>}
     {<Footer classes={(showFooter ? `${corporateDesign}` : "hidden")} />}
   </div>

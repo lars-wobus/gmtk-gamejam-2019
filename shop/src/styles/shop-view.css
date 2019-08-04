@@ -109,3 +109,31 @@
   font-size: 46px;
   background-color: rgb(228, 84, 132);
 }
+
+.cross-selling-table {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 10px;
+}
+
+.comparison {
+  display: table-cell;
+  width: 200px;
+  height: auto;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid lightgray;
+  padding: 10px 10px;
+  font-weight: 400;
+}
+
+.comparison .rendering {
+  width: 160px;
+  height: auto;
+}
+
+#cross-selling-info {
+  font-weight: 700;
+}
