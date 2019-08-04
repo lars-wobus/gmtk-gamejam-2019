@@ -83,20 +83,6 @@ html, body {
   height: 32px;
 }
 
-#buy {
-  border: 3px solid darkgray;
-  width: 50%;
-  left: 25%;
-  display: inline-block;
-  margin: 50px 0px;
-  height: 50px;
-  border-radius: 10px;
-  background-color: darkgray;
-  box-shadow: 2px 2px black;
-  font-weight: 700;
-  font-size: 32px;
-}
-
 #productimage {
   width: 200px;
   height: auto;

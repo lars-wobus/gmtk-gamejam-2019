@@ -1,0 +1,14 @@
+#buy {
+  border: 1px solid black;
+  width: 50%;
+  left: 25%;
+  display: inline-block;
+  margin: 50px 0px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: darkgray;
+  box-shadow: 1px 2px #bbbbbb;
+  font-weight: 700;
+  font-size: 32px;
+  background-color: #e25f4d;
+}
