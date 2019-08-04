@@ -1,35 +1,9 @@
 {
-  "example": {
+  "money": {
     "COMMENT_0": "cap, rate and rateCap are either null, or a number",
     "COMMENT_1": "rates are in units per second",
     "COMMENT_2": "displayType can be one of [int, float, percent]",
     "COMMENT_3": "if no name is given, the id is used",
-    "name": "the example stat",
-    "displayType": "int",
-    "value": 0,
-    "cap": null,
-    "rate": null,
-    "rateCap": null,
-    "statVisible": false,
-    "valueVisible": false,
-    "capVisible": false,
-    "rateVisible": false,
-    "rateCapVisible": false
-  },
-  "test": {
-    "name": "some test stat",
-    "displayType": "int",
-    "statVisible": true,
-    "value": 0,
-    "cap": 10,
-    "rate": 1,
-    "rateCap": 2,
-    "valueVisible": true,
-    "capVisible": true,
-    "rateVisible": true,
-    "rateCapVisible": true
-  },
-  "money": {
     "name": "Account balance",
     "displayType": "int",
     "statVisible": true,
