@@ -3,14 +3,35 @@
     "section": "shop",
     "label": "Improve Layout",
     "type": "multilevel",
-    "costs": [10, 15, 20, 25, 30],
+    "costs": [10, 15, 25, 50, 250],
     "actions": [
       "plus conversion 0.01; activate productImage",
       "plus conversion 0.01",
       "plus conversion 0.01",
       "plus conversion 0.01",
-      "plus conversion 0.01"
+      "plus conversion 0.02"
     ]
+  },
+  "tellYourFriendsBox": {
+    "section": "shop",
+    "label": "Tell your friends box",
+    "type": "multilevel",
+    "costs": [20, 40, 80, 200, 1000],
+    "actions": [
+      "plus visits rate 1; activate trafficAnalysis",
+      "plus visits rate 1.5",
+      "plus visits rate 2",
+      "plus visits rate 3",
+      "plus visits rate 5"
+    ]
+  },
+  "trafficAnalysis": {
+    "section": "research",
+    "label": "Traffic analysis",
+    "type": "research",
+    "costs": 200,
+    "duration": 90,
+    "actions": "plus visits 0.2; show visits rate"
   },
   "productImage": {
     "section": "shop",
@@ -23,11 +44,11 @@
     "section": "shop",
     "label": "Product image",
     "type": "multilevel",
-    "costs": [20, 25, 30],
+    "costs": [20, 30, 50],
     "actions": [
       "plus conversion 0.01",
       "plus conversion 0.01",
-      "plus conversion 0.01"
+      "plus conversion 0.02"
     ]
   },
   "guidingArrows": {
@@ -36,10 +57,18 @@
     "type": "multilevel",
     "costs": [20, 25, 30],
     "actions": [
-      "plus conversion 0.01",
+      "plus conversion 0.01; activate conversionAnalysis",
       "plus conversion 0.01",
       "plus conversion 0.01; activate suggestiveEmojis"
     ]
+  },
+  "conversionAnalysis": {
+    "section": "research",
+    "label": "Conversion analysis",
+    "type": "research",
+    "costs": 200,
+    "duration": 90,
+    "actions": "plus conversion 0.03; show conversion value"
   },
   "suggestiveEmojis": {
     "section": "shop",
@@ -47,7 +76,7 @@
     "type": "multilevel",
     "costs": [20, 25, 30],
     "actions": [
-      "plus conversion 0.01; activate fakeReviews researchDepartment",
+      "plus conversion 0.01; activate fakeReviews phase2",
       "plus conversion 0.01",
       "plus conversion 0.01"
     ]
@@ -63,18 +92,12 @@
       "plus conversion 0.01"
     ]
   },
-  "researchDepartment": {
-    "section": "shop",
-    "label": "R&D department",
-    "type": "normal",
-    "costs": 100,
-    "actions": "activate phase2"
-  },
   "phase2": {
     "section": "research",
     "label": "Dynamic content",
     "type": "research",
     "costs": 400,
+    "duration": 90,
     "actions": "activate imageButton headerButton arrowButton crossSelling"
   },
   "imageButton": {
@@ -117,6 +140,7 @@
     "label": "More than one product",
     "type": "research",
     "costs": 4000,
+    "duration": 120,
     "actions": "activate sueResearchTeam; message The research team was not able to add additional products to the shop. The head of the department mumbled something senseless about 'theme constraints' and apologized heavily. You should probably sue them for their incompetence!"
   },
   "sueResearchTeam": {
@@ -124,6 +148,8 @@
     "label": "Sue the research team",
     "type": "operation",
     "costs": 1000,
-    "actions": "add money 10000; message You got a pretty good deal out of that lawsuit. That will teach these egg-heads that failure is not an option in the Plumbus industry!"
+    "isRepeatable": false,
+    "cooldown": 0,
+    "actions": "plus money 10000; message You got a pretty good deal out of that lawsuit. That will teach these egg-heads that failure is not an option in the Plumbus industry!"
   }
 }

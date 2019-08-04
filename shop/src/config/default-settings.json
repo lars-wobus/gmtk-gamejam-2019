@@ -3,5 +3,7 @@
   "show_startscreen": true,
   "show_tutorial": true,
   "rich_mode": true,
-  "upgrade_duration": 30
+  "updates_per_second": 2,
+  "upgrade_speed_multiplier": 20,
+  "cooldown_speed_multiplier": 20
 }

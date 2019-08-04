@@ -13,10 +13,10 @@ export const StatsElement = (
   let rateCap = statsData.rateCap || 0;
   if (statsData.rateCap !== null && rate > rateCap) rate = rateCap;
   if (statsData.displayType === "percent") {
-    value = `${value}%`;
-    cap = `${cap}%`;
-    rate = `${rate}%`;
-    rateCap = `${rateCap}%`;
+    value = `${Math.floor(value * 100)}%`;
+    cap = `${Math.floor(cap * 100)}%`;
+    rate = `${Math.floor(rate * 100)}%`;
+    rateCap = `${Math.floor(rateCap * 100)}%`;
   }
   if (statsData.displayType === "int") {
     value = Math.floor(value);
