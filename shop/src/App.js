@@ -13,6 +13,7 @@ import { ShopView } from './components/shop-view';
 
 import { createUserReview } from './utils/create-user-review';
 import { initEditorUpgrades, runUpgradeAction } from "./utils/editor-upgrades";
+import { getRandomRankingNumber } from './utils/get-random-ranking-number';
 
 import settings from './config/default-settings'
 import editorStatsData from './data/editor-stats';
@@ -20,6 +21,10 @@ import editorUpgradeDefinitions from './data/editor-upgrades';
 import editorSectionDefinitions from './data/editor-sections';
 import editorInitialActions from './data/editor-initial-actions';
 import tutorialData from './data/tutorial-data';
+
+const ratingRange = [
+  [0,3], [1,4], [3,5], [5,5]
+];
 
 let initializationDone = false;
 
@@ -29,7 +34,7 @@ function App() {
   const [tutorialIndex, setTutorialIndex] = useState(0);
   const [shopName, setShopName] = useState(settings.default_shop_name);
 
-  const [userReviews, setUserReviews] = useState([createUserReview(0, false)]);
+  const [userReviews, setUserReviews] = useState([createUserReview(getRandomRankingNumber(ratingRange[0][0], ratingRange[0][1]), false)]);
   const [stats, setStats] = useState(editorStatsData);
   const [upgrades, setUpgrades] = useState(() => initEditorUpgrades(editorSectionDefinitions, editorUpgradeDefinitions));
   const [corporateDesignLevel, setCorporateDesignLevel] = useState(0);
@@ -237,18 +242,21 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.warn(upgrades.shop.upgrades.fakeReviews.level);
-    if (upgrades.shop.upgrades.fakeReviews.level < 1) {
+    const { level } = upgrades.shop.upgrades.fakeReviews;
+    if (level < 1) {
       return;
     }
     const interval = setInterval(() => {
+      const range = ratingRange[level];
+      const rating = getRandomRankingNumber(range[0], range[1]);
+      console.log(rating);
       if (userReviews.length < 30) {
-        setUserReviews([...userReviews, createUserReview(0, false)]);
+        setUserReviews([...userReviews, createUserReview(rating, false)]);
       } else {
         userReviews.shift();
-        setUserReviews([...userReviews, createUserReview(0, false)]);
+        setUserReviews([...userReviews, createUserReview(rating, false)]);
       }
-    }, 8000 / (upgrades.shop.upgrades.fakeReviews.level + 2));
+    }, 8000 / (level + 2));
 
     return () => {
       clearInterval(interval);
