@@ -1,66 +1,359 @@
 {
+  "========= UPGRADES SINGLE =========": null,
+  "productImage": {
+    "section": "shop",
+    "label": "Product image",
+    "type": "normal",
+    "costs": 20,
+    "actions": "add conversion 0.02; activate imageUpgrade guidingArrows"
+  },
+  "imageButton": {
+    "section": "shop",
+    "label": "Image as button",
+    "type": "normal",
+    "costs": 100,
+    "actions": "add conversion 0.01; activate buttonButton"
+  },
+  "headerButton": {
+    "section": "shop",
+    "label": "Header buttons",
+    "type": "normal",
+    "costs": 100,
+    "actions": "add conversion 0.01; activate buttonButton"
+  },
+  "arrowButton": {
+    "section": "shop",
+    "label": "Interactive arrows",
+    "type": "normal",
+    "costs": 100,
+    "actions": "add conversion 0.01; activate buttonButton"
+  },
+  "buttonButton": {
+    "section": "shop",
+    "label": "Buttonception",
+    "type": "normal",
+    "costs": 300,
+    "actions": "add conversion 0.01"
+  },
+  "crossSelling": {
+    "section": "shop",
+    "label": "Cross selling",
+    "type": "normal",
+    "costs": 400,
+    "actions": "add conversion 0.01; activate moreProducts"
+  },
+  "hypnoticBackground": {
+    "section": "shop",
+    "label": "Cross selling",
+    "type": "normal",
+    "costs": 400,
+    "actions": "TODO"
+  },
+  "falseDiscounts": {
+    "section": "shop",
+    "label": "Cross selling",
+    "type": "normal",
+    "costs": 400,
+    "actions": "TODO"
+  },
+  "socialMediaButtons": {
+    "section": "shop",
+    "label": "Cross selling",
+    "type": "normal",
+    "costs": 400,
+    "actions": "TODO"
+  },
+  "botnetHomepage": {
+    "section": "bots",
+    "label": "Homepage override",
+    "type": "normal",
+    "costs": 400,
+    "actions": "activate keylogger"
+  },
+  "keylogger": {
+    "section": "bots",
+    "label": "Cross selling",
+    "type": "normal",
+    "costs": 400,
+    "actions": "TODO"
+  },
+  "floodSocialMedia": {
+    "section": "shop",
+    "label": "Cross selling",
+    "type": "normal",
+    "costs": 400,
+    "actions": "TODO"
+  },
+  "shopLobby": {
+    "section": "shop",
+    "label": "Cross selling",
+    "type": "normal",
+    "costs": 400,
+    "actions": "TODO"
+  },
+  "shoppingLaw": {
+    "section": "shop",
+    "label": "Cross selling",
+    "type": "normal",
+    "costs": 400,
+    "actions": "TODO"
+  },
+  "forcedMonopoly": {
+    "section": "shop",
+    "label": "Cross selling",
+    "type": "normal",
+    "costs": 400,
+    "actions": "TODO"
+  },
+  "harsherPunishment": {
+    "section": "shop",
+    "label": "Cross selling",
+    "type": "normal",
+    "costs": 400,
+    "actions": "TODO"
+  },
+  "========= UPGRADES MULTI =========": null,
   "buttonUpgrade": {
     "section": "shop",
     "label": "Improve Layout",
     "type": "multilevel",
-    "costs": [10, 15, 25, 50, 250],
+    "costs": [
+      10,
+      15,
+      25,
+      50,
+      250
+    ],
     "actions": [
-      "plus conversion 0.01; activate productImage",
-      "plus conversion 0.01",
-      "plus conversion 0.01",
-      "plus conversion 0.01",
-      "plus conversion 0.02"
+      "add conversion 0.01; activate productImage",
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.02"
     ]
   },
   "tellYourFriendsBox": {
     "section": "shop",
     "label": "Tell your friends box",
     "type": "multilevel",
-    "costs": [20, 40, 80, 200, 1000],
+    "costs": [
+      20,
+      40,
+      80,
+      200,
+      1000
+    ],
     "actions": [
-      "plus visits rate 1; activate trafficAnalysis",
-      "plus visits rate 1.5",
-      "plus visits rate 2",
-      "plus visits rate 3",
-      "plus visits rate 5"
+      "add visits rate 1; activate trafficAnalysis",
+      "add visits rate 1.5",
+      "add visits rate 2",
+      "add visits rate 3",
+      "add visits rate 5"
     ]
-  },
-  "trafficAnalysis": {
-    "section": "research",
-    "label": "Traffic analysis",
-    "type": "research",
-    "costs": 200,
-    "duration": 90,
-    "actions": "plus visits 0.2; show visits rate"
-  },
-  "productImage": {
-    "section": "shop",
-    "label": "Product image",
-    "type": "normal",
-    "costs": 20,
-    "actions": "plus conversion 0.02; activate imageUpgrade guidingArrows"
   },
   "imageUpgrade": {
     "section": "shop",
     "label": "Product image",
     "type": "multilevel",
-    "costs": [20, 30, 50],
+    "costs": [
+      20,
+      30,
+      50
+    ],
     "actions": [
-      "plus conversion 0.01",
-      "plus conversion 0.01",
-      "plus conversion 0.02"
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.02"
     ]
   },
   "guidingArrows": {
     "section": "shop",
     "label": "Guiding arrows",
     "type": "multilevel",
-    "costs": [20, 25, 30],
+    "costs": [
+      20,
+      25,
+      30
+    ],
     "actions": [
-      "plus conversion 0.01; activate conversionAnalysis",
-      "plus conversion 0.01",
-      "plus conversion 0.01; activate suggestiveEmojis"
+      "add conversion 0.01; activate conversionAnalysis",
+      "add conversion 0.01",
+      "add conversion 0.01; activate suggestiveEmojis"
     ]
+  },
+  "suggestiveEmojis": {
+    "section": "shop",
+    "label": "Suggestive emojis",
+    "type": "multilevel",
+    "costs": [
+      20,
+      25,
+      30
+    ],
+    "actions": [
+      "add conversion 0.01; activate fakeReviews phase2",
+      "add conversion 0.01",
+      "add conversion 0.01"
+    ]
+  },
+  "fakeReviews": {
+    "section": "shop",
+    "label": "Fake reviews",
+    "type": "multilevel",
+    "costs": [
+      20,
+      25,
+      30
+    ],
+    "actions": [
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01"
+    ]
+  },
+  "seo": {
+    "section": "shop",
+    "label": "Fake reviews",
+    "type": "multilevel",
+    "costs": [
+      20,
+      25,
+      30
+    ],
+    "actions": [
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01"
+    ]
+  },
+  "mailBoost": {
+    "section": "shop",
+    "label": "Fake reviews",
+    "type": "multilevel",
+    "costs": [
+      20,
+      25,
+      30
+    ],
+    "actions": [
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01"
+    ]
+  },
+  "browserExploits": {
+    "section": "shop",
+    "label": "Fake reviews",
+    "type": "multilevel",
+    "costs": [
+      20,
+      25,
+      30
+    ],
+    "actions": [
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01"
+    ]
+  },
+  "networkingExploits": {
+    "section": "shop",
+    "label": "Fake reviews",
+    "type": "multilevel",
+    "costs": [
+      20,
+      25,
+      30
+    ],
+    "actions": [
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01"
+    ]
+  },
+  "clickBots": {
+    "section": "shop",
+    "label": "Fake reviews",
+    "type": "multilevel",
+    "costs": [
+      20,
+      25,
+      30
+    ],
+    "actions": [
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01"
+    ]
+  },
+  "botnetMails": {
+    "section": "shop",
+    "label": "Fake reviews",
+    "type": "multilevel",
+    "costs": [
+      20,
+      25,
+      30
+    ],
+    "actions": [
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01"
+    ]
+  },
+  "farmSize": {
+    "section": "shop",
+    "label": "Fake reviews",
+    "type": "multilevel",
+    "costs": [
+      20,
+      25,
+      30
+    ],
+    "actions": [
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01"
+    ]
+  },
+  "captiveBreeding": {
+    "section": "shop",
+    "label": "Fake reviews",
+    "type": "multilevel",
+    "costs": [
+      20,
+      25,
+      30
+    ],
+    "actions": [
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01"
+    ]
+  },
+  "hunterMachines": {
+    "section": "shop",
+    "label": "Fake reviews",
+    "type": "multilevel",
+    "costs": [
+      20,
+      25,
+      30
+    ],
+    "actions": [
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01"
+    ]
+  },
+  "========= RESEARCH =========": null,
+  "trafficAnalysis": {
+    "section": "research",
+    "label": "Traffic analysis",
+    "type": "research",
+    "costs": 200,
+    "duration": 90,
+    "actions": "add visits 0.2; show visits rate"
   },
   "conversionAnalysis": {
     "section": "research",
@@ -68,72 +361,7 @@
     "type": "research",
     "costs": 200,
     "duration": 90,
-    "actions": "plus conversion 0.03; show conversion value"
-  },
-  "suggestiveEmojis": {
-    "section": "shop",
-    "label": "Suggestive emojis",
-    "type": "multilevel",
-    "costs": [20, 25, 30],
-    "actions": [
-      "plus conversion 0.01; activate fakeReviews phase2",
-      "plus conversion 0.01",
-      "plus conversion 0.01"
-    ]
-  },
-  "fakeReviews": {
-    "section": "shop",
-    "label": "Fake reviews",
-    "type": "multilevel",
-    "costs": [20, 25, 30],
-    "actions": [
-      "plus conversion 0.01",
-      "plus conversion 0.01",
-      "plus conversion 0.01"
-    ]
-  },
-  "phase2": {
-    "section": "research",
-    "label": "Dynamic content",
-    "type": "research",
-    "costs": 400,
-    "duration": 90,
-    "actions": "activate imageButton headerButton arrowButton crossSelling"
-  },
-  "imageButton": {
-    "section": "shop",
-    "label": "Image as button",
-    "type": "normal",
-    "costs": 100,
-    "actions": "plus conversion 0.01; activate buttonButton"
-  },
-  "headerButton": {
-    "section": "shop",
-    "label": "Header buttons",
-    "type": "normal",
-    "costs": 100,
-    "actions": "plus conversion 0.01; activate buttonButton"
-  },
-  "arrowButton": {
-    "section": "shop",
-    "label": "Interactive arrows",
-    "type": "normal",
-    "costs": 100,
-    "actions": "plus conversion 0.01; activate buttonButton"
-  },
-  "buttonButton": {
-    "section": "shop",
-    "label": "Buttonception",
-    "type": "normal",
-    "costs": 300,
-    "actions": "plus conversion 0.01"
-  },
-  "crossSelling": {
-    "section": "shop",
-    "label": "Cross selling",
-    "type": "normal",
-    "costs": 400,
-    "actions": "plus conversion 0.01; activate moreProducts"
+    "actions": "add conversion 0.03; show conversion value"
   },
   "moreProducts": {
     "section": "research",
@@ -143,6 +371,111 @@
     "duration": 120,
     "actions": "activate sueResearchTeam; message The research team was not able to add additional products to the shop. The head of the department mumbled something senseless about 'theme constraints' and apologized heavily. You should probably sue them for their incompetence!"
   },
+  "adMails": {
+    "section": "research",
+    "label": "More than one product",
+    "type": "research",
+    "costs": 4000,
+    "duration": 120,
+    "actions": "TODO"
+  },
+  "roboCalls": {
+    "section": "research",
+    "label": "More than one product",
+    "type": "research",
+    "costs": 4000,
+    "duration": 120,
+    "actions": "TODO"
+  },
+  "hacking": {
+    "section": "research",
+    "label": "More than one product",
+    "type": "research",
+    "costs": 4000,
+    "duration": 120,
+    "actions": "TODO"
+  },
+  "trojanMails": {
+    "section": "research",
+    "label": "More than one product",
+    "type": "research",
+    "costs": 4000,
+    "duration": 120,
+    "actions": "TODO"
+  },
+  "botnet": {
+    "section": "research",
+    "label": "More than one product",
+    "type": "research",
+    "costs": 4000,
+    "duration": 120,
+    "actions": "TODO"
+  },
+  "shopMilita": {
+    "section": "research",
+    "label": "More than one product",
+    "type": "research",
+    "costs": 4000,
+    "duration": 120,
+    "actions": "TODO"
+  },
+  "machineBrainInterfaces": {
+    "section": "research",
+    "label": "More than one product",
+    "type": "research",
+    "costs": 4000,
+    "duration": 120,
+    "actions": "TODO"
+  },
+  "humanClickFarm": {
+    "section": "research",
+    "label": "More than one product",
+    "type": "research",
+    "costs": 4000,
+    "duration": 120,
+    "actions": "TODO"
+  },
+  "phase2": {
+    "section": "research",
+    "label": "Dynamic content",
+    "type": "research",
+    "costs": 400,
+    "duration": 90,
+    "actions": "activate imageButton headerButton arrowButton crossSelling"
+  },
+  "phase3": {
+    "section": "research",
+    "label": "Dynamic content",
+    "type": "research",
+    "costs": 400,
+    "duration": 90,
+    "actions": "TODO"
+  },
+  "phase4": {
+    "section": "research",
+    "label": "Dynamic content",
+    "type": "research",
+    "costs": 400,
+    "duration": 90,
+    "actions": "TODO"
+  },
+  "phase5": {
+    "section": "research",
+    "label": "Dynamic content",
+    "type": "research",
+    "costs": 400,
+    "duration": 90,
+    "actions": "TODO"
+  },
+  "phase6": {
+    "section": "research",
+    "label": "Dynamic content",
+    "type": "research",
+    "costs": 400,
+    "duration": 90,
+    "actions": "TODO"
+  },
+  "========= OPERATIONS =========": null,
   "sueResearchTeam": {
     "section": "operations",
     "label": "Sue the research team",
@@ -150,6 +483,42 @@
     "costs": 1000,
     "isRepeatable": false,
     "cooldown": 0,
-    "actions": "plus money 10000; message You got a pretty good deal out of that lawsuit. That will teach these egg-heads that failure is not an option in the Plumbus industry!"
+    "actions": "add money 10000; message You got a pretty good deal out of that lawsuit. That will teach these egg-heads that failure is not an option in the Plumbus industry!"
+  },
+  "smearCampaign": {
+    "section": "operations",
+    "label": "Sue the research team",
+    "type": "operation",
+    "costs": 1000,
+    "isRepeatable": false,
+    "cooldown": 0,
+    "actions": "TODO"
+  },
+  "hackCompetitor": {
+    "section": "operations",
+    "label": "Sue the research team",
+    "type": "operation",
+    "costs": 1000,
+    "isRepeatable": false,
+    "cooldown": 0,
+    "actions": "TODO"
+  },
+  "imageCampaign": {
+    "section": "operations",
+    "label": "Sue the research team",
+    "type": "operation",
+    "costs": 1000,
+    "isRepeatable": false,
+    "cooldown": 0,
+    "actions": "TODO"
+  },
+  "corporateState": {
+    "section": "operations",
+    "label": "Sue the research team",
+    "type": "operation",
+    "costs": 1000,
+    "isRepeatable": false,
+    "cooldown": 0,
+    "actions": "TODO"
   }
 }
