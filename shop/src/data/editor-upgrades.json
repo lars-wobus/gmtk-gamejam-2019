@@ -1,7 +1,7 @@
 {
   "buttonUpgrade": {
     "section": "shop",
-    "label": "Better buy button",
+    "label": "Improve Layout",
     "type": "multilevel",
     "costs": [10, 15, 20, 25, 30],
     "actions": [
