@@ -55,10 +55,14 @@ export const ShopView = (
     labels.push(<Label classes={`guidingarrow-${i}`} />);
   }
 
+  const showHeader = false;
+  const showBanner = false;
+  const showFooter = false;
+
   console.log(shopUpgrades);
   return <div id = "shopview">
-    <Header />
-    <Banner />
+    {showHeader && <Header />}
+    {showBanner && <Banner />}
     <div id="buy" style={buttonStyle} onClick={() => onButtonClick()}>
       Buy Now
     </div>
@@ -75,6 +79,6 @@ export const ShopView = (
     </div>*
     <Alarm classes="alarm-1" />*/}
     {(array.length > 0) && <div className="review-container">{array}</div>}
-    <Footer />
+    {showFooter && <Footer />}
   </div>
 };
