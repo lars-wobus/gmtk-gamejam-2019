@@ -68,13 +68,13 @@ export const runUpgradeAction = (
     let operation = parts.shift();
     switch (operation) {
       case "plus":
-        changeStat(action, statsData, parts, (stat, amount) => stat.value += amount);
+        changeStat(action, statsData, parts, (stat, elementName, amount) => stat[elementName] += amount);
         break;
       case "multiply":
-        changeStat(action, statsData, parts, (stat, amount) => stat.value *= amount);
+        changeStat(action, statsData, parts, (stat, elementName, amount) => stat[elementName] *= amount);
         break;
       case "set":
-        changeStat(action, statsData, parts, (stat, amount) => stat.value = amount);
+        changeStat(action, statsData, parts, (stat, elementName, amount) => stat[elementName] = amount);
         break;
       case "activate":
         activateUpgrade(action, upgradeDefinitions, upgradeData, parts);
@@ -95,10 +95,22 @@ export const runUpgradeAction = (
 
 const changeStat = (action, statsData, actionData, operation) => {
   let statName = actionData.shift();
-  let amountString = actionData.shift();
   let stat = statsData[statName];
   if (!stat) {
     console.error(`could not perform action "${action}": could not find stat "${statName}"!`);
+    return;
+  }
+
+  let secondParam = actionData.shift();
+  let elementName = "value";
+  let amountString = secondParam;
+  if (secondParam === "value" || secondParam === "cap" || secondParam === "rate" || secondParam === "rateCap"){
+    elementName = secondParam;
+    amountString = actionData.shift();
+  }
+
+  if (stat[elementName] === undefined || stat[elementName] === null) {
+    console.error(`could not perform action "${action}": stat "${statName}" has no element called "${elementName}"!`);
     return;
   }
 
@@ -108,7 +120,7 @@ const changeStat = (action, statsData, actionData, operation) => {
     return;
   }
 
-  operation(stat, amount);
+  operation(stat, elementName, amount);
   console.info(`changed stat with action: "${action}"`);
   if (actionData.length > 0) {
     console.warn(` action "${action}" has too many arguments. did you forget a semicolon?`);
