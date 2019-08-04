@@ -47,6 +47,8 @@ export const ShopView = (
   const showReviews = fakeReviews.level > 0;
 
   return <div id = "shopview">
+    <div><div className="background"></div></div>
+    
     {<Header classes={(showHeader ? `${corporateDesign}` : "hidden")} />}
     {(tellYourFriendsBox.level > 0) && <Banner classes={(showBanner ? `${corporateDesign}` : "hidden")} text={bannerData[tellYourFriendsBox.level-1]} />}
     <div className={buttonClass} onClick={() => onButtonClick()}>
@@ -60,6 +62,7 @@ export const ShopView = (
           style={{ width: "100%" }}
           alt="Rendering of a Plumbus"
         />
+        
       </div>
     }
     {labels}
