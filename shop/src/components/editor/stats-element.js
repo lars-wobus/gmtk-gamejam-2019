@@ -18,6 +18,10 @@ export const StatsElement = (
     rate = `${rate}%`;
     rateCap = `${rateCap}%`;
   }
+  if (statsData.displayType === "int") {
+    value = Math.floor(value);
+    cap = Math.floor(cap);
+  }
 
   let valueString = "";
   if (statsData.valueVisible) {
