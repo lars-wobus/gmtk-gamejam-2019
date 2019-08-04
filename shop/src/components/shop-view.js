@@ -24,7 +24,7 @@ export const ShopView = (
   });
   const {
     buttonUpgrade, imageUpgrade, guidingArrows, suggestiveEmojis,
-    fakeReviews, tellYourFriendsBox, crossSelling
+    fakeReviews, tellYourFriendsBox, crossSelling, hypnoticBackground
   } = shopUpgrades;
 
   const grayscale = `grayscale(${25 * (4 - imageUpgrade.level - 1)}%`;
@@ -47,7 +47,7 @@ export const ShopView = (
   const showReviews = fakeReviews.level > 0;
 
   return <div id = "shopview">
-    <div><div className="background"></div></div>
+    {(hypnoticBackground.level > 0) && <div><div className="background"></div></div>}
     
     {<Header classes={(showHeader ? `${corporateDesign}` : "hidden")} />}
     {(tellYourFriendsBox.level > 0) && <Banner classes={(showBanner ? `${corporateDesign}` : "hidden")} text={bannerData[tellYourFriendsBox.level-1]} />}
