@@ -37,6 +37,10 @@ function App() {
   const [upgrades, setUpgrades] = useState(() => initEditorUpgrades(editorSectionDefinitions, editorUpgradeDefinitions));
   const [shopButtons, setShopButtons] = useState(shopData.buttons);
 
+  const runAction = (action) => {
+    runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, message => onMessage(message));
+  };
+
   const onSkipButtonClick = () => {
     setShowTutorialDialog(false);
   };
@@ -126,22 +130,42 @@ function App() {
       return;
     }
 
-    let action = "";
+    stats.money.value -= cost;
     switch (it.type) {
       case "multilevel":
-        action = it.actions[it.level];
+        runAction(it.actions[it.level]);
         it.level++;
         it.isDone = it.level === it.actions.length;
+        onEditorDataChanged();
+        onUpgradeEvent(it.name, it.level);
         break;
       case "normal":
-        action = it.actions;
+        runAction(it.actions);
         it.level = 1;
         it.isDone = true;
+        onEditorDataChanged();
+        onUpgradeEvent(it.name, it.level);
+        break;
+      case "research":
+        it.isRunning = true;
+        const interval = setInterval(() => {
+          it.progress += 0.01;
+          if (it.progress >= 1) {
+            clearInterval(interval);
+            it.isRunning = false;
+            it.isDone = true;
+            it.level = 1;
+            runAction(it.actions);
+            onEditorDataChanged();
+            onUpgradeEvent(it.name, it.level);
+          }
+        }, 10 * settings.upgrade_duration); // 1000ms / 100times * durationInSeconds
+        onEditorDataChanged();
+        break;
+      default:
+        console.error(`onUpgradeClicked could not handle upgrade of type "${it.type}"`);
+        break;
     }
-    runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, message => onMessage(message));
-    stats.money.value -= cost;
-    onEditorDataChanged();
-    onUpgradeEvent(it.name, it.level);
   };
 
   const onEditorDataChanged = () => {
@@ -168,9 +192,7 @@ function App() {
   if (!initializationDone) {
     initializationDone = true;
 
-    editorInitialActions.forEach(action => {
-      runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, () => onMessage())
-    });
+    editorInitialActions.forEach(action => runAction(action));
     setStats(stats);
     setUpgrades(upgrades);
   }

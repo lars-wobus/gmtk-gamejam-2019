@@ -22,7 +22,7 @@ export const initEditorUpgrades = (
       console.log(`cannot add upgrade "${upgradeName}": section "${sectionName}" does not exist!`);
       return;
     }
-    section.upgrades[upgradeName] = {
+    let upgrade = {
       name: upgradeName,
       label: upgradeDef.label,
       type: upgradeDef.type,
@@ -33,6 +33,11 @@ export const initEditorUpgrades = (
       costs: upgradeDef.costs,
       actions: upgradeDef.actions
     };
+    if (upgradeDef.type === "research") {
+      upgrade.isRunning = false;
+      upgrade.progress = 0;
+    }
+    section.upgrades[upgradeName] = upgrade;
     console.info(`initialized upgrade "${sectionName}"/"${upgradeName}"`);
   });
 
