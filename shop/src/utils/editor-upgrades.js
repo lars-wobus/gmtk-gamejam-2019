@@ -15,6 +15,8 @@ export const initEditorUpgrades = (
   });
 
   Object.keys(upgradeDefinitions).forEach(upgradeName => {
+    if (upgradeName.startsWith("=")) return;
+
     let upgradeDef = upgradeDefinitions[upgradeName];
     let sectionName = upgradeDef.section;
     let section = upgradeData[sectionName];
@@ -67,7 +69,7 @@ export const runUpgradeAction = (
       .filter(word => word.length > 0);
     let operation = parts.shift();
     switch (operation) {
-      case "plus":
+      case "add":
         changeStat(action, statsData, parts, (stat, elementName, amount) => stat[elementName] += amount);
         break;
       case "multiply":
