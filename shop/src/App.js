@@ -184,15 +184,15 @@ function App() {
          />
          : <>
           <>
-            <EditorView
-              stats={stats}
-              upgradeSections={upgrades}
-              onUpgrade={it => onUpgradeClicked(it)}
-            />
             <ShopView
               userReviews={userReviews}
               onButtonClick={onButtonClick}
               shopUpgrades={upgrades.shop.upgrades}
+              onUpgrade={it => onUpgradeClicked(it)}
+            />
+            <EditorView
+              stats={stats}
+              upgradeSections={upgrades}
               onUpgrade={it => onUpgradeClicked(it)}
             />
           </>
