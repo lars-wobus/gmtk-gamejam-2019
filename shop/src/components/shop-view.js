@@ -58,6 +58,7 @@ export const ShopView = (
   const showHeader = false;
   const showBanner = false;
   const showFooter = false;
+  const showReviews = false;
 
   console.log(shopUpgrades);
   return <div id = "shopview">
@@ -78,7 +79,7 @@ export const ShopView = (
       Remaining: 
     </div>*
     <Alarm classes="alarm-1" />*/}
-    {(array.length > 0) && <div className="review-container">{array}</div>}
+    {(showReviews && array.length > 0) && <div className="review-container">{array}</div>}
     {showFooter && <Footer />}
   </div>
 };
