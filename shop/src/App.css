@@ -53,12 +53,11 @@ html, body {
 }
 
 #editorview {
-  border: 1px solid black;
+  border-right: 1px solid black;
   width:30%;
 }
 
 #shopview {
-  border: 1px solid red;
   width:70%;
   left: 30%;
 }
