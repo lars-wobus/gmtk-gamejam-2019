@@ -6,7 +6,7 @@ export const EditorView = (
   {stats, upgradeSections, onUpgrade}
 ) => {
   return <div id="editorview">
-    {createStatsMap(stats)}
+    <div className = "stats-element">{createStatsMap(stats)}</div>
     {createUpgradeMap(upgradeSections, onUpgrade)}
   </div>
 };

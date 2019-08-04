@@ -35,9 +35,9 @@ export const StatsElement = (
     if (statsData.rateCapVisible) rateString += ` (max: ${rateCap}/sec)`
   }
 
-  return <div className = "stats-element">
-    <div id = "stats-element-name">{name}:</div>
-    <div id = "stats-element-value">{valueString}</div>
-    <div id = "stats-element-rate">{rateString}</div>
+  return <div>
+    <div className = "stats-element-name">{name}:</div>
+    <div className = "stats-element-value">{valueString}</div>
+    <div className = "stats-element-rate">{rateString}</div>
   </div>
 };
