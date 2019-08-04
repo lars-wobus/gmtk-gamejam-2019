@@ -48,7 +48,7 @@
     "statVisible": false,
     "value": 0,
     "cap": null,
-    "rate": 0,
+    "rate": 1,
     "rateCap": 100,
     "valueVisible": true,
     "capVisible": false,

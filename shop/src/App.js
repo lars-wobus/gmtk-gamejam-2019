@@ -34,16 +34,6 @@ function App() {
   const [upgrades, setUpgrades] = useState(() => initEditorUpgrades(editorSectionDefinitions, editorUpgradeDefinitions));
   const [shopButtons, setShopButtons] = useState(shopData.buttons);
 
-  // TODO: do this the way it is supposed to be ^^
-  const init = () => {
-    editorInitialActions.forEach(action => {
-      runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, () => onMessage())
-    });
-    setStats(stats);
-    setUpgrades(upgrades);
-  };
-  const [] = useState(() => init());
-
   const onSkipButtonClick = () => {
     setShowTutorialDialog(false);
   }
@@ -56,8 +46,11 @@ function App() {
     setTutorialIndex(tutorialIndex + 1);
   };
 
-  const onButtonClick = () => {
+  const onPurchaseButtonClicked = () => {
     console.log('Button was clicked');
+    stats.purchases.value++;
+    stats.money.value++;
+    onEditorDataChanged();
   };
 
   const calcRate = (stat, deltaTimeInSeconds) => {
@@ -122,6 +115,29 @@ function App() {
     if (newPurchases > 0) onNewPurchases(newPurchases);
   };
 
+  const onUpgradeClicked = it => {
+    let action = "";
+    switch (it.type) {
+      case "multilevel":
+        action = it.actions[it.level];
+        it.level++;
+        it.isDone = it.level === it.actions.length;
+        break;
+      case "normal":
+        action = it.actions;
+        it.level = 1;
+        it.isDone = true;
+    }
+    runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, () => onMessage());
+    onEditorDataChanged();
+    onUpgradeEvent(it.name, it.level);
+  };
+
+  const onEditorDataChanged = () => {
+    setStats(Object.assign({}, stats));
+    setUpgrades(Object.assign({}, upgrades));
+  };
+
   const onNewVisits = amount => {
     // TODO: do something with this
   };
@@ -134,30 +150,27 @@ function App() {
     // TODO: do something with this
   };
 
-  const onUpgradeClicked = it => {
-    let action = "";
-    switch (it.type) {
-      case "multilevel":
-        action = it.actions[it.level];
-        it.level++;
-        it.isDone = it.level === it.actions.length;
-        break;
-      case "normal":
-        action = it.actions;
-        it.isDone = true;
-    }
-    runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, () => onMessage());
-    onEditorDataChanged();
-  };
-
-  const onEditorDataChanged = () => {
-    setStats(Object.assign({}, stats));
-    setUpgrades(Object.assign({}, upgrades));
-  };
-
   const onUpgradeEvent = (upgradeEvent, level) => {
     // TODO: do something with this
   };
+
+  useEffect(() => {
+    editorInitialActions.forEach(action => {
+      runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, () => onMessage())
+    });
+    setStats(stats);
+    setUpgrades(upgrades);
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      calculateStats(0.5);
+      onEditorDataChanged();
+    }, 500);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -186,7 +199,7 @@ function App() {
           <>
             <ShopView
               userReviews={userReviews}
-              onButtonClick={onButtonClick}
+              onButtonClick={onPurchaseButtonClicked}
               shopUpgrades={upgrades.shop.upgrades}
               onUpgrade={it => onUpgradeClicked(it)}
             />
