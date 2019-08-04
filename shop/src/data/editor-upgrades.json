@@ -273,7 +273,7 @@
       30
     ],
     "actions": [
-      "add conversion 0.01",
+      "add conversion 0.01; show bots rate",
       "add conversion 0.01; activate phase5",
       "add conversion 0.01",
       "add conversion 0.01"
@@ -298,7 +298,7 @@
     "label": "Flood social media",
     "type": "normal",
     "costs": 400,
-    "actions": "activate imageCampaign; add visits rate 20; add publicOpinion 0.2"
+    "actions": "activate imageCampaign; add visits rate 20; add publicOpinion 0.5"
   },
   "shopLobby": {
     "section": "politics",
@@ -319,7 +319,7 @@
     "label": "Forced monopoly",
     "type": "normal",
     "costs": 400,
-    "actions": "set competitors 0"
+    "actions": "set competitors 0, show competitors"
   },
   "harsherPunishment": {
     "section": "politics",
@@ -334,7 +334,7 @@
     "type": "normal",
     "costs": 4000,
     "duration": 120,
-    "actions": "set captiveHumans 10; show captiveHumans value; activate captiveBreeding farmSize"
+    "actions": "set captiveHumans 10; show captiveHumans value cap; activate captiveBreeding farmSize"
   },
   "farmSize": {
     "section": "farms",
@@ -350,11 +350,17 @@
       25,
       25,
       25,
+      25,
+      25,
+      25,
       30
     ],
     "actions": [
       "set captiveHumans cap 1000",
       "multiply captiveHumans cap 10; activate hunterMachines",
+      "multiply captiveHumans cap 10",
+      "multiply captiveHumans cap 10",
+      "multiply captiveHumans cap 10",
       "multiply captiveHumans cap 10",
       "multiply captiveHumans cap 10",
       "multiply captiveHumans cap 10",
@@ -414,7 +420,7 @@
       30
     ],
     "actions": [
-      "set huntedHumans rate 1",
+      "set huntedHumans rate 1; show freeHumans value; show huntedHumans value rate",
       "multiply huntedHumans rate 4",
       "multiply huntedHumans rate 4",
       "multiply huntedHumans rate 4",
@@ -446,7 +452,7 @@
     "type": "research",
     "costs": 200,
     "duration": 90,
-    "actions": "add conversion 0.03; show conversion value"
+    "actions": "add conversion 0.03; show conversion value; show purchases rate"
   },
   "moreProducts": {
     "section": "research",
@@ -554,7 +560,7 @@
     "costs": 1000,
     "isRepeatable": true,
     "cooldown": 90,
-    "actions": "add publicOpinion 2"
+    "actions": "add publicOpinion 2; multiply demand rate 2"
   },
   "corporateState": {
     "section": "operations",

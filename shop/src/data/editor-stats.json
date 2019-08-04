@@ -9,11 +9,11 @@
     "statVisible": true,
     "value": 0,
     "cap": null,
-    "rate": null,
+    "rate": 0,
     "rateCap": null,
     "valueVisible": true,
     "capVisible": false,
-    "rateVisible": false,
+    "rateVisible": true,
     "rateCapVisible": false
   },
   "visits": {
@@ -217,7 +217,7 @@
     "statVisible": false,
     "value": 0,
     "cap": null,
-    "rate": 0,
+    "rate": 1000,
     "rateCap": null,
     "valueVisible": false,
     "capVisible": false,
