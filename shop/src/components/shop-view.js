@@ -22,7 +22,7 @@ export const ShopView = (
   });
   const {
     buttonUpgrade, imageUpgrade, guidingArrows, suggestiveEmojis,
-    fakeReviews, tellYourFriendsBox
+    fakeReviews, tellYourFriendsBox, crossSelling
   } = shopUpgrades;
   console.log(shopUpgrades);
   const maxImageLevel = imageUpgrade.actions.length;
@@ -58,7 +58,7 @@ export const ShopView = (
     {(suggestiveEmojis.level >= 1) && <GestureTabHold classes="gesturetabhold" />}
     {(suggestiveEmojis.level >= 2) && <BellRing classes="bellring" />}
     {(suggestiveEmojis.level >= 3) && <Alarm classes="alarm" />}
-    <CrossSellingTable />
+    {(crossSelling.level > 0) && <CrossSellingTable />}
     {(showReviews) && <div className="review-container">{array}</div>}
     {<Footer classes={(showFooter ? `${corporateDesign}` : "hidden")} />}
   </div>
