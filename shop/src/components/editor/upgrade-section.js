@@ -15,7 +15,7 @@ export const UpgradeSection = (
     </div>
   );
 
-  return <div>
+  return <div className="upgradesection">
     <div>{section.label}:</div>
     <div>{upgrades}</div>
   </div>
