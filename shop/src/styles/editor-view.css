@@ -5,6 +5,7 @@
   height: 100vh;
   position: fixed;
   right: 0;
+  overflow-y: scroll;
 }
 
 .stats-element, .upgradesection  {
