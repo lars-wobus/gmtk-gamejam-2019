@@ -75,7 +75,7 @@
     "value": 0,
     "cap": null,
     "rate": 0,
-    "rateCap": 10,
+    "rateCap": null,
     "valueVisible": true,
     "capVisible": false,
     "rateVisible": true,
@@ -88,11 +88,11 @@
     "value": 0,
     "cap": null,
     "rate": 0,
-    "rateCap": 1,
+    "rateCap": null,
     "valueVisible": true,
     "capVisible": false,
     "rateVisible": true,
-    "rateCapVisible": true
+    "rateCapVisible": false
   },
   "adImpact": {
     "name": "Ad impact",
@@ -103,6 +103,19 @@
     "rate": null,
     "rateCap": null,
     "valueVisible": true,
+    "capVisible": false,
+    "rateVisible": false,
+    "rateCapVisible": false
+  },
+  "browserExploits": {
+    "name": "THIS SHOULD ALWAYS BE HIDDEN",
+    "displayType": "percent",
+    "statVisible": false,
+    "value": 0,
+    "cap": null,
+    "rate": null,
+    "rateCap": null,
+    "valueVisible": false,
     "capVisible": false,
     "rateVisible": false,
     "rateCapVisible": false
@@ -133,8 +146,34 @@
     "rateVisible": true,
     "rateCapVisible": false
   },
+  "botVisits": {
+    "name": "Bot induced visits",
+    "displayType": "int",
+    "statVisible": false,
+    "value": null,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
+    "valueVisible": false,
+    "capVisible": false,
+    "rateVisible": true,
+    "rateCapVisible": false
+  },
   "botPurchases": {
-    "name": "Bot send mails",
+    "name": "Bot direct clicks",
+    "displayType": "int",
+    "statVisible": false,
+    "value": null,
+    "cap": null,
+    "rate": 0,
+    "rateCap": null,
+    "valueVisible": false,
+    "capVisible": false,
+    "rateVisible": true,
+    "rateCapVisible": false
+  },
+  "botStealing": {
+    "name": "Money stolen by bots",
     "displayType": "int",
     "statVisible": false,
     "value": null,

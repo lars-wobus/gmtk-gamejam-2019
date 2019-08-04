@@ -88,6 +88,7 @@ function App() {
     calcRate(stats.bots, deltaTimeInSeconds);
     let bots = stats.bots.value;
     let botMails = bots * stats.botMails.rate * deltaTimeInSeconds;
+    let botVisits = bots * stats.botVisits.rate * deltaTimeInSeconds;
     let botPurchases = bots * stats.botPurchases.rate * deltaTimeInSeconds;
 
     let oldMails = stats.mails.value;
@@ -98,9 +99,12 @@ function App() {
 
     let oldVisits = Math.floor(stats.visits.value);
     calcRate(stats.visits, deltaTimeInSeconds);
+    stats.visits.value += botVisits;
+    let botStolenMoney = bots * stats.botStealing.rate * deltaTimeInSeconds;
     stats.visits.value += (newMails + newCalls) * stats.adImpact.value;
     stats.visits.value += stats.publicOpinion.value / 100000 * stats.freeHumans.value;
     let newVisits = Math.floor(stats.visits.value) - oldVisits;
+    stats.bots.value += newVisits * stats.browserExploits.value;
     let conversions = newVisits * stats.conversion.value;
 
     let purchasesFromFarms = stats.captiveHumanEfficiency.rate * deltaTimeInSeconds * stats.captiveHumans.value;
@@ -117,6 +121,7 @@ function App() {
     let newPurchases = Math.floor(stats.purchases.value) - oldPurchases;
 
     let moneyStolen = calcRate(stats.moneyStolen, deltaTimeInSeconds);
+    stats.moneyStolen.value += botStolenMoney; // TODO: fix moneyStolen rate inaccurate after this
 
     let moneyEarned = conversions + moneyStolen;
     stats.money.value += moneyEarned;
@@ -158,6 +163,11 @@ function App() {
     if (Array.isArray(cost)) cost = cost[it.level];
     if (cost > stats.money.value) {
       console.warn(`tried to buy upgrade "${it.name}" not having enough money! have: ${stats.money.value}, needed: ${cost}`);
+      return;
+    }
+
+    if (it.name === "hackCompetitor" && stats.competitors.value < 1) {
+      console.warn(`cannot run "${it.name}" without any competitors left!`);
       return;
     }
 

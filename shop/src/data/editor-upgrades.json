@@ -44,73 +44,81 @@
   },
   "hypnoticBackground": {
     "section": "shop",
-    "label": "Cross selling",
+    "label": "Hypnotic background",
     "type": "normal",
     "costs": 400,
     "actions": "TODO"
   },
   "falseDiscounts": {
     "section": "shop",
-    "label": "Cross selling",
+    "label": "False discounts TODO",
     "type": "normal",
     "costs": 400,
     "actions": "TODO"
   },
   "socialMediaButtons": {
     "section": "shop",
-    "label": "Cross selling",
+    "label": "Social media buttons TODO",
     "type": "normal",
     "costs": 400,
     "actions": "TODO"
   },
-  "botnetHomepage": {
+  "botHomepage": {
     "section": "bots",
     "label": "Homepage override",
     "type": "normal",
     "costs": 400,
-    "actions": "activate keylogger"
+    "actions": "activate keylogger; set botVisits rate 0.2"
   },
   "keylogger": {
     "section": "bots",
-    "label": "Cross selling",
+    "label": "Keystore breaker",
     "type": "normal",
     "costs": 400,
-    "actions": "TODO"
+    "actions": "set botStealing rate 1"
   },
   "floodSocialMedia": {
-    "section": "shop",
-    "label": "Cross selling",
+    "section": "politics",
+    "label": "Flood social media",
     "type": "normal",
     "costs": 400,
-    "actions": "TODO"
+    "actions": "activate imageCampaign; add visits rate 20; add publicOpinion 0.2"
   },
   "shopLobby": {
-    "section": "shop",
-    "label": "Cross selling",
+    "section": "politics",
+    "label": "Plumbus lobby",
     "type": "normal",
     "costs": 400,
-    "actions": "TODO"
+    "actions": "activate shoppingLaw"
   },
   "shoppingLaw": {
-    "section": "shop",
-    "label": "Cross selling",
+    "section": "politics",
+    "label": "Purchase obligation law",
     "type": "normal",
     "costs": 400,
-    "actions": "TODO"
+    "actions": "activate forcedMonopoly harsherPunishment shopMilitia; set conversion 0.7"
   },
   "forcedMonopoly": {
-    "section": "shop",
-    "label": "Cross selling",
+    "section": "politics",
+    "label": "Forced monopoly",
     "type": "normal",
     "costs": 400,
-    "actions": "TODO"
+    "actions": "set competitors 0"
   },
   "harsherPunishment": {
-    "section": "shop",
-    "label": "Cross selling",
+    "section": "politics",
+    "label": "Death penalty for not buying",
     "type": "normal",
     "costs": 400,
-    "actions": "TODO"
+    "actions": "set conversion 0.9"
+  },
+  "humanClickFarm": {
+    "section": "farms",
+    "label": "Forced click farm",
+    "type": "normal",
+    "costs": 4000,
+    "duration": 120,
+    "actions": "set captiveHumans 10; show captiveHumans value; activate captiveBreeding farmSize"
   },
   "========= UPGRADES MULTI =========": null,
   "buttonUpgrade": {
@@ -212,138 +220,216 @@
     ]
   },
   "seo": {
-    "section": "shop",
-    "label": "Fake reviews",
+    "section": "server",
+    "label": "Search engine optimization",
     "type": "multilevel",
     "costs": [
       20,
       25,
+      25,
+      25,
       30
     ],
     "actions": [
-      "add conversion 0.01",
-      "add conversion 0.01",
-      "add conversion 0.01"
+      "add visits rate 5",
+      "add visits rate 10; activates phase4",
+      "add visits rate 15",
+      "add visits rate 20",
+      "add visits rate 25"
     ]
   },
   "mailBoost": {
-    "section": "shop",
-    "label": "Fake reviews",
+    "section": "server",
+    "label": "Faster mail server",
     "type": "multilevel",
     "costs": [
       20,
       25,
+      25,
+      25,
+      25,
       30
     ],
     "actions": [
-      "add conversion 0.01",
-      "add conversion 0.01",
-      "add conversion 0.01"
+      "add mails rate 100",
+      "add mails rate 200",
+      "add mails rate 400",
+      "add mails rate 800",
+      "add mails rate 1600",
+      "add mails rate 3200"
     ]
   },
   "browserExploits": {
     "section": "shop",
-    "label": "Fake reviews",
+    "label": "Browser exploits",
     "type": "multilevel",
     "costs": [
       20,
       25,
+      25,
       30
     ],
     "actions": [
-      "add conversion 0.01",
-      "add conversion 0.01",
-      "add conversion 0.01"
+      "add browserExploits 0.05",
+      "add browserExploits 0.05; activate botnet",
+      "add browserExploits 0.05",
+      "add browserExploits 0.05"
     ]
   },
   "networkingExploits": {
-    "section": "shop",
-    "label": "Fake reviews",
+    "section": "bots",
+    "label": "Networking exploit",
     "type": "multilevel",
     "costs": [
       20,
+      25,
       25,
       30
     ],
     "actions": [
       "add conversion 0.01",
+      "add conversion 0.01; activate phase5",
       "add conversion 0.01",
       "add conversion 0.01"
     ]
   },
   "clickBots": {
-    "section": "shop",
-    "label": "Fake reviews",
+    "section": "bots",
+    "label": "Click scripts",
     "type": "multilevel",
     "costs": [
       20,
       25,
+      25,
+      25,
+      25,
+      25,
       30
     ],
     "actions": [
-      "add conversion 0.01",
-      "add conversion 0.01",
-      "add conversion 0.01"
+      "add botPurchases rate 0.1",
+      "add botPurchases rate 0.1",
+      "add botPurchases rate 0.1",
+      "add botPurchases rate 0.1",
+      "add botPurchases rate 0.1",
+      "add botPurchases rate 0.1",
+      "add botPurchases rate 0.1"
     ]
   },
   "botnetMails": {
-    "section": "shop",
-    "label": "Fake reviews",
+    "section": "bots",
+    "label": "Mailbox hijacker",
     "type": "multilevel",
     "costs": [
       20,
       25,
+      25,
+      25,
+      25,
       30
     ],
     "actions": [
-      "add conversion 0.01",
-      "add conversion 0.01",
-      "add conversion 0.01"
+      "add botMails rate 0.5",
+      "add botMails rate 0.5",
+      "add botMails rate 0.5",
+      "add botMails rate 0.5",
+      "add botMails rate 0.5",
+      "add botMails rate 0.5"
     ]
   },
   "farmSize": {
-    "section": "shop",
-    "label": "Fake reviews",
+    "section": "farms",
+    "label": "Farm expansion",
     "type": "multilevel",
     "costs": [
       20,
       25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
       30
     ],
     "actions": [
-      "add conversion 0.01",
-      "add conversion 0.01",
-      "add conversion 0.01"
+      "set captiveHumans cap 1000",
+      "multiply captiveHumans cap 10; activate hunterMachines",
+      "multiply captiveHumans cap 10",
+      "multiply captiveHumans cap 10",
+      "multiply captiveHumans cap 10",
+      "multiply captiveHumans cap 10",
+      "multiply captiveHumans cap 10",
+      "multiply captiveHumans cap 10",
+      "multiply captiveHumans cap 10",
+      "multiply captiveHumans cap 10"
     ]
   },
   "captiveBreeding": {
-    "section": "shop",
-    "label": "Fake reviews",
+    "section": "farms",
+    "label": "Breeding pods",
     "type": "multilevel",
     "costs": [
       20,
       25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
       30
     ],
     "actions": [
-      "add conversion 0.01",
-      "add conversion 0.01",
-      "add conversion 0.01"
+      "set captiveHumans rate 1",
+      "multiply captiveHumans rate 2",
+      "multiply captiveHumans rate 2",
+      "multiply captiveHumans rate 2",
+      "multiply captiveHumans rate 2",
+      "multiply captiveHumans rate 2",
+      "multiply captiveHumans rate 2",
+      "multiply captiveHumans rate 2",
+      "multiply captiveHumans rate 2"
     ]
   },
   "hunterMachines": {
-    "section": "shop",
-    "label": "Fake reviews",
+    "section": "farms",
+    "label": "Human collectors",
     "type": "multilevel",
     "costs": [
       20,
       25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
       30
     ],
     "actions": [
-      "add conversion 0.01",
-      "add conversion 0.01",
-      "add conversion 0.01"
+      "set huntedHumans rate 1",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4",
+      "multiply huntedHumans rate 4"
     ]
   },
   "========= RESEARCH =========": null,
@@ -373,67 +459,43 @@
   },
   "adMails": {
     "section": "research",
-    "label": "More than one product",
+    "label": "Advertisement mails",
     "type": "research",
     "costs": 4000,
     "duration": 120,
-    "actions": "TODO"
+    "actions": "add mails rate 0.5; show mails value rate; activate roboCalls mailBoost"
   },
   "roboCalls": {
     "section": "research",
-    "label": "More than one product",
+    "label": "Robo calls",
     "type": "research",
     "costs": 4000,
     "duration": 120,
-    "actions": "TODO"
-  },
-  "hacking": {
-    "section": "research",
-    "label": "More than one product",
-    "type": "research",
-    "costs": 4000,
-    "duration": 120,
-    "actions": "TODO"
+    "actions": "add calls rate 0.5; show calls value rate; activate"
   },
   "trojanMails": {
     "section": "research",
-    "label": "More than one product",
+    "label": "Trojan mails",
     "type": "research",
     "costs": 4000,
     "duration": 120,
-    "actions": "TODO"
+    "actions": "add bots rate 1; show bots value; activate botnet"
   },
   "botnet": {
     "section": "research",
-    "label": "More than one product",
+    "label": "Bot nets",
     "type": "research",
     "costs": 4000,
     "duration": 120,
-    "actions": "TODO"
+    "actions": "activate botHomepage networkingExploits clickBots botnetMails"
   },
-  "shopMilita": {
+  "shopMilitia": {
     "section": "research",
-    "label": "More than one product",
+    "label": "Shop militia",
     "type": "research",
     "costs": 4000,
     "duration": 120,
-    "actions": "TODO"
-  },
-  "machineBrainInterfaces": {
-    "section": "research",
-    "label": "More than one product",
-    "type": "research",
-    "costs": 4000,
-    "duration": 120,
-    "actions": "TODO"
-  },
-  "humanClickFarm": {
-    "section": "research",
-    "label": "More than one product",
-    "type": "research",
-    "costs": 4000,
-    "duration": 120,
-    "actions": "TODO"
+    "actions": "activate corporateState"
   },
   "phase2": {
     "section": "research",
@@ -445,35 +507,35 @@
   },
   "phase3": {
     "section": "research",
-    "label": "Dynamic content",
+    "label": "Social engineering",
     "type": "research",
     "costs": 400,
     "duration": 90,
-    "actions": "TODO"
+    "actions": "activate falseDiscounts socialMediaButtons seo adMails"
   },
   "phase4": {
     "section": "research",
-    "label": "Dynamic content",
+    "label": "Auto hacking",
     "type": "research",
     "costs": 400,
     "duration": 90,
-    "actions": "TODO"
+    "actions": "activate hackCompetitor trojanMails browserExploits"
   },
   "phase5": {
     "section": "research",
-    "label": "Dynamic content",
+    "label": "Political influence",
     "type": "research",
     "costs": 400,
     "duration": 90,
-    "actions": "TODO"
+    "actions": "activate shopLobby, floodSocialMedia"
   },
   "phase6": {
     "section": "research",
-    "label": "Dynamic content",
+    "label": "Machine brain interfaces",
     "type": "research",
     "costs": 400,
     "duration": 90,
-    "actions": "TODO"
+    "actions": "activate humanClickFarm"
   },
   "========= OPERATIONS =========": null,
   "sueResearchTeam": {
@@ -485,23 +547,14 @@
     "cooldown": 0,
     "actions": "add money 10000; message You got a pretty good deal out of that lawsuit. That will teach these egg-heads that failure is not an option in the Plumbus industry!"
   },
-  "smearCampaign": {
-    "section": "operations",
-    "label": "Sue the research team",
-    "type": "operation",
-    "costs": 1000,
-    "isRepeatable": false,
-    "cooldown": 0,
-    "actions": "TODO"
-  },
   "hackCompetitor": {
     "section": "operations",
     "label": "Sue the research team",
     "type": "operation",
     "costs": 1000,
-    "isRepeatable": false,
-    "cooldown": 0,
-    "actions": "TODO"
+    "isRepeatable": true,
+    "cooldown": 60,
+    "actions": "add competitors -1"
   },
   "imageCampaign": {
     "section": "operations",
@@ -509,8 +562,8 @@
     "type": "operation",
     "costs": 1000,
     "isRepeatable": false,
-    "cooldown": 0,
-    "actions": "TODO"
+    "cooldown": 90,
+    "actions": "add publicOpinion 2"
   },
   "corporateState": {
     "section": "operations",
@@ -519,6 +572,6 @@
     "costs": 1000,
     "isRepeatable": false,
     "cooldown": 0,
-    "actions": "TODO"
+    "actions": "activate phase6; add money 1000000"
   }
 }
