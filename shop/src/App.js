@@ -209,7 +209,7 @@ function App() {
   };
 
   const onMessage = message => {
-    // TODO: do something with this
+    alert(message);
   };
 
   const onUpgradeEvent = (upgradeEvent, level) => {
