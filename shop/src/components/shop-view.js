@@ -3,6 +3,7 @@ import { Header } from './lars/header';
 import { Banner } from './lars/banner';
 import { Footer } from './lars/footer';
 import { Alarm } from '../icons/alarm';
+import { Label } from '../icons/label';
 import { UserReview } from './lars/user-review';
 import ProductImage from '../images/plumbus.png';
 
@@ -29,7 +30,7 @@ export const ShopView = (
     const key = index++;
     return <UserReview userData={element} key={key} />
   });
-  const { buttonUpgrade, imageUpgrade} = shopUpgrades
+  const { buttonUpgrade, imageUpgrade, guidingArrows } = shopUpgrades
 
   const { level } = buttonUpgrade;
   const buttonWidth = 15 * (1 + level);
@@ -45,6 +46,11 @@ export const ShopView = (
     imageStyle.display = "block";
   }
 
+  const labels = [];
+  for (var i = 0; i < guidingArrows.level; ++i) {
+    labels.push(<Label classes={`guidingarrow-${i}`} />);
+  }
+
   console.log(shopUpgrades);
   return <div id = "shopview">
     <Header />
@@ -53,6 +59,7 @@ export const ShopView = (
       Buy Now
     </div>
     <img id="productimage" src={ProductImage} style={imageStyle} alt="Rendering of a Plumbus" />
+    {labels}
     {/*<div>
       In Stock: 
     </div>
