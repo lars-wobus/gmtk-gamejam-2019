@@ -124,6 +124,7 @@
     "label": "Sue the research team",
     "type": "operation",
     "costs": 1000,
+    "isRepeatable": false,
     "actions": "add money 10000; message You got a pretty good deal out of that lawsuit. That will teach these egg-heads that failure is not an option in the Plumbus industry!"
   }
 }

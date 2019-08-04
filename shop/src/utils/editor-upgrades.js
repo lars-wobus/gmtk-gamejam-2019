@@ -33,9 +33,14 @@ export const initEditorUpgrades = (
       costs: upgradeDef.costs,
       actions: upgradeDef.actions
     };
-    if (upgradeDef.type === "research") {
-      upgrade.isRunning = false;
-      upgrade.progress = 0;
+    switch (upgradeDef.type) {
+      case "research":
+        upgrade.isRunning = false;
+        upgrade.progress = 0;
+        break;
+      case "operation":
+        upgrade.isRepeatable = upgradeDef.isRepeatable;
+        break;
     }
     section.upgrades[upgradeName] = upgrade;
     console.info(`initialized upgrade "${sectionName}"/"${upgradeName}"`);
