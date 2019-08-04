@@ -63,6 +63,10 @@ export const runUpgradeAction = (
       case "activate":
         activateUpgrade(action, upgradeDefinitions, upgradeData, parts);
         break;
+      case "show":
+        let statName = parts.shift();
+        activateStat(action, statsData, statName, parts);
+        break;
       case "message":
         onMessage(parts.join(" "));
         break;
@@ -102,5 +106,31 @@ const activateUpgrade = (action, upgradeDefinitions, upgradeData, upgradeNames) 
     section.isVisible = true;
     section.upgrades[upgradeName].isVisible = true;
     console.info(`activated upgrade "${sectionName}"/"${upgradeName}"!`);
+  });
+};
+
+const activateStat = (action, statsData, statName, elements) => {
+  let stat = statsData[statName];
+  if (!stat) {
+    console.error(`could not perform action "${action}": could not find stat "${statName}"!`);
+    return;
+  }
+
+  stat.statVisible = true;
+  console.info(`activated stat "${statName}!`);
+  elements.forEach(element => {
+    if (element !== "value" && element !== "cap" && element !== "rate" && element !== "rateCap") {
+      console.error(`error while performing action "${action}": invalid stat element "${statName}.${element}"!`);
+      return;
+    }
+
+    let elementValue = stat[element];
+    let visiblePropertyName = `${element}Visible`;
+    if (elementValue === undefined || elementValue === null) {
+      console.error(`error while performing action "${action}": could not find stat element "${statName}.${element}"!`);
+      return;
+    }
+    stat[visiblePropertyName] = true;
+    console.info(`activated stat element "${statName}.${element}"!`);
   });
 };

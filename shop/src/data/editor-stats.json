@@ -45,7 +45,7 @@
   "visits": {
     "name": "Shop visitors",
     "displayType": "int",
-    "statVisible": false,
+    "statVisible": true,
     "value": 0,
     "cap": null,
     "rate": 1,
