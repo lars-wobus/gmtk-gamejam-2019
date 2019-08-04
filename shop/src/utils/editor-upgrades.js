@@ -67,7 +67,7 @@ export const runUpgradeAction = (
       .filter(word => word.length > 0);
     let operation = parts.shift();
     switch (operation) {
-      case "plus":
+      case "add":
         changeStat(action, statsData, parts, (stat, elementName, amount) => stat[elementName] += amount);
         break;
       case "multiply":

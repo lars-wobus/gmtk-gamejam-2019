@@ -5,11 +5,11 @@
     "type": "multilevel",
     "costs": [10, 15, 25, 50, 250],
     "actions": [
-      "plus conversion 0.01; activate productImage",
-      "plus conversion 0.01",
-      "plus conversion 0.01",
-      "plus conversion 0.01",
-      "plus conversion 0.02"
+      "add conversion 0.01; activate productImage",
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.02"
     ]
   },
   "tellYourFriendsBox": {
@@ -18,11 +18,11 @@
     "type": "multilevel",
     "costs": [20, 40, 80, 200, 1000],
     "actions": [
-      "plus visits rate 1; activate trafficAnalysis",
-      "plus visits rate 1.5",
-      "plus visits rate 2",
-      "plus visits rate 3",
-      "plus visits rate 5"
+      "add visits rate 1; activate trafficAnalysis",
+      "add visits rate 1.5",
+      "add visits rate 2",
+      "add visits rate 3",
+      "add visits rate 5"
     ]
   },
   "trafficAnalysis": {
@@ -31,14 +31,14 @@
     "type": "research",
     "costs": 200,
     "duration": 90,
-    "actions": "plus visits 0.2; show visits rate"
+    "actions": "add visits 0.2; show visits rate"
   },
   "productImage": {
     "section": "shop",
     "label": "Product image",
     "type": "normal",
     "costs": 20,
-    "actions": "plus conversion 0.02; activate imageUpgrade guidingArrows"
+    "actions": "add conversion 0.02; activate imageUpgrade guidingArrows"
   },
   "imageUpgrade": {
     "section": "shop",
@@ -46,9 +46,9 @@
     "type": "multilevel",
     "costs": [20, 30, 50],
     "actions": [
-      "plus conversion 0.01",
-      "plus conversion 0.01",
-      "plus conversion 0.02"
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.02"
     ]
   },
   "guidingArrows": {
@@ -57,9 +57,9 @@
     "type": "multilevel",
     "costs": [20, 25, 30],
     "actions": [
-      "plus conversion 0.01; activate conversionAnalysis",
-      "plus conversion 0.01",
-      "plus conversion 0.01; activate suggestiveEmojis"
+      "add conversion 0.01; activate conversionAnalysis",
+      "add conversion 0.01",
+      "add conversion 0.01; activate suggestiveEmojis"
     ]
   },
   "conversionAnalysis": {
@@ -68,7 +68,7 @@
     "type": "research",
     "costs": 200,
     "duration": 90,
-    "actions": "plus conversion 0.03; show conversion value"
+    "actions": "add conversion 0.03; show conversion value"
   },
   "suggestiveEmojis": {
     "section": "shop",
@@ -76,9 +76,9 @@
     "type": "multilevel",
     "costs": [20, 25, 30],
     "actions": [
-      "plus conversion 0.01; activate fakeReviews phase2",
-      "plus conversion 0.01",
-      "plus conversion 0.01"
+      "add conversion 0.01; activate fakeReviews phase2",
+      "add conversion 0.01",
+      "add conversion 0.01"
     ]
   },
   "fakeReviews": {
@@ -87,9 +87,9 @@
     "type": "multilevel",
     "costs": [20, 25, 30],
     "actions": [
-      "plus conversion 0.01",
-      "plus conversion 0.01",
-      "plus conversion 0.01"
+      "add conversion 0.01",
+      "add conversion 0.01",
+      "add conversion 0.01"
     ]
   },
   "phase2": {
@@ -105,35 +105,35 @@
     "label": "Image as button",
     "type": "normal",
     "costs": 100,
-    "actions": "plus conversion 0.01; activate buttonButton"
+    "actions": "add conversion 0.01; activate buttonButton"
   },
   "headerButton": {
     "section": "shop",
     "label": "Header buttons",
     "type": "normal",
     "costs": 100,
-    "actions": "plus conversion 0.01; activate buttonButton"
+    "actions": "add conversion 0.01; activate buttonButton"
   },
   "arrowButton": {
     "section": "shop",
     "label": "Interactive arrows",
     "type": "normal",
     "costs": 100,
-    "actions": "plus conversion 0.01; activate buttonButton"
+    "actions": "add conversion 0.01; activate buttonButton"
   },
   "buttonButton": {
     "section": "shop",
     "label": "Buttonception",
     "type": "normal",
     "costs": 300,
-    "actions": "plus conversion 0.01"
+    "actions": "add conversion 0.01"
   },
   "crossSelling": {
     "section": "shop",
     "label": "Cross selling",
     "type": "normal",
     "costs": 400,
-    "actions": "plus conversion 0.01; activate moreProducts"
+    "actions": "add conversion 0.01; activate moreProducts"
   },
   "moreProducts": {
     "section": "research",
@@ -150,6 +150,6 @@
     "costs": 1000,
     "isRepeatable": false,
     "cooldown": 0,
-    "actions": "plus money 10000; message You got a pretty good deal out of that lawsuit. That will teach these egg-heads that failure is not an option in the Plumbus industry!"
+    "actions": "add money 10000; message You got a pretty good deal out of that lawsuit. That will teach these egg-heads that failure is not an option in the Plumbus industry!"
   }
 }
