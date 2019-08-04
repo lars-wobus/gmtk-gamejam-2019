@@ -2,8 +2,10 @@ import React from 'react';
 import { Header } from './lars/header';
 import { Banner } from './lars/banner';
 import { Footer } from './lars/footer';
-import { Alarm } from '../icons/alarm';
 import { Label } from '../icons/label';
+import { GestureTabHold } from '../icons/gesture-tab-hold';
+import { BellRing } from '../icons/bell-ring';
+import { Alarm } from '../icons/alarm';
 import { UserReview } from './lars/user-review';
 import ProductImage from '../images/plumbus.png';
 
@@ -30,7 +32,9 @@ export const ShopView = (
     const key = index++;
     return <UserReview userData={element} key={key} />
   });
-  const { buttonUpgrade, imageUpgrade, guidingArrows } = shopUpgrades
+  const {
+    buttonUpgrade, imageUpgrade, guidingArrows, suggestiveEmojis
+  } = shopUpgrades;
 
   const { level } = buttonUpgrade;
   const buttonWidth = 15 * (1 + level);
@@ -60,13 +64,16 @@ export const ShopView = (
     </div>
     <img id="productimage" src={ProductImage} style={imageStyle} alt="Rendering of a Plumbus" />
     {labels}
+    {(suggestiveEmojis.level >= 1) && <GestureTabHold classes="gesturetabhold" />}
+    {(suggestiveEmojis.level >= 2) && <BellRing classes="bellring" />}
+    {(suggestiveEmojis.level >= 3) && <Alarm classes="alarm" />}
     {/*<div>
       In Stock: 
     </div>
     <div>
       Remaining: 
-    </div>*/}
-    <Alarm classes="alarm-1" />
+    </div>*
+    <Alarm classes="alarm-1" />*/}
     <div className="review-container">{array}</div>
     <Footer />
   </div>

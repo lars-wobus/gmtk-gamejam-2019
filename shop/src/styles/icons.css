@@ -1,10 +1,10 @@
-.alarm-1 {
+/*.alarm-1 {
   width: 96px;
   height: 96px;
   position: absolute;
   top: 180px;
   right: 30px;
-}
+}*/
 
 .star {
   width: 24px;
@@ -35,4 +35,76 @@
   transform: rotate(180deg);
   right: -1%;
   top: 11%;
+}
+
+.gesturetabhold, .bellring, .alarm {
+  width: 96px;
+  height: 96px;
+  position: absolute;
+  top: 180px;
+}
+
+.gesturetabhold {
+  animation: point 1s infinite;
+  right: 32%;
+  top: 21.1%;
+}
+
+.bellring {
+  animation: swing 1s infinite;
+  right: 7%;
+}
+
+.alarm {
+  animation: fadeIn 1s infinite;
+  left: 35%;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes point {
+  10%, 90% {
+    transform: translate3d(0, -1px, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(0, 2px, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+      
+@keyframes swing { 
+  20% { transform: rotate(15deg); } 
+  40% { transform: rotate(-10deg); } 
+  60% { transform: rotate(5deg); } 
+  80% { transform: rotate(-5deg); } 
+  100% { transform: rotate(0deg); } 
 }
