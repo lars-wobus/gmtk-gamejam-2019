@@ -38,7 +38,9 @@ export const ShopView = (
 
   const { level } = buttonUpgrade;
   const buttonWidth = 15 * (1 + level);
-  const buttonStyle = { width: `${buttonWidth}%` };
+  const buttonHeight =  20 * (1 + level);
+  //const buttonStyle = { width: `${buttonWidth}%`, height: `${buttonHeight}px`};
+  const buttonClass = `buy buy-${level}`
 
   const maxImageLevel = imageUpgrade.actions.length;
   const imageStepSize = 100 / maxImageLevel;
@@ -55,19 +57,19 @@ export const ShopView = (
     labels.push(<Label classes={`guidingarrow-${i}`} />);
   }
 
-  const showHeader = false;
-  const showBanner = false;
-  const showFooter = false;
-  const showReviews = false;
+  const showHeader = true;
+  const showBanner = true;
+  const showFooter = true;
+  const showReviews = true;
 
   console.log(shopUpgrades);
   return <div id = "shopview">
     {<Header classes={(showHeader ? "" : "hidden")} />}
     {<Banner classes={(showBanner ? "" : "hidden")} />}
-    <div id="buy" style={buttonStyle} onClick={() => onButtonClick()}>
+    <div className={buttonClass} onClick={() => onButtonClick()}>
       Buy Now
     </div>
-    <img id="productimage" src={ProductImage} style={imageStyle} alt="Rendering of a Plumbus" />
+    {(imageUpgrade.level !== 0 ) && <img id="productimage" src={ProductImage} style={imageStyle} alt="Rendering of a Plumbus" />}
     {labels}
     {(suggestiveEmojis.level >= 1) && <GestureTabHold classes="gesturetabhold" />}
     {(suggestiveEmojis.level >= 2) && <BellRing classes="bellring" />}

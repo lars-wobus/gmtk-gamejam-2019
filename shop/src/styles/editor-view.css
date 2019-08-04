@@ -1,7 +1,10 @@
 #editorview {
-  border-left: 1px solid black;
+  border-left: 1px solid darkgray;
   background-color: #efefef;
-  width:30%;
+  width: 30%;
+  height: 100vh;
+  position: fixed;
+  right: 0;
 }
 
 .stats-element, .upgradesection  {
