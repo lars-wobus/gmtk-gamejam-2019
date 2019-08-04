@@ -15,6 +15,8 @@ export const initEditorUpgrades = (
   });
 
   Object.keys(upgradeDefinitions).forEach(upgradeName => {
+    if (upgradeName.startsWith("=")) return;
+
     let upgradeDef = upgradeDefinitions[upgradeName];
     let sectionName = upgradeDef.section;
     let section = upgradeData[sectionName];
