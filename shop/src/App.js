@@ -242,12 +242,8 @@ function App() {
       return;
     }
     const interval = setInterval(() => {
-      if (userReviews.length < 30) {
-        setUserReviews([...userReviews, createUserReview(0, false)]);
-      } else {
-        userReviews.shift();
-        setUserReviews([...userReviews, createUserReview(0, false)]);
-      }
+      while (userReviews.length >= 10) userReviews.pop();
+      setUserReviews([createUserReview(0, false), ...userReviews]);
     }, 8000 / (upgrades.shop.upgrades.fakeReviews.level + 2));
 
     return () => {
