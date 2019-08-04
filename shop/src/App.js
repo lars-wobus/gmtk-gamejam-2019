@@ -21,6 +21,7 @@ import editorInitialActions from './data/editor-initial-actions';
 import shopData from './data/shop-data';
 import tutorialData from './data/tutorial-data';
 
+let initializationDone = false;
 let reviewIntervalId = null;
 
 function App() {
@@ -154,13 +155,15 @@ function App() {
     // TODO: do something with this
   };
 
-  useEffect(() => {
+  if (!initializationDone) {
+    initializationDone = true;
+
     editorInitialActions.forEach(action => {
       runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, () => onMessage())
     });
     setStats(stats);
     setUpgrades(upgrades);
-  });
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
