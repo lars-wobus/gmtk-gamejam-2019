@@ -78,7 +78,7 @@ export const ShopView = (
       Remaining: 
     </div>*
     <Alarm classes="alarm-1" />*/}
-    {(showReviews && array.length > 0) && <div className="review-container">{array}</div>}
+    {(showReviews) && <div className="review-container">{array}</div>}
     {<Footer classes={(showFooter ? "" : "hidden")} />}
   </div>
 };

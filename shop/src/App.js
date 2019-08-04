@@ -32,7 +32,7 @@ function App() {
   const [tutorialIndex, setTutorialIndex] = useState(0);
   const [shopName, setShopName] = useState(settings.default_shop_name);
 
-  const [userReviews, setUserReviews] = useState([]);
+  const [userReviews, setUserReviews] = useState([createUserReview(0, false)]);
   const [stats, setStats] = useState(editorStatsData);
   const [upgrades, setUpgrades] = useState(() => initEditorUpgrades(editorSectionDefinitions, editorUpgradeDefinitions));
   const [shopButtons, setShopButtons] = useState(shopData.buttons);
@@ -186,6 +186,10 @@ function App() {
   }, []);
 
   useEffect(() => {
+    console.warn(upgrades.shop.upgrades.fakeReviews.level);
+    if (upgrades.shop.upgrades.fakeReviews.level < 1) {
+      return;
+    }
     const interval = setInterval(() => {
       if (userReviews.length < 30) {
         setUserReviews([...userReviews, createUserReview(0, false)]);
@@ -193,12 +197,12 @@ function App() {
         userReviews.shift();
         setUserReviews([...userReviews, createUserReview(0, false)]);
       }
-    }, 3000);
+    }, 8000 / (upgrades.shop.upgrades.fakeReviews.level + 2));
 
     return () => {
       clearInterval(interval);
     };
-  }, [userReviews]);
+  }, [userReviews, upgrades.shop.upgrades.fakeReviews.level]);
 
   return (
     <div className="App">
