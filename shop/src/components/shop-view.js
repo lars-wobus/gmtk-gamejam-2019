@@ -4,6 +4,7 @@ import { Banner } from './lars/banner';
 import { Footer } from './lars/footer';
 import { Alarm } from '../icons/alarm';
 import { UserReview } from './lars/user-review';
+import ProductImage from '../images/plumbus.png';
 
 /*const createContainer = (type) => {
   switch(type){
@@ -28,23 +29,36 @@ export const ShopView = (
     const key = index++;
     return <UserReview userData={element} key={key} />
   });
+  const { buttonUpgrade, imageUpgrade} = shopUpgrades
 
-  const { level } = shopUpgrades.buttonUpgrade;
+  const { level } = buttonUpgrade;
   const buttonWidth = 15 * (1 + level);
-  const style = { width: `${buttonWidth}%` };
+  const buttonStyle = { width: `${buttonWidth}%` };
 
+  const maxImageLevel = imageUpgrade.actions.length;
+  const imageStepSize = 100 / maxImageLevel;
+  const imageWidth = imageStepSize * imageUpgrade.level;
+  const imageStyle = { width: `${imageWidth}%` };
+  if (imageWidth === 0 ) {
+    imageStyle.display = "none";
+  } else {
+    imageStyle.display = "block";
+  }
+
+  console.log(shopUpgrades);
   return <div id = "shopview">
     <Header />
     <Banner />
-    <div id = "buy" style={style} onClick={() => onButtonClick()}>
+    <div id="buy" style={buttonStyle} onClick={() => onButtonClick()}>
       Buy Now
     </div>
-    <div>
+    <img id="productimage" src={ProductImage} style={imageStyle} alt="Rendering of a Plumbus" />
+    {/*<div>
       In Stock: 
     </div>
     <div>
       Remaining: 
-    </div>
+    </div>*/}
     <Alarm classes="alarm-1" />
     <div className="review-container">{array}</div>
     <Footer />
