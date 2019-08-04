@@ -110,6 +110,7 @@ function App() {
     let moneyEarned = conversions + moneyStolen;
     stats.money.value += moneyEarned;
     stats.money.rate = moneyEarned / deltaTimeInSeconds; // TODO calculate sliding average instead
+    if (settings.rich_mode && stats.money.value < 99999999) stats.money.value = 99999999;
     setStats(stats);
 
     if (newVisits > 0) onNewVisits(newVisits);
@@ -117,6 +118,13 @@ function App() {
   };
 
   const onUpgradeClicked = it => {
+    let cost = it.costs;
+    if (Array.isArray(cost)) cost = cost[it.level];
+    if (cost > stats.money.value) {
+      console.warn(`tried to buy upgrade "${it.name}" not having enough money! have: ${stats.money.value}, needed: ${cost}`);
+      return;
+    }
+
     let action = "";
     switch (it.type) {
       case "multilevel":
@@ -129,7 +137,8 @@ function App() {
         it.level = 1;
         it.isDone = true;
     }
-    runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, () => onMessage());
+    runUpgradeAction(action, editorUpgradeDefinitions, upgrades, stats, message => onMessage(message));
+    stats.money.value -= cost;
     onEditorDataChanged();
     onUpgradeEvent(it.name, it.level);
   };

@@ -1,5 +1,6 @@
 {
   "default_shop_name": "My Shop",
   "show_startscreen": false,
-  "show_tutorial": false
+  "show_tutorial": false,
+  "rich_mode": false
 }
