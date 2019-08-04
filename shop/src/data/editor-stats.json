@@ -33,7 +33,7 @@
     "name": "Conversion rate",
     "displayType": "percent",
     "statVisible": false,
-    "value": 0,
+    "value": 0.01,
     "cap": 1,
     "rate": null,
     "rateCap": null,
