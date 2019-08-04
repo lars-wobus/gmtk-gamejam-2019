@@ -60,7 +60,7 @@ export const ShopView = (
   const showFooter = false;
   const showReviews = false;
 
-  console.log(shopUpgrades);
+  // console.log(shopUpgrades);
   return <div id = "shopview">
     {<Header classes={(showHeader ? "" : "hidden")} />}
     {<Banner classes={(showBanner ? "" : "hidden")} />}
