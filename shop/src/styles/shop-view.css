@@ -117,6 +117,10 @@
   border-spacing: 10px;
 }
 
+.cross-selling-table.active .comparison {
+  background-color: rgb(255, 230, 230);
+}
+
 .comparison {
   display: table-cell;
   width: 200px;
@@ -126,7 +130,7 @@
   margin-right: auto;
   padding: 10px 10px;
   font-weight: 400;
-  background-color: rgb(255, 230, 230);
+   background-color: #fff;
 }
 
 .comparison .rendering {

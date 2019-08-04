@@ -6,7 +6,11 @@
     width: 96%;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(255, 230, 230);
+    background-color: #fff;
+}
+
+.review-container.active {
+  background-color: rgb(255, 230, 230);
 }
 
 .user-review {

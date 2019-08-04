@@ -58,8 +58,8 @@ export const ShopView = (
     {(suggestiveEmojis.level >= 1) && <GestureTabHold classes="gesturetabhold" />}
     {(suggestiveEmojis.level >= 2) && <BellRing classes="bellring" />}
     {(suggestiveEmojis.level >= 3) && <Alarm classes="alarm" />}
-    {(crossSelling.level > 0) && <CrossSellingTable />}
-    {(showReviews) && <div className="review-container">{array}</div>}
+    {(crossSelling.level > 0) && <CrossSellingTable classes={`${corporateDesign}`} />}
+    {(showReviews) && <div className={`review-container ${corporateDesign}`}>{array}</div>}
     {<Footer classes={(showFooter ? `${corporateDesign}` : "hidden")} />}
   </div>
 };
