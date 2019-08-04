@@ -65,7 +65,7 @@ function App() {
     return increase;
   };
 
-  const calculateStats = (deltaTimeInSeconds) => {
+  const calculateStats = deltaTimeInSeconds => {
     calcRate(stats.captiveHumans, deltaTimeInSeconds);
     calcRate(stats.freeHumans, deltaTimeInSeconds);
     let huntedHumans = stats.huntedHumans.rate * deltaTimeInSeconds;
@@ -112,10 +112,35 @@ function App() {
     stats.money.value += moneyEarned;
     stats.money.rate = moneyEarned / deltaTimeInSeconds; // TODO calculate sliding average instead
     if (settings.rich_mode && stats.money.value < 99999999) stats.money.value = 99999999;
-    setStats(stats);
 
     if (newVisits > 0) onNewVisits(newVisits);
     if (newPurchases > 0) onNewPurchases(newPurchases);
+  };
+
+  const updateTimedUpgrades = deltaTimeInSeconds => {
+    Object.keys(upgrades).forEach(sectionName => {
+      let section = upgrades[sectionName];
+      Object.keys(section.upgrades).forEach(upgradeName => {
+        let upgrade = section.upgrades[upgradeName];
+
+        if (upgrade.type === "research" && upgrade.isRunning) {
+          upgrade.progress += deltaTimeInSeconds / upgrade.duration * settings.upgrade_speed_multiplier;
+          if (upgrade.progress >= 1) {
+            upgrade.isRunning = false;
+            upgrade.isDone = true;
+            upgrade.level = 1;
+            runAction(upgrade.actions);
+            onEditorDataChanged();
+            onUpgradeEvent(upgrade.name, upgrade.level);
+          }
+        }
+
+        if (upgrade.type === "operation" && upgrade.isOnCooldown) {
+          upgrade.cooldownProgress += deltaTimeInSeconds / upgrade.cooldown * settings.cooldown_speed_multiplier;
+          if (upgrade.cooldownProgress >= 1) upgrade.isOnCooldown = false;
+        }
+      });
+    });
   };
 
   const onUpgradeClicked = it => {
@@ -144,18 +169,18 @@ function App() {
         break;
       case "research":
         it.isRunning = true;
-        const interval = setInterval(() => {
-          it.progress += 0.01;
-          if (it.progress >= 1) {
-            clearInterval(interval);
-            it.isRunning = false;
-            it.isDone = true;
-            it.level = 1;
-            runAction(it.actions);
-            onEditorDataChanged();
-            onUpgradeEvent(it.name, it.level);
-          }
-        }, 10 * settings.upgrade_duration); // 1000ms / 100times * durationInSeconds
+        it.progress = 0;
+        onEditorDataChanged();
+        break;
+      case "operation":
+        runAction(it.actions);
+        if (it.isRepeatable) {
+          it.isOnCooldown = true;
+          it.cooldownProgress = 0;
+        } else {
+          it.isDone = true;
+          it.level = 1;
+        }
         onEditorDataChanged();
         break;
       default:
@@ -194,10 +219,12 @@ function App() {
   }
 
   useEffect(() => {
+    const delta = 1 / settings.updates_per_second;
     const interval = setInterval(() => {
-      calculateStats(0.5);
+      calculateStats(delta);
+      updateTimedUpgrades(delta);
       onEditorDataChanged();
-    }, 500);
+    }, delta * 1000);
     return () => {
       clearInterval(interval);
     };

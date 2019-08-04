@@ -75,6 +75,7 @@
     "label": "Dynamic content",
     "type": "research",
     "costs": 400,
+    "duration": 90,
     "actions": "activate imageButton headerButton arrowButton crossSelling"
   },
   "imageButton": {
@@ -117,6 +118,7 @@
     "label": "More than one product",
     "type": "research",
     "costs": 4000,
+    "duration": 120,
     "actions": "activate sueResearchTeam; message The research team was not able to add additional products to the shop. The head of the department mumbled something senseless about 'theme constraints' and apologized heavily. You should probably sue them for their incompetence!"
   },
   "sueResearchTeam": {
@@ -125,6 +127,7 @@
     "type": "operation",
     "costs": 1000,
     "isRepeatable": false,
+    "cooldown": 0,
     "actions": "add money 10000; message You got a pretty good deal out of that lawsuit. That will teach these egg-heads that failure is not an option in the Plumbus industry!"
   }
 }

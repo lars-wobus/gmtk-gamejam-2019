@@ -37,9 +37,13 @@ export const initEditorUpgrades = (
       case "research":
         upgrade.isRunning = false;
         upgrade.progress = 0;
+        upgrade.duration = upgradeDef.duration;
         break;
       case "operation":
         upgrade.isRepeatable = upgradeDef.isRepeatable;
+        upgrade.cooldown = upgradeDef.cooldown;
+        upgrade.isOnCooldown = false;
+        upgrade.cooldownProgress = 0;
         break;
     }
     section.upgrades[upgradeName] = upgrade;

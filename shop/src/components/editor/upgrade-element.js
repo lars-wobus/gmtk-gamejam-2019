@@ -12,6 +12,8 @@ export const UpgradeElement = (
       return multiLevel(upgrade, onUpgrade);
     case "research":
       return research(upgrade, onUpgrade);
+    case "operation":
+      return operation(upgrade, onUpgrade);
     default:
       console.error(`cannot render upgrade "${upgrade.name}": unknown upgrade type "${upgrade.type}"!`);
       return null;
@@ -56,6 +58,23 @@ const research = (it, onUpgrade) => {
     return <div>
       <Button
         label={`Research: ${it.label} ($${it.costs})`}
+        onButtonClick={() => onUpgrade(it)}
+      />
+    </div>
+  }
+};
+
+const operation = (it, onUpgrade) => {
+  if (it.isDone) {
+    return null
+  } else if (it.isOnCooldown) {
+    return <div>
+      {`${it.label} (recharging: ${Math.floor(it.cooldownProgress * 100)}%)`}
+    </div>
+  } else {
+    return <div>
+      <Button
+        label={`${it.label} ($${it.costs})`}
         onButtonClick={() => onUpgrade(it)}
       />
     </div>
