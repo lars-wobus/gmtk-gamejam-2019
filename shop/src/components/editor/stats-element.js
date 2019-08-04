@@ -36,8 +36,8 @@ export const StatsElement = (
   }
 
   return <div>
-    <div id = "stats-element-name">{name}:</div>
-    <div id = "stats-element-value">{valueString}</div>
-    <div id = "stats-element-rate">{rateString}</div>
+    <div className = "stats-element-name">{name}:</div>
+    <div className = "stats-element-value">{valueString}</div>
+    <div className = "stats-element-rate">{rateString}</div>
   </div>
 };
