@@ -2,8 +2,9 @@
   "default_shop_name": "Super Plumbus Store",
   "show_startscreen": true,
   "show_tutorial": true,
-  "rich_mode": true,
-  "updates_per_second": 2,
-  "upgrade_speed_multiplier": 20,
-  "cooldown_speed_multiplier": 20
+  "rich_mode": false,
+  "updates_per_second": 4,
+  "time_multiplier": 1,
+  "upgrade_speed_multiplier": 1,
+  "cooldown_speed_multiplier": 1
 }

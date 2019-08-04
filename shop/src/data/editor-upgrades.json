@@ -5,11 +5,11 @@
     "label": "Improve Layout",
     "type": "multilevel",
     "costs": [
+      5,
       10,
       15,
-      25,
-      50,
-      250
+      20,
+      30
     ],
     "actions": [
       "add conversion 0.01; activate productImage",
@@ -24,25 +24,25 @@
     "label": "Tell your friends box",
     "type": "multilevel",
     "costs": [
+      10,
+      15,
       20,
-      40,
-      80,
-      200,
-      1000
+      30,
+      50
     ],
     "actions": [
       "add visits rate 1; activate trafficAnalysis",
       "add visits rate 1.5",
       "add visits rate 2",
-      "add visits rate 3",
-      "add visits rate 5"
+      "add visits rate 4",
+      "add visits rate 9"
     ]
   },
   "productImage": {
     "section": "shop",
     "label": "Product image",
     "type": "normal",
-    "costs": 20,
+    "costs": 50,
     "actions": "add conversion 0.02; activate imageUpgrade guidingArrows"
   },
   "imageUpgrade": {
@@ -50,9 +50,9 @@
     "label": "Better image",
     "type": "multilevel",
     "costs": [
-      20,
-      30,
-      50
+      50,
+      70,
+      100
     ],
     "actions": [
       "add conversion 0.01",
@@ -65,9 +65,9 @@
     "label": "Guiding arrows",
     "type": "multilevel",
     "costs": [
-      20,
-      25,
-      30
+      40,
+      60,
+      90
     ],
     "actions": [
       "add conversion 0.01; activate conversionAnalysis",
@@ -80,9 +80,9 @@
     "label": "Suggestive emojis",
     "type": "multilevel",
     "costs": [
-      20,
-      25,
-      30
+      80,
+      130,
+      170
     ],
     "actions": [
       "add conversion 0.01; activate fakeReviews phase2",
@@ -95,64 +95,64 @@
     "label": "Fake reviews",
     "type": "multilevel",
     "costs": [
-      20,
-      25,
-      30
+      200,
+      400,
+      600
     ],
     "actions": [
-      "add conversion 0.01",
-      "add conversion 0.01",
-      "add conversion 0.01"
+      "add conversion 0.01; add visits rate 5",
+      "add conversion 0.02; add visits rate 5",
+      "add conversion 0.02; add visits rate 8"
     ]
   },
   "imageButton": {
     "section": "shop",
     "label": "Image as button",
     "type": "normal",
-    "costs": 100,
+    "costs": 400,
     "actions": "add conversion 0.01; activate buttonButton"
   },
   "headerButton": {
     "section": "shop",
     "label": "Header buttons",
     "type": "normal",
-    "costs": 100,
-    "actions": "add conversion 0.01; activate buttonButton"
+    "costs": 400,
+    "actions": "add conversion 0.02; activate buttonButton"
   },
   "arrowButton": {
     "section": "shop",
     "label": "Interactive arrows",
     "type": "normal",
-    "costs": 100,
-    "actions": "add conversion 0.01; activate buttonButton"
+    "costs": 300,
+    "actions": "add conversion 0.02; activate buttonButton"
   },
   "buttonButton": {
     "section": "shop",
     "label": "Buttonception",
     "type": "normal",
-    "costs": 300,
-    "actions": "add conversion 0.01; activate hypnoticBackground phase3"
+    "costs": 600,
+    "actions": "add conversion 0.04; activate hypnoticBackground phase3"
   },
   "crossSelling": {
     "section": "shop",
     "label": "Cross selling",
     "type": "normal",
-    "costs": 400,
-    "actions": "add conversion 0.01; activate moreProducts"
+    "costs": 2000,
+    "actions": "add conversion 0.06; activate moreProducts"
   },
   "hypnoticBackground": {
     "section": "shop",
     "label": "Hypnotic background",
     "type": "normal",
-    "costs": 400,
-    "actions": "TODO"
+    "costs": 3000,
+    "actions": "add conversion 0.08"
   },
   "falseDiscounts": {
     "section": "shop",
-    "label": "False discounts TODO",
+    "label": "False discounts",
     "type": "normal",
-    "costs": 400,
-    "actions": "TODO"
+    "costs": 2000,
+    "actions": "add conversion 0.04"
   },
   "socialMediaButtons": {
     "section": "shop",
@@ -166,11 +166,11 @@
     "label": "Search engine optimization",
     "type": "multilevel",
     "costs": [
-      20,
-      25,
-      25,
-      25,
-      30
+      1000,
+      2000,
+      3000,
+      5000,
+      8000
     ],
     "actions": [
       "add visits rate 5",
@@ -185,12 +185,12 @@
     "label": "Faster mail server",
     "type": "multilevel",
     "costs": [
-      20,
-      25,
-      25,
-      25,
-      25,
-      30
+      4000,
+      6000,
+      8000,
+      10000,
+      12000,
+      15000
     ],
     "actions": [
       "add mails rate 100",
@@ -206,10 +206,10 @@
     "label": "Browser exploits",
     "type": "multilevel",
     "costs": [
-      20,
-      25,
-      25,
-      30
+      5000,
+      7000,
+      10000,
+      14000
     ],
     "actions": [
       "add browserExploits 0.05; activate botnet",
@@ -223,12 +223,12 @@
     "label": "Mailbox hijacker",
     "type": "multilevel",
     "costs": [
-      20,
-      25,
-      25,
-      25,
-      25,
-      30
+      10000,
+      10000,
+      10000,
+      10000,
+      10000,
+      10000
     ],
     "actions": [
       "add botMails rate 0.5",
@@ -244,13 +244,13 @@
     "label": "Click scripts",
     "type": "multilevel",
     "costs": [
-      20,
-      25,
-      25,
-      25,
-      25,
-      25,
-      30
+      15000,
+      15000,
+      15000,
+      15000,
+      15000,
+      15000,
+      15000
     ],
     "actions": [
       "add botPurchases rate 0.1",
@@ -267,10 +267,10 @@
     "label": "Networking exploit",
     "type": "multilevel",
     "costs": [
-      20,
-      25,
-      25,
-      30
+      15000,
+      15000,
+      15000,
+      15000
     ],
     "actions": [
       "add conversion 0.01; show bots rate",
@@ -283,56 +283,56 @@
     "section": "bots",
     "label": "Homepage override",
     "type": "normal",
-    "costs": 400,
+    "costs": 1000,
     "actions": "activate keylogger; set botVisits rate 0.2"
   },
   "keylogger": {
     "section": "bots",
     "label": "Keystore breaker",
     "type": "normal",
-    "costs": 400,
+    "costs": 8000,
     "actions": "set botStealing rate 1"
   },
   "floodSocialMedia": {
     "section": "politics",
     "label": "Flood social media",
     "type": "normal",
-    "costs": 400,
+    "costs": 10000,
     "actions": "activate imageCampaign; add visits rate 20; add publicOpinion 0.5"
   },
   "shopLobby": {
     "section": "politics",
     "label": "Plumbus lobby",
     "type": "normal",
-    "costs": 400,
+    "costs": 20000,
     "actions": "activate shoppingLaw"
   },
   "shoppingLaw": {
     "section": "politics",
     "label": "Purchase obligation law",
     "type": "normal",
-    "costs": 400,
+    "costs": 50000,
     "actions": "activate forcedMonopoly harsherPunishment shopMilitia; set conversion 0.7"
   },
   "forcedMonopoly": {
     "section": "politics",
     "label": "Forced monopoly",
     "type": "normal",
-    "costs": 400,
+    "costs": 80000,
     "actions": "set competitors 0, show competitors"
   },
   "harsherPunishment": {
     "section": "politics",
     "label": "Death penalty for not buying",
     "type": "normal",
-    "costs": 400,
+    "costs": 100000,
     "actions": "set conversion 0.9"
   },
   "humanClickFarm": {
     "section": "farms",
     "label": "Forced click farm",
     "type": "normal",
-    "costs": 4000,
+    "costs": 100000,
     "duration": 120,
     "actions": "set captiveHumans 10; show captiveHumans value cap; activate captiveBreeding farmSize"
   },
@@ -341,19 +341,19 @@
     "label": "Farm expansion",
     "type": "multilevel",
     "costs": [
-      20,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      30
+      300000,
+      300000,
+      300000,
+      300000,
+      300000,
+      300000,
+      300000,
+      300000,
+      300000,
+      300000,
+      300000,
+      300000,
+      300000
     ],
     "actions": [
       "set captiveHumans cap 1000",
@@ -376,15 +376,15 @@
     "label": "Breeding pods",
     "type": "multilevel",
     "costs": [
-      20,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      30
+      200000,
+      200000,
+      200000,
+      200000,
+      200000,
+      200000,
+      200000,
+      200000,
+      200000
     ],
     "actions": [
       "set captiveHumans rate 1",
@@ -403,21 +403,21 @@
     "label": "Human collectors",
     "type": "multilevel",
     "costs": [
-      20,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      30
+      500000,
+      500000,
+      500000,
+      500000,
+      500000,
+      500000,
+      500000,
+      500000,
+      500000,
+      500000,
+      500000,
+      500000,
+      500000,
+      500000,
+      500000
     ],
     "actions": [
       "set huntedHumans rate 1; show freeHumans value; show huntedHumans value rate",
@@ -442,7 +442,7 @@
     "section": "research",
     "label": "Traffic analysis",
     "type": "research",
-    "costs": 200,
+    "costs": 80,
     "duration": 90,
     "actions": "add visits 0.2; show visits rate"
   },
@@ -450,7 +450,7 @@
     "section": "research",
     "label": "Conversion analysis",
     "type": "research",
-    "costs": 200,
+    "costs": 100,
     "duration": 90,
     "actions": "add conversion 0.03; show conversion value; show purchases rate"
   },
@@ -458,7 +458,7 @@
     "section": "research",
     "label": "More than one product",
     "type": "research",
-    "costs": 4000,
+    "costs": 1000,
     "duration": 120,
     "actions": "activate sueResearchTeam; message The research team was not able to add additional products to the shop. The head of the department mumbled something senseless about 'theme constraints' and apologized heavily. You should probably sue them for their incompetence!"
   },
@@ -466,7 +466,7 @@
     "section": "research",
     "label": "Advertisement mails",
     "type": "research",
-    "costs": 4000,
+    "costs": 2000,
     "duration": 120,
     "actions": "add mails rate 0.5; show mails value rate; activate mailBoost"
   },
@@ -490,7 +490,7 @@
     "section": "research",
     "label": "Shop militia",
     "type": "research",
-    "costs": 4000,
+    "costs": 20000,
     "duration": 120,
     "actions": "activate corporateState"
   },
@@ -506,15 +506,15 @@
     "section": "research",
     "label": "Social engineering",
     "type": "research",
-    "costs": 400,
+    "costs": 800,
     "duration": 90,
-    "actions": "activate falseDiscounts socialMediaButtons seo adMails"
+    "actions": "activate falseDiscounts seo adMails"
   },
   "phase4": {
     "section": "research",
     "label": "Auto hacking",
     "type": "research",
-    "costs": 400,
+    "costs": 2000,
     "duration": 90,
     "actions": "activate hackCompetitor trojanMails browserExploits"
   },
@@ -522,7 +522,7 @@
     "section": "research",
     "label": "Political influence",
     "type": "research",
-    "costs": 400,
+    "costs": 10000,
     "duration": 90,
     "actions": "activate shopLobby floodSocialMedia"
   },
@@ -530,7 +530,7 @@
     "section": "research",
     "label": "Machine brain interfaces",
     "type": "research",
-    "costs": 400,
+    "costs": 30000,
     "duration": 90,
     "actions": "activate humanClickFarm"
   },
@@ -557,7 +557,7 @@
     "section": "operations",
     "label": "Plumbus propaganda campaign",
     "type": "operation",
-    "costs": 1000,
+    "costs": 2000,
     "isRepeatable": true,
     "cooldown": 90,
     "actions": "add publicOpinion 2; multiply demand rate 2"
@@ -566,7 +566,7 @@
     "section": "operations",
     "label": "Overtake the government",
     "type": "operation",
-    "costs": 1000,
+    "costs": 50000,
     "isRepeatable": false,
     "cooldown": 0,
     "actions": "activate phase6; add money 1000000"

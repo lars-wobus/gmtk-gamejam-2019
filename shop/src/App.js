@@ -248,8 +248,8 @@ function App() {
   useEffect(() => {
     const delta = 1 / settings.updates_per_second;
     const interval = setInterval(() => {
-      calculateStats(delta);
-      updateTimedUpgrades(delta);
+      calculateStats(delta * settings.time_multiplier);
+      updateTimedUpgrades(delta * settings.time_multiplier);
       onEditorDataChanged();
     }, delta * 1000);
     return () => {
