@@ -62,8 +62,8 @@ export const ShopView = (
 
   console.log(shopUpgrades);
   return <div id = "shopview">
-    {showHeader && <Header />}
-    {showBanner && <Banner />}
+    {<Header classes={(showHeader ? "" : "hidden")} />}
+    {<Banner classes={(showBanner ? "" : "hidden")} />}
     <div id="buy" style={buttonStyle} onClick={() => onButtonClick()}>
       Buy Now
     </div>
@@ -80,6 +80,6 @@ export const ShopView = (
     </div>*
     <Alarm classes="alarm-1" />*/}
     {(showReviews && array.length > 0) && <div className="review-container">{array}</div>}
-    {showFooter && <Footer />}
+    {<Footer classes={(showFooter ? "" : "hidden")} />}
   </div>
 };

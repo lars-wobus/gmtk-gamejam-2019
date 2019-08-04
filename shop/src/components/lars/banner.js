@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const Banner = () => {
-  return <div className="banner">
+export const Banner = ({ classes }) => {
+  return <div className={`banner ${classes}`}>
     <img alt="Banner"/>
   </div>
 };
