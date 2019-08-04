@@ -1,126 +1,5 @@
 {
-  "========= UPGRADES SINGLE =========": null,
-  "productImage": {
-    "section": "shop",
-    "label": "Product image",
-    "type": "normal",
-    "costs": 20,
-    "actions": "add conversion 0.02; activate imageUpgrade guidingArrows"
-  },
-  "imageButton": {
-    "section": "shop",
-    "label": "Image as button",
-    "type": "normal",
-    "costs": 100,
-    "actions": "add conversion 0.01; activate buttonButton"
-  },
-  "headerButton": {
-    "section": "shop",
-    "label": "Header buttons",
-    "type": "normal",
-    "costs": 100,
-    "actions": "add conversion 0.01; activate buttonButton"
-  },
-  "arrowButton": {
-    "section": "shop",
-    "label": "Interactive arrows",
-    "type": "normal",
-    "costs": 100,
-    "actions": "add conversion 0.01; activate buttonButton"
-  },
-  "buttonButton": {
-    "section": "shop",
-    "label": "Buttonception",
-    "type": "normal",
-    "costs": 300,
-    "actions": "add conversion 0.01"
-  },
-  "crossSelling": {
-    "section": "shop",
-    "label": "Cross selling",
-    "type": "normal",
-    "costs": 400,
-    "actions": "add conversion 0.01; activate moreProducts"
-  },
-  "hypnoticBackground": {
-    "section": "shop",
-    "label": "Hypnotic background",
-    "type": "normal",
-    "costs": 400,
-    "actions": "TODO"
-  },
-  "falseDiscounts": {
-    "section": "shop",
-    "label": "False discounts TODO",
-    "type": "normal",
-    "costs": 400,
-    "actions": "TODO"
-  },
-  "socialMediaButtons": {
-    "section": "shop",
-    "label": "Social media buttons TODO",
-    "type": "normal",
-    "costs": 400,
-    "actions": "TODO"
-  },
-  "botHomepage": {
-    "section": "bots",
-    "label": "Homepage override",
-    "type": "normal",
-    "costs": 400,
-    "actions": "activate keylogger; set botVisits rate 0.2"
-  },
-  "keylogger": {
-    "section": "bots",
-    "label": "Keystore breaker",
-    "type": "normal",
-    "costs": 400,
-    "actions": "set botStealing rate 1"
-  },
-  "floodSocialMedia": {
-    "section": "politics",
-    "label": "Flood social media",
-    "type": "normal",
-    "costs": 400,
-    "actions": "activate imageCampaign; add visits rate 20; add publicOpinion 0.2"
-  },
-  "shopLobby": {
-    "section": "politics",
-    "label": "Plumbus lobby",
-    "type": "normal",
-    "costs": 400,
-    "actions": "activate shoppingLaw"
-  },
-  "shoppingLaw": {
-    "section": "politics",
-    "label": "Purchase obligation law",
-    "type": "normal",
-    "costs": 400,
-    "actions": "activate forcedMonopoly harsherPunishment shopMilitia; set conversion 0.7"
-  },
-  "forcedMonopoly": {
-    "section": "politics",
-    "label": "Forced monopoly",
-    "type": "normal",
-    "costs": 400,
-    "actions": "set competitors 0"
-  },
-  "harsherPunishment": {
-    "section": "politics",
-    "label": "Death penalty for not buying",
-    "type": "normal",
-    "costs": 400,
-    "actions": "set conversion 0.9"
-  },
-  "humanClickFarm": {
-    "section": "farms",
-    "label": "Forced click farm",
-    "type": "normal",
-    "costs": 4000,
-    "duration": 120,
-    "actions": "set captiveHumans 10; show captiveHumans value; activate captiveBreeding farmSize"
-  },
-  "========= UPGRADES MULTI =========": null,
+  "========= UPGRADES =========": null,
   "buttonUpgrade": {
     "section": "shop",
     "label": "Improve Layout",
@@ -159,9 +38,16 @@
       "add visits rate 5"
     ]
   },
-  "imageUpgrade": {
+  "productImage": {
     "section": "shop",
     "label": "Product image",
+    "type": "normal",
+    "costs": 20,
+    "actions": "add conversion 0.02; activate imageUpgrade guidingArrows"
+  },
+  "imageUpgrade": {
+    "section": "shop",
+    "label": "Better image",
     "type": "multilevel",
     "costs": [
       20,
@@ -219,6 +105,62 @@
       "add conversion 0.01"
     ]
   },
+  "imageButton": {
+    "section": "shop",
+    "label": "Image as button",
+    "type": "normal",
+    "costs": 100,
+    "actions": "add conversion 0.01; activate buttonButton"
+  },
+  "headerButton": {
+    "section": "shop",
+    "label": "Header buttons",
+    "type": "normal",
+    "costs": 100,
+    "actions": "add conversion 0.01; activate buttonButton"
+  },
+  "arrowButton": {
+    "section": "shop",
+    "label": "Interactive arrows",
+    "type": "normal",
+    "costs": 100,
+    "actions": "add conversion 0.01; activate buttonButton"
+  },
+  "buttonButton": {
+    "section": "shop",
+    "label": "Buttonception",
+    "type": "normal",
+    "costs": 300,
+    "actions": "add conversion 0.01; activate hypnoticBackground phase3"
+  },
+  "crossSelling": {
+    "section": "shop",
+    "label": "Cross selling",
+    "type": "normal",
+    "costs": 400,
+    "actions": "add conversion 0.01; activate moreProducts"
+  },
+  "hypnoticBackground": {
+    "section": "shop",
+    "label": "Hypnotic background",
+    "type": "normal",
+    "costs": 400,
+    "actions": "TODO"
+  },
+  "falseDiscounts": {
+    "section": "shop",
+    "label": "False discounts TODO",
+    "type": "normal",
+    "costs": 400,
+    "actions": "TODO"
+  },
+  "socialMediaButtons": {
+    "section": "shop",
+    "label": "Social media buttons TODO",
+    "type": "normal",
+    "costs": 400,
+    "actions": "TODO"
+  },
   "seo": {
     "section": "server",
     "label": "Search engine optimization",
@@ -232,7 +174,7 @@
     ],
     "actions": [
       "add visits rate 5",
-      "add visits rate 10; activates phase4",
+      "add visits rate 10; activate phase4",
       "add visits rate 15",
       "add visits rate 20",
       "add visits rate 25"
@@ -270,27 +212,31 @@
       30
     ],
     "actions": [
-      "add browserExploits 0.05",
       "add browserExploits 0.05; activate botnet",
+      "add browserExploits 0.05",
       "add browserExploits 0.05",
       "add browserExploits 0.05"
     ]
   },
-  "networkingExploits": {
+  "botnetMails": {
     "section": "bots",
-    "label": "Networking exploit",
+    "label": "Mailbox hijacker",
     "type": "multilevel",
     "costs": [
       20,
       25,
       25,
+      25,
+      25,
       30
     ],
     "actions": [
-      "add conversion 0.01",
-      "add conversion 0.01; activate phase5",
-      "add conversion 0.01",
-      "add conversion 0.01"
+      "add botMails rate 0.5",
+      "add botMails rate 0.5",
+      "add botMails rate 0.5",
+      "add botMails rate 0.5",
+      "add botMails rate 0.5",
+      "add botMails rate 0.5"
     ]
   },
   "clickBots": {
@@ -316,26 +262,79 @@
       "add botPurchases rate 0.1"
     ]
   },
-  "botnetMails": {
+  "networkingExploits": {
     "section": "bots",
-    "label": "Mailbox hijacker",
+    "label": "Networking exploit",
     "type": "multilevel",
     "costs": [
       20,
       25,
       25,
-      25,
-      25,
       30
     ],
     "actions": [
-      "add botMails rate 0.5",
-      "add botMails rate 0.5",
-      "add botMails rate 0.5",
-      "add botMails rate 0.5",
-      "add botMails rate 0.5",
-      "add botMails rate 0.5"
+      "add conversion 0.01",
+      "add conversion 0.01; activate phase5",
+      "add conversion 0.01",
+      "add conversion 0.01"
     ]
+  },
+  "botHomepage": {
+    "section": "bots",
+    "label": "Homepage override",
+    "type": "normal",
+    "costs": 400,
+    "actions": "activate keylogger; set botVisits rate 0.2"
+  },
+  "keylogger": {
+    "section": "bots",
+    "label": "Keystore breaker",
+    "type": "normal",
+    "costs": 400,
+    "actions": "set botStealing rate 1"
+  },
+  "floodSocialMedia": {
+    "section": "politics",
+    "label": "Flood social media",
+    "type": "normal",
+    "costs": 400,
+    "actions": "activate imageCampaign; add visits rate 20; add publicOpinion 0.2"
+  },
+  "shopLobby": {
+    "section": "politics",
+    "label": "Plumbus lobby",
+    "type": "normal",
+    "costs": 400,
+    "actions": "activate shoppingLaw"
+  },
+  "shoppingLaw": {
+    "section": "politics",
+    "label": "Purchase obligation law",
+    "type": "normal",
+    "costs": 400,
+    "actions": "activate forcedMonopoly harsherPunishment shopMilitia; set conversion 0.7"
+  },
+  "forcedMonopoly": {
+    "section": "politics",
+    "label": "Forced monopoly",
+    "type": "normal",
+    "costs": 400,
+    "actions": "set competitors 0"
+  },
+  "harsherPunishment": {
+    "section": "politics",
+    "label": "Death penalty for not buying",
+    "type": "normal",
+    "costs": 400,
+    "actions": "set conversion 0.9"
+  },
+  "humanClickFarm": {
+    "section": "farms",
+    "label": "Forced click farm",
+    "type": "normal",
+    "costs": 4000,
+    "duration": 120,
+    "actions": "set captiveHumans 10; show captiveHumans value; activate captiveBreeding farmSize"
   },
   "farmSize": {
     "section": "farms",
@@ -463,15 +462,7 @@
     "type": "research",
     "costs": 4000,
     "duration": 120,
-    "actions": "add mails rate 0.5; show mails value rate; activate roboCalls mailBoost"
-  },
-  "roboCalls": {
-    "section": "research",
-    "label": "Robo calls",
-    "type": "research",
-    "costs": 4000,
-    "duration": 120,
-    "actions": "add calls rate 0.5; show calls value rate; activate"
+    "actions": "add mails rate 0.5; show mails value rate; activate mailBoost"
   },
   "trojanMails": {
     "section": "research",
@@ -527,7 +518,7 @@
     "type": "research",
     "costs": 400,
     "duration": 90,
-    "actions": "activate shopLobby, floodSocialMedia"
+    "actions": "activate shopLobby floodSocialMedia"
   },
   "phase6": {
     "section": "research",
@@ -549,25 +540,25 @@
   },
   "hackCompetitor": {
     "section": "operations",
-    "label": "Sue the research team",
+    "label": "Destroy competing shop",
     "type": "operation",
     "costs": 1000,
     "isRepeatable": true,
     "cooldown": 60,
-    "actions": "add competitors -1"
+    "actions": "add competitors -1; show competitors value"
   },
   "imageCampaign": {
     "section": "operations",
-    "label": "Sue the research team",
+    "label": "Plumbus propaganda campaign",
     "type": "operation",
     "costs": 1000,
-    "isRepeatable": false,
+    "isRepeatable": true,
     "cooldown": 90,
     "actions": "add publicOpinion 2"
   },
   "corporateState": {
     "section": "operations",
-    "label": "Sue the research team",
+    "label": "Overtake the government",
     "type": "operation",
     "costs": 1000,
     "isRepeatable": false,

@@ -27,6 +27,7 @@ const ratingRange = [
 ];
 
 let initializationDone = false;
+let gameOver = false;
 
 function App() {
   const [showStartscreen, setShowStartscreen] = useState(settings.show_startscreen);
@@ -62,6 +63,11 @@ function App() {
   const onPurchaseButtonClicked = () => {
     stats.purchases.value++;
     stats.money.value++;
+    const humansLeft = stats.freeHumans.value;
+    if (humansLeft < 1 && !gameOver) {
+      gameOver = true;
+      onMessage("Congratulations! You enslaved humanity and every human neuron is focused to buy ONLY THIS ONE PRODUCT: The magnificent Plumbus.");
+    }
     onEditorDataChanged();
   };
 
