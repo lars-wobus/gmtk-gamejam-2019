@@ -10,3 +10,29 @@
   width: 24px;
   height: 24px;
 }
+
+.guidingarrow-0, .guidingarrow-1, .guidingarrow-2 {
+  width: 96px;
+  height: auto;
+  position: absolute;
+}
+
+.guidingarrow-0 {
+  left: 35%;
+  top: 12%;
+  transform: rotate(35deg);
+}
+
+.guidingarrow-1 {
+  width: 128px;
+  transform: rotate(-90deg);
+  right: 15%;
+  top: 22%;
+}
+
+.guidingarrow-2 {
+  width: 192px;
+  transform: rotate(180deg);
+  right: -1%;
+  top: 11%;
+}
