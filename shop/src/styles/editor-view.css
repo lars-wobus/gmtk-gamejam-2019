@@ -1,0 +1,9 @@
+#editorview {
+  border-left: 1px solid black;
+  background-color: #efefef;
+  width:30%;
+}
+
+.stats-element  {
+  border: 1px solid black;
+}
