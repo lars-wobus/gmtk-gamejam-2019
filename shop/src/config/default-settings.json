@@ -1,7 +1,7 @@
 {
   "default_shop_name": "Super Plumbus Store",
-  "show_startscreen": false,
-  "show_tutorial": false,
+  "show_startscreen": true,
+  "show_tutorial": true,
   "rich_mode": true,
   "updates_per_second": 2,
   "upgrade_speed_multiplier": 20,
