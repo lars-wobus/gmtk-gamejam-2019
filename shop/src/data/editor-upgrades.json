@@ -3,6 +3,7 @@
     "section": "shop",
     "label": "Better buy button",
     "type": "multilevel",
+    "costs": [10, 15, 20, 25, 30],
     "actions": [
       "plus conversion 0.01; activate productImage",
       "plus conversion 0.01",
@@ -15,12 +16,14 @@
     "section": "shop",
     "label": "Product image",
     "type": "normal",
+    "costs": 20,
     "actions": "plus conversion 0.02; activate imageUpgrade guidingArrows"
   },
   "imageUpgrade": {
     "section": "shop",
     "label": "Product image",
     "type": "multilevel",
+    "costs": [20, 25, 30],
     "actions": [
       "plus conversion 0.01",
       "plus conversion 0.01",
@@ -31,6 +34,7 @@
     "section": "shop",
     "label": "Guiding arrows",
     "type": "multilevel",
+    "costs": [20, 25, 30],
     "actions": [
       "plus conversion 0.01",
       "plus conversion 0.01",
@@ -41,6 +45,7 @@
     "section": "shop",
     "label": "Suggestive emojis",
     "type": "multilevel",
+    "costs": [20, 25, 30],
     "actions": [
       "plus conversion 0.01 activate fakeReviews researchDepartment",
       "plus conversion 0.01",
@@ -51,6 +56,7 @@
     "section": "shop",
     "label": "Fake reviews",
     "type": "multilevel",
+    "costs": [20, 25, 30],
     "actions": [
       "plus conversion 0.01",
       "plus conversion 0.01",
@@ -61,54 +67,63 @@
     "section": "shop",
     "label": "R&D department",
     "type": "normal",
+    "costs": 100,
     "actions": "activate phase2"
   },
   "phase2": {
     "section": "research",
     "label": "Dynamic content",
     "type": "research",
+    "costs": 400,
     "actions": "activate imageButton headerButton arrowButton crossSelling"
   },
   "imageButton": {
     "section": "shop",
     "label": "Image as button",
     "type": "normal",
+    "costs": 100,
     "actions": "plus conversion 0.01; activate buttonButton"
   },
   "headerButton": {
     "section": "shop",
     "label": "Header buttons",
     "type": "normal",
+    "costs": 100,
     "actions": "plus conversion 0.01; activate buttonButton"
   },
   "arrowButton": {
     "section": "shop",
     "label": "Interactive arrows",
     "type": "normal",
+    "costs": 100,
     "actions": "plus conversion 0.01; activate buttonButton"
   },
   "buttonButton": {
     "section": "shop",
     "label": "Buttonception",
     "type": "normal",
+    "costs": 300,
     "actions": "plus conversion 0.01"
   },
   "crossSelling": {
     "section": "shop",
     "label": "Cross selling",
     "type": "normal",
+    "costs": 400,
     "actions": "plus conversion 0.01; activate moreProducts"
   },
   "moreProducts": {
     "section": "research",
     "label": "More than one product",
     "type": "research",
+    "cost": 4000,
     "actions": "activate sueResearchTeam"
   },
   "sueResearchTeam": {
     "section": "operations",
     "label": "Sue the research team",
     "type": "operation",
+    "cost": 1000,
     "actions": "add money 10000"
   }
 }

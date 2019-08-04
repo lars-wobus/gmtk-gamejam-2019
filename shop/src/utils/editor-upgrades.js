@@ -30,6 +30,7 @@ export const initEditorUpgrades = (
       isDone: false,
       level: 0,
       maxLevel: upgradeDef.type === "multilevel" ? upgradeDef.actions.length : 1,
+      costs: upgradeDef.costs,
       actions: upgradeDef.actions
     };
     console.info(`initialized upgrade "${sectionName}"/"${upgradeName}"`);
