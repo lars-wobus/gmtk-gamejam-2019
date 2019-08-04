@@ -33,14 +33,11 @@ export const ShopView = (
     return <UserReview userData={element} key={key} />
   });
   const {
-    buttonUpgrade, imageUpgrade, guidingArrows, suggestiveEmojis
+    buttonUpgrade, imageUpgrade, guidingArrows, suggestiveEmojis,
+    fakeReviews
   } = shopUpgrades;
 
-  const { level } = buttonUpgrade;
-  const buttonWidth = 15 * (1 + level);
-  const buttonHeight =  20 * (1 + level);
-  //const buttonStyle = { width: `${buttonWidth}%`, height: `${buttonHeight}px`};
-  const buttonClass = `buy buy-${level}`
+  const buttonClass = `buy buy-${buttonUpgrade.level}`
 
   const maxImageLevel = imageUpgrade.actions.length;
   const imageStepSize = 100 / maxImageLevel;
@@ -60,9 +57,9 @@ export const ShopView = (
   const showHeader = true;
   const showBanner = true;
   const showFooter = true;
-  const showReviews = true;
+  const showReviews = fakeReviews.level > 0;
 
-  // console.log(shopUpgrades);
+  console.log(shopUpgrades);
   return <div id = "shopview">
     {<Header classes={(showHeader ? "" : "hidden")} />}
     {<Banner classes={(showBanner ? "" : "hidden")} />}
