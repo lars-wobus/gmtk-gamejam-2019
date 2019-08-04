@@ -47,7 +47,7 @@
     "type": "multilevel",
     "costs": [20, 25, 30],
     "actions": [
-      "plus conversion 0.01 activate fakeReviews researchDepartment",
+      "plus conversion 0.01; activate fakeReviews researchDepartment",
       "plus conversion 0.01",
       "plus conversion 0.01"
     ]
