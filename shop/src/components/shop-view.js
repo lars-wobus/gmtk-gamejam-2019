@@ -12,7 +12,7 @@ import ProductImage from '../images/plumbus.png';
 
 import bannerData from '../data/tell-your-friends-data';
 
-const imageWidths = [25, 50, 75, 75];
+const imageWidths = [50, 60, 70, 75];
 
 export const ShopView = (
   { userReviews, shopUpgrades, onButtonClick }
@@ -53,16 +53,20 @@ export const ShopView = (
       Buy Now
     </div>
     {(imageUpgrade.isVisible) &&
-      <img id="productimage"
-        className={(imageUpgrade.level >= 3) ? "active": ""}
-        src={ProductImage} style={imageStyle}
-        alt="Rendering of a Plumbus"
-      />
+      <div id="productimage" style={imageStyle}>
+        <img 
+          className={(imageUpgrade.level >= 3) ? "active": ""}
+          src={ProductImage}
+          style={{ width: "100%" }}
+          alt="Rendering of a Plumbus"
+        />
+      </div>
     }
     {labels}
     {(suggestiveEmojis.level >= 1) && <GestureTabHold classes="gesturetabhold" />}
     {(suggestiveEmojis.level >= 2) && <BellRing classes="bellring" />}
     {(suggestiveEmojis.level >= 3) && <Alarm classes="alarm" />}
+
     {(crossSelling.level > 0) && <CrossSellingTable classes={`${corporateDesign}`} />}
     {(showReviews) && <div className={`review-container ${corporateDesign}`}>{array}</div>}
     {<Footer classes={(showFooter ? `${corporateDesign}` : "hidden")} />}

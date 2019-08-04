@@ -17,24 +17,28 @@
   position: absolute;
 }
 
+.guidingarrow-0, .guidingarrow-1, .guidingarrow-2  {
+  position: absolute;
+}
+
 .guidingarrow-0 {
-  left: 270px;
-  top: 530px;
   transform: rotate(35deg);
+  top: 210px;
+  left: 20%;
 }
 
 .guidingarrow-1 {
   width: 128px;
   transform: rotate(180deg);
-  left: 620px;
-  top: 650px;
+  right: 50%;
+  top: 380px;
 }
 
 .guidingarrow-2 {
   width: 192px;
   transform: rotate(180deg);
-  left: 600px;
-  top: 300px;
+  top: 210px;
+  right: 50%;
 }
 
 .gesturetabhold, .bellring, .alarm {
@@ -47,18 +51,19 @@
 .gesturetabhold {
   animation: point 1s infinite;
   left: 32%;
-  top: 21.1%;
+  top: 150px;
 }
 
 .bellring {
   animation: swing 1s infinite;
   left: 60%;
+  top: 100px;
 }
 
 .alarm {
   animation: fadeIn 1s infinite;
   left: 5%;
-  top: 28%;
+  top: 200px;
 }
 
 @keyframes shake {
