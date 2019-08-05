@@ -8,6 +8,7 @@ Topic: "Only One"
 - Genre: Clicker Game 
 - Platform: Web Browser
 - Technology: React
+- Link: https://lostmekka.itch.io/plumbus
 
 ## Description
 
