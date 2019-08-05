@@ -25,5 +25,5 @@ The player is running and improving a webshop to attract more and more people fo
 
 | Rendering of a Plumbus | Webshop 1st tier | Webshop n-th tier |
 |-------------------|---------------------|--------------------------|
-| ![Rendering of our main project](./resources/plumbus_002.png) | ![Primitive webshop](./resources/webshop_1.png) | ![More complex webshop](./resources/webshop_2.png) |
+| ![Rendering of our main project](./resources/plumbus_002.png) | ![Primitive webshop](./resources/webshop_1.PNG) | ![More complex webshop](./resources/webshop_2.PNG) |
 
