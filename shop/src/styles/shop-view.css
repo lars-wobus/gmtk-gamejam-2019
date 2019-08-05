@@ -1,0 +1,229 @@
+
+#shopview {
+  width:70%;
+  left: 30%;
+  overflow-y: scroll;
+}
+
+.header, .banner, .footer {
+  width: 100%;
+  width: 70%;
+}
+
+.header {
+  width: 100%;
+  height: 64px;
+  position: inherit;
+  border-bottom: 1px solid coral;
+  background-color: #fff;
+  border-bottom: 1px solid darkgray;
+}
+
+.header.active {
+  background-color: #f99292;
+  border-bottom: 1px solid coral;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.banner {
+  width: 100%;
+  position: inherit;
+  margin-top: 20px;
+  height: 32px;
+  background-color: #fff;
+}
+
+.banner.active {
+  background-color: rgb(255, 230, 230);
+}
+
+.footer {
+  bottom: 0px;
+  width: calc(70% - 1px);
+  height: 48px;
+  border-top: 1px solid darkgray;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  background-color: #fff;
+}
+
+.footer div{
+  display: inline-block;
+  margin: 10px;
+}
+
+.footer.active {
+  background-color: #f99292;
+  border-top: 1px solid coral;
+}
+
+.footer.active div{
+  font-weight: 500;
+  color: white;
+}
+
+#productimage {
+  width: 200px;
+  height: auto;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*#productimage:before {
+  background: url('../images/spiral.png') no-repeat center center;
+}*/
+
+#shopview .abc {
+  width: 70vw;
+  height: 100vh;
+  position: fixed;
+  display: block;
+  right: 30%;
+  top: -500px;
+}
+
+#shopview .abc .background {
+  /*background: url('../images/spiral.png') no-repeat center center;
+  animation: spinning 5s linear infinite;
+  height: 100%;
+  display: block;
+  background-position: center;
+  border-radius: 50%;
+  opacity: 0.1;
+  position: absolute;
+  width: 70%;
+  background-size: 100%;*/
+  background: url(/static/media/spiral.44406ca2.png) no-repeat center center;
+  animation: spinning 5s linear infinite;
+  background-position: center;
+  opacity: 0.1;
+  height: 70%;
+  height: 2000px;
+  background-size: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*#productimage .background {
+  background: url('../images/spiral.png') no-repeat center center;
+  animation: spinning 5s linear infinite;
+  width: 200px;
+  display: inline-block;
+  height: 200px;
+  top: 100px;
+  left: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  border-radius: 50%;
+}*/
+
+#productimage .active {
+  animation: glow 5s infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    border: 1px solid rgb(255, 230, 230);
+  }
+
+  50% {
+    border: 1px solid rgb(228, 84, 132);;
+  }
+}
+
+@keyframes spinning {
+  from  {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.buy {
+  border: 1px solid black;
+  width: 50%;
+  display: inline-block;
+  margin: 50px 0px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: darkgray;
+  box-shadow: 1px 2px #bbbbbb;
+  font-weight: 700;
+  font-size: 32px;
+  background-color: gray;
+}
+
+.buy-0 {
+  width: 40%;
+  height: 50px;
+}
+
+.buy-1 {
+  width: 50%;
+  height: 55px;
+  font-size: 34px;
+}
+
+.buy-2 {
+  width: 60%;
+  height: 60px;
+  font-size: 36px;
+}
+
+.buy-3 {
+  width: 70%;
+  height: 65px;
+  font-size: 38px;
+}
+
+.buy-4 {
+  width: 80%;
+  height: 70px;
+  font-size: 42px;
+}
+
+.buy-5 {
+  width: 90%;
+  height: 70px;
+  font-size: 46px;
+  background-color: rgb(228, 84, 132);
+}
+
+.cross-selling-table {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 10px;
+}
+
+.cross-selling-table.active .comparison {
+  background-color: rgb(255, 230, 230);
+}
+
+.comparison {
+  display: table-cell;
+  width: 200px;
+  height: auto;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 10px;
+  font-weight: 400;
+   background-color: #fff;
+}
+
+.comparison .rendering {
+  width: 160px;
+  height: auto;
+}
+
+#cross-selling-info {
+  font-weight: 700;
+}

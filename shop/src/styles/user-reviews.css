@@ -1,0 +1,46 @@
+.review-container {
+    height: 500px;
+    overflow: overlay;
+    bottom: 48px;
+    display: block;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+}
+
+.review-container.active {
+  background-color: rgb(255, 230, 230);
+}
+
+.user-review {
+  margin: 10px;
+  border: 1px solid gray;
+}
+
+.user-name {
+  display: block;
+}
+
+.user-rating, .user-verification {
+  
+  margin: 10px;
+}
+
+.user-review-1, .user-review-2 {
+  display: table-cell;
+}
+
+.user-review-1 {
+  width: 20vw;
+}
+
+.user-review-2 {
+  width: 100vw;
+  text-align: left;
+}
+
+.user-comment {
+  top: 10px;
+  position: relative;
+}

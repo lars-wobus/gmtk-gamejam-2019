@@ -37,27 +37,52 @@
     width:100%;
 }*/
 
+html, body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow-y: hidden;
+}
+
 .App {
   display:flex;
   justify-content: space-between;
   height: 100vh;
 }
 
-#editorview {
-  border: 1px solid black;
-  width:30%;
-}
-
-#shopview {
-  border: 1px solid red;
-  width:70%;
-  left: 30%;
-}
-
-#buy {
+.center {
   position: relative;
-  top: 50%;
-  border: 1px solid black;
   width: 50%;
   left: 25%;
+  top: 35%;
+}
+
+.center input {
+  border: 1px solid #000;
+  width: 50%;
+  height: 40px;
+  box-shadow: 1px 1px black;
+  padding: 5px;
+  text-align: center;
+}
+
+.center .startbutton {
+  position: relative;
+  border: 1px solid black;
+  width: 50%;
+  display: inline-block;
+  margin-top: 20px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+  border-radius: 10px;
+  box-shadow: 2px 2px black;
+  padding: 5px;
+}
+
+.hidden {
+  visibility: hidden;
 }

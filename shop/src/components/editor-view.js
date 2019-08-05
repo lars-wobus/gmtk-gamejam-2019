@@ -1,12 +1,12 @@
 import React from 'react';
-import { createButtonMap } from './create-button-map';
-import { createTextfieldMap } from './create-textfield-map';
+import { createStatsMap } from "./create-stats-map";
+import { createUpgradeMap } from "./editor/upgrade-section";
 
 export const EditorView = (
-  { buttons=[], textfields=[], onButtonClick }
+  {stats, upgradeSections, onUpgrade}
 ) => {
-  return <div id = "editorview">
-    {createButtonMap(buttons, onButtonClick)}
-    {createTextfieldMap(textfields)}
+  return <div id="editorview">
+    <div className = "stats-element">{createStatsMap(stats)}</div>
+    {createUpgradeMap(upgradeSections, onUpgrade)}
   </div>
 };
